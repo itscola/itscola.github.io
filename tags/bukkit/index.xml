@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bukkit on White_cola Blog</title>
+    <link>https://itscola.github.io/tags/bukkit/</link>
+    <description>Recent content in Bukkit on White_cola Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
+    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/bukkit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于更好的白名单插件</title>
+      <link>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</guid>
+      <description>为什么所有贴都删了 很多原因, 从MCBBS的贴被限制手机访问 删帖, 到MineBBS 删帖.
+其中经历了各种各样的奇葩事, 虽然说也学到了很多.
+这个插件之后会怎么样? 开发者不会再继续更新插件 也不一定会继续维护.
+最终决定将插件开源.
+github WL
+github WB
+如果将来有人需要的, 那可以基于项目制作, 或是参考.
+计划的更强大的MagicList呢? MagicList已经制作完成, 在我的Github私有仓库那里. 但是并不一定发布.
+MagicList是我所有白名单的制作经验的合体. 也用上了我制作的&amp;quot;先进&amp;quot;插件制作框架HiPlugin.
+目前想着, 就把他当作自己的武器库了.
+还会有地方交流吗? 还能下载到吗? 插件不更新后 还能用吗? 你可以加群 703246558 下载到最新的完整插件.
+由于插件的计算和储存都在本地, 所以停止更新, 不会对插件有任何影响.
+这个插件能做好的原因(个人想法) Think Different
+开发者的创意 创新能力 是这个插件能做好的关键因素.
+在开发者看来 其中的创意价值远超插件本身.
+正因如此 开发者认为 这个插件可能会被模仿 但却永远不会被代替 因为独特创新能力没办法模仿.</description>
+    </item>
+    
+  </channel>
+</rss>

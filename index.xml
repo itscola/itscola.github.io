@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>White_cola Blog</title>
+    <link>https://itscola.github.io/</link>
+    <description>Recent content on White_cola Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
+    <lastBuildDate>Sat, 11 Apr 2020 18:49:01 +0200</lastBuildDate><atom:link href="https://itscola.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://itscola.github.io/posts/post2/</link>
+      <pubDate>Sat, 11 Apr 2020 18:49:01 +0200</pubDate>
+      
+      <guid>https://itscola.github.io/posts/post2/</guid>
+      <description>这里是White_cola  Minecraft玩家 时不时开发些 插件,mod等  更好的白名单(WL/WB), HiPlugin , MagicList 作者 Minecraft 正版ID : White_cola 曾经开过H2O服务器      一个业余UP主 为了远大理想不停努力. (将来想开IT公司) 喜欢开发 喜欢科技产品 技术等 主要用Java, C# 还会CPP JS PHP 等语言 也会大部分框架. 思想独特且独立 创意天马行空 实事求是. 大学生 很期待考研.  </description>
+    </item>
+    
+    <item>
+      <title>关于更好的白名单插件</title>
+      <link>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</guid>
+      <description>为什么所有贴都删了 很多原因, 从MCBBS的贴被限制手机访问 删帖, 到MineBBS 删帖.
+其中经历了各种各样的奇葩事, 虽然说也学到了很多.
+这个插件之后会怎么样? 开发者不会再继续更新插件 也不一定会继续维护.
+最终决定将插件开源.
+github WL
+github WB
+如果将来有人需要的, 那可以基于项目制作, 或是参考.
+计划的更强大的MagicList呢? MagicList已经制作完成, 在我的Github私有仓库那里. 但是并不一定发布.
+MagicList是我所有白名单的制作经验的合体. 也用上了我制作的&amp;quot;先进&amp;quot;插件制作框架HiPlugin.
+目前想着, 就把他当作自己的武器库了.
+还会有地方交流吗? 还能下载到吗? 插件不更新后 还能用吗? 你可以加群 703246558 下载到最新的完整插件.
+由于插件的计算和储存都在本地, 所以停止更新, 不会对插件有任何影响.
+这个插件能做好的原因(个人想法) Think Different
+开发者的创意 创新能力 是这个插件能做好的关键因素.
+在开发者看来 其中的创意价值远超插件本身.
+正因如此 开发者认为 这个插件可能会被模仿 但却永远不会被代替 因为独特创新能力没办法模仿.</description>
+    </item>
+    
+    <item>
+      <title>地图推荐系列第一期 [长期更新]</title>
+      <link>https://itscola.github.io/blog/minecraft-maps-1/</link>
+      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/minecraft-maps-1/</guid>
+      <description>地图推荐角度  地图规模: 地图实际展示方块的规模. 游玩时长: 主观游玩地图时长. 简易层度: 地图的难易程度. 相关评分: 地图在发布网站的受欢迎程度. 相关视频: 相关UP主做过的视频. 是否适合实况: 是否适合实况 适合多少人. 游玩感想及补充: 实际游玩的感想和补充.  地图推荐 来自于各个网站, 这里不做转载仅做推荐.
+如果你是原作者, 你不希望你的地图被推荐, 请联系.
+游玩感想为不会详细介绍 防止具体. 具体介绍请去原地址. 点击眼睛emojil来查看地图.
+冒险地图: 1.Unreality - (并非真实) [基础英文] [支持多人和单人] [适合录制] 👁‍🗨 地图规模: 中等偏小
+游玩时长: 一小时左右
+简易程度: 前半部分简单,后半部分需大量动脑.
+相关评分: 3.8星
+相关视频: 1.官方攻略 Youtube
+2. White_cola Bilibili
+是否适合实况: 非常适合
+ 游玩感想: 这真是一张很棒的地图, 它一张地图包含了RPG 解谜 PVE 跑酷 红石 任务等多种元素. 剧情不会直接 显现出来, 而是慢慢出现, 让游玩的人难以猜透背后的剧情. 随着剧情的推进, 玩家的心情也会 随之改变. 游戏难度适中. 英文对话不算多,大部分为基础单词.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://itscola.github.io/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>思维不受限, 创意无极限.</title>
+      <link>https://itscola.github.io/blog/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/markdown-syntax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://itscola.github.io/about/</link>
+      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/about/</guid>
+      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+Hugo makes use of a variety of open source projects including:
+ https://github.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://itscola.github.io/posts/post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/posts/post1/</guid>
+      <description>欢迎来到我的博客 文章未经允许禁止转载.
+祝你有个美好的一天 !</description>
+    </item>
+    
+    <item>
+      <title>get in touch</title>
+      <link>https://itscola.github.io/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/contact/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

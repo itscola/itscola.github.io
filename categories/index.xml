@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on White_cola Blog</title>
+    <link>https://itscola.github.io/categories/</link>
+    <description>Recent content in Categories on White_cola Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright><atom:link href="https://itscola.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

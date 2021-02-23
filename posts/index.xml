@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on White_cola Blog</title>
+    <link>https://itscola.github.io/posts/</link>
+    <description>Recent content in Posts on White_cola Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
+    <lastBuildDate>Sat, 11 Apr 2020 18:49:01 +0200</lastBuildDate><atom:link href="https://itscola.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://itscola.github.io/posts/post2/</link>
+      <pubDate>Sat, 11 Apr 2020 18:49:01 +0200</pubDate>
+      
+      <guid>https://itscola.github.io/posts/post2/</guid>
+      <description>这里是White_cola  Minecraft玩家 时不时开发些 插件,mod等  更好的白名单(WL/WB), HiPlugin , MagicList 作者 Minecraft 正版ID : White_cola 曾经开过H2O服务器      一个业余UP主 为了远大理想不停努力. (将来想开IT公司) 喜欢开发 喜欢科技产品 技术等 主要用Java, C# 还会CPP JS PHP 等语言 也会大部分框架. 思想独特且独立 创意天马行空 实事求是. 大学生 很期待考研.  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://itscola.github.io/posts/post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/posts/post1/</guid>
+      <description>欢迎来到我的博客 文章未经允许禁止转载.
+祝你有个美好的一天 !</description>
+    </item>
+    
+  </channel>
+</rss>
