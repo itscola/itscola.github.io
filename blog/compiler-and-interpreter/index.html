@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="blog/minecraft-maps-1/"
+                
+            >
+                <i class="MinecraftMaps"></i>
+                <span>MC地图推荐</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">什么是编译器,解释器? (一文理解编译型和解释型语言)</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#编程语言">编程语言</a></li>
+    <li><a href="#编译器和解释器">编译器和解释器</a>
+      <ul>
+        <li><a href="#编译器">编译器</a></li>
+        <li><a href="#解释器">解释器</a></li>
+        <li><a href="#优缺点">优缺点</a></li>
+      </ul>
+    </li>
+    <li><a href="#java的半编译半解释">Java的半编译半解释</a></li>
+    <li><a href="#补充">补充</a></li>
+  </ul>
+</nav>
+    <hr>
+<h2 id="编程语言">编程语言</h2>
+<ul>
+<li>我们所用的程序都是用某种语言写的, 但是它会先被翻译成能被计算机执行的语言之后才能运行.</li>
+<li>通常人们会通过它翻译用了 编译器(compiler) 还是 解释器(interpreter) 来判定他解释型还是编译型语言.</li>
+<li>如java这种又用了 编译器 又用了 解释器 通常被我们称为 半解释半编译型语言.</li>
+</ul>
+<h2 id="编译器和解释器">编译器和解释器</h2>
+<h3 id="编译器">编译器</h3>
+<p>编译器就是一个程序.它会把我们的 源代码写的程序 翻译成 <strong>一种等价的 另一种语言</strong> 写的程序.<br>
+在它进行翻译的过程中, 还会报告它在源代码中发现的错误.</p>
+<ul>
+<li><em>源代码写的程序</em> -<em>编译器</em>-&gt; <em>目标程序</em><br>
+<strong>目标程序就可以处理 用户的输入 得到对应的 输出</strong></li>
+</ul>
+<h3 id="解释器">解释器</h3>
+<p>解释器不会进行翻译来生成目标程序, 而是直接通过 <strong>用户的输入</strong> 和 <strong>源程序</strong> 来生成目标程序.</p>
+<ul>
+<li><em>源代码写的程序 + 用户的输入</em> -<em>解释器</em>-&gt; <em>目标程序</em></li>
+</ul>
+<h3 id="优缺点">优缺点</h3>
+<ul>
+<li>通过编译器生成的目标程序 来处理用户的输入 通常比用一个解释器快很多.</li>
+<li>通过解释器来运行 由于它是逐个语句来执行 错误诊断效果通常比编译器好.</li>
+</ul>
+<h2 id="java的半编译半解释">Java的半编译半解释</h2>
+<p>Java就是个半编译半解释形语言 java源程序会被编译成字节码(bytecode)(中间代码),然后再由JVM(java虚拟机)
+解释执行. 也通过中间代码 实现了跨平台.</p>
+<h2 id="补充">补充</h2>
+<p>在编译器和解释器前后, 还会有一些其他步骤. 这边主要聊编译器和解释器.</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/gradle-basic/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
