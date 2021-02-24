@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
-    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradle快速掌握基础用法</title>
+      <link>https://itscola.github.io/blog/gradle-basic/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/gradle-basic/</guid>
+      <description>Why Gradle？  Gradle是一款自动化构建项目的开源工具。 它使用Groovy来声明项目设置。和maven相比，它抛弃了繁杂的xml配置，同时配置文件做到简洁美观。 很多开源项目 需要使用gradle构建。 Java应用为主 目前支持 Java、Groovy、Kotlin和Scala.  下载并配置 下载地址： 点击下载 这里下载all版本，包含了源码、文档、示例等内容。
+配置环境变量：  将压缩包解压到任意目录. 打开环境变量配置，添加系统变量到这个目录，命名为Gradle_Home。 选择用户变量中的path，添加%Gradle_Home%/bin 。 在cmd中输入 gradle -v 如果出现显示的gradle版本，代表配置成功。  使用本地maven仓库 如果每个项目都要从maven仓库下载一次依赖, 那么将会占用很多空间, 并影响开发效率. 我们可以通过配置环境变量, 先让gradle找本地下载过的依赖, 如果没有 那再去maven仓库下载.
+首先选择一个本地的maven仓库文件夹路径. 然后打开环境变量配置, 在系统变量新建一个变量 变量名为 GRADLE_USER_HOME 变量值为上一步选择的本地 maven仓库文件夹.
+今后gradle会先从本地maven仓库找jar包 , 找不到再去maven仓库下载到本地maven仓库.
+IDEA创建gradle项目与配置 在Idea中创建Gradle项目 配置build.gradle  主要配置内容:
+   repositories主要是选定的maven仓库 默认为maven中央仓库
+当然你也可以添加仓库 可以参考 阿里的Maven仓库镜像 的教程来设定  在denpdencies添加jar坐标(依赖):   从你所添加的maven仓库添加:
+这里用默认的 maven中央仓库. 首先打开你所要添加的仓库页面, 搜索你要添加的jar. 点击search. 找到后点击.</description>
+    </item>
+    
     <item>
       <title>关于更好的白名单插件</title>
       <link>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</link>

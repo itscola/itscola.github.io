@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="blog/minecraft-maps-1/"
+                
+            >
+                <i class="MinecraftMaps"></i>
+                <span>MC地图推荐</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">Gradle快速掌握基础用法</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-gradle">Why Gradle？</a></li>
+    <li><a href="#下载并配置">下载并配置</a>
+      <ul>
+        <li><a href="#下载地址">下载地址：</a></li>
+        <li><a href="#配置环境变量">配置环境变量：</a></li>
+        <li><a href="#使用本地maven仓库">使用本地maven仓库</a></li>
+      </ul>
+    </li>
+    <li><a href="#idea创建gradle项目与配置">IDEA创建gradle项目与配置</a>
+      <ul>
+        <li><a href="#在idea中创建gradle项目">在Idea中创建Gradle项目</a></li>
+        <li><a href="#配置buildgradle">配置build.gradle</a></li>
+      </ul>
+    </li>
+    <li><a href="#导出项目jar包">导出项目jar包</a>
+      <ul>
+        <li><a href="#idea中导出">idea中导出</a></li>
+        <li><a href="#用cmd导出">用cmd导出</a></li>
+        <li><a href="#导出后的目录">导出后的目录</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何通过一个项目-配置开发环境">如何通过一个项目 配置开发环境</a>
+      <ul>
+        <li><a href="#一般项目">一般项目</a></li>
+        <li><a href="#模板项目">模板项目</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h2 id="why-gradle">Why Gradle？</h2>
+<ul>
+<li>Gradle是一款自动化构建项目的开源工具。</li>
+<li>它使用Groovy来声明项目设置。和maven相比，它抛弃了繁杂的xml配置，同时配置文件做到简洁美观。</li>
+<li>很多开源项目 需要使用gradle构建。</li>
+<li>Java应用为主 目前支持 Java、Groovy、Kotlin和Scala.</li>
+</ul>
+<h2 id="下载并配置">下载并配置</h2>
+<h3 id="下载地址">下载地址：</h3>
+<p><a href="http://services.gradle.org/distributions/">点击下载</a>
+这里下载all版本，包含了源码、文档、示例等内容。</p>
+<h3 id="配置环境变量">配置环境变量：</h3>
+<ol>
+<li>将压缩包解压到任意目录.</li>
+<li>打开环境变量配置，添加系统变量到这个目录，命名为Gradle_Home。</li>
+<li>选择用户变量中的path，添加%Gradle_Home%/bin 。</li>
+<li>在cmd中输入 gradle -v 如果出现显示的gradle版本，代表配置成功。</li>
+</ol>
+<h3 id="使用本地maven仓库">使用本地maven仓库</h3>
+<p>如果每个项目都要从maven仓库下载一次依赖, 那么将会占用很多空间, 并影响开发效率.
+我们可以通过配置环境变量, 先让gradle找本地下载过的依赖, 如果没有 那再去maven仓库下载.</p>
+<p>首先选择一个本地的maven仓库文件夹路径.
+然后打开环境变量配置, 在系统变量新建一个变量 变量名为 GRADLE_USER_HOME 变量值为上一步选择的本地
+maven仓库文件夹.</p>
+<p>今后gradle会先从本地maven仓库找jar包 , 找不到再去maven仓库下载到本地maven仓库.</p>
+<h2 id="idea创建gradle项目与配置">IDEA创建gradle项目与配置</h2>
+<h3 id="在idea中创建gradle项目">在Idea中创建Gradle项目</h3>
+<p><img src="/Gradle/1.png" alt="image">
+<img src="/Gradle/2.png" alt="image">
+<img src="/Gradle/3.png" alt="image">
+<img src="/Gradle/4.png" alt="image"></p>
+<h3 id="配置buildgradle">配置build.gradle</h3>
+<ol>
+<li>主要配置内容:<br>
+<img src="/Gradle/5.png" alt="image"></li>
+</ol>
+<ul>
+<li>repositories主要是选定的maven仓库 默认为maven中央仓库<br>
+当然你也可以添加仓库 可以参考 <a href="https://maven.aliyun.com/mvn/guide?spm=a2c6h.13651104.0.0.435836a4gsyGs1">阿里的Maven仓库镜像</a> 的教程来设定</li>
+</ul>
+<ol start="2">
+<li>在denpdencies添加jar坐标(依赖):
+<ol>
+<li>
+<p>从你所添加的maven仓库添加:<br>
+这里用默认的 <a href="https://mvnrepository.com/">maven中央仓库</a>. 首先打开你所要添加的仓库页面, 搜索你要添加的jar. 点击search.
+<img src="/Gradle/6.png" alt="image"></p>
+<p>找到后点击.<br>
+<img src="/Gradle/7.png" alt="image"></p>
+<p>选择你需要的版本 点击.
+<img src="/Gradle/8.png" alt="image"></p>
+<p>选择gradle 复制后,加入到你的denpdencies.
+<img src="/Gradle/9.png" alt="image">
+<img src="/Gradle/10.png" alt="image"><br>
+然后idea会自动去下载.</p>
+</li>
+<li>
+<p>添加本地依赖jar包:<br>
+我们在项目中创建一个lib文件夹, 放入你想添加的jar包.<br>
+然后在 denpdencies 中加入<br>
+<code>compile fileTree(dir: 'src/main/libs', includes: ['*.jar'])</code></p>
+</li>
+<li>
+<p><a href="https://www.cnblogs.com/longjunhao/p/10160831.html">几种添加依赖方式的区别</a></p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="导出项目jar包">导出项目jar包</h2>
+<h3 id="idea中导出">idea中导出</h3>
+<p><img src="/Gradle/11.png" alt="image"></p>
+<h3 id="用cmd导出">用cmd导出</h3>
+<p>首先来到项目目录 然后通过cmd cd到这里 或者直接在路径中输入cmd.
+<img src="/Gradle/12.png" alt="image"><br>
+输入gradle build 生成 jar
+<img src="/Gradle/13.png" alt="image"></p>
+<h3 id="导出后的目录">导出后的目录</h3>
+<p>导出后的目录在项目的 build/libs 下</p>
+<h2 id="如何通过一个项目-配置开发环境">如何通过一个项目 配置开发环境</h2>
+<h3 id="一般项目">一般项目</h3>
+<p>我们通常拿到一个gradle项目, 首先要做得就是配置开发环境.<br>
+在已经自己按需求配置好后 通常我会通过cmd 在文件夹中输入 gradle idea 或 gradle eclipse 来构建开发环境.
+然后会在目录生成idea或eclipse的启动文件.</p>
+<p>你也可以右键build.gradle 选择idea来构建项目.</p>
+<h3 id="模板项目">模板项目</h3>
+<p>如我们要构建Fabric-example这个Minecraft开发模板项目, 我们下载/clone 库后.<br>
+需要先对build.gradle settings.gradle进行
+修改.<br>
+之后按一般项目配置开发环境即可.</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

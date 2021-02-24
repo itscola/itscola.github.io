@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
-    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gradle</title>
+      <link>https://itscola.github.io/tags/gradle/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/gradle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://itscola.github.io/tags/java/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>开发</title>
+      <link>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Bukkit</title>
       <link>https://itscola.github.io/tags/bukkit/</link>
