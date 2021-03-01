@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/gradle/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gradle快速掌握基础用法</title>
       <link>https://itscola.github.io/blog/gradle-basic/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/blog/gradle-basic/</guid>
       <description>Why Gradle？  Gradle是一款自动化构建项目的开源工具。 它使用Groovy来声明项目设置。和maven相比，它抛弃了繁杂的xml配置，同时配置文件做到简洁美观。 很多开源项目 需要使用gradle构建。 Java应用为主 目前支持 Java、Groovy、Kotlin和Scala.  下载并配置 下载地址： 点击下载 这里下载all版本，包含了源码、文档、示例等内容。

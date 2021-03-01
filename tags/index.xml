@@ -7,29 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
-    <lastBuildDate>Tue, 25 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Java</title>
-      <link>https://itscola.github.io/tags/java/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      <title>Machine Learning</title>
+      <link>https://itscola.github.io/tags/machine-learning/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://itscola.github.io/tags/java/</guid>
+      <guid>https://itscola.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>开发</title>
       <link>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>机器学习</title>
+      <link>https://itscola.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://itscola.github.io/tags/java/</link>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>编译原理</title>
       <link>https://itscola.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
-      <pubDate>Tue, 25 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</guid>
       <description></description>
@@ -38,7 +56,7 @@
     <item>
       <title>Gradle</title>
       <link>https://itscola.github.io/tags/gradle/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/gradle/</guid>
       <description></description>
@@ -47,7 +65,7 @@
     <item>
       <title>Bukkit</title>
       <link>https://itscola.github.io/tags/bukkit/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/bukkit/</guid>
       <description></description>
@@ -56,7 +74,7 @@
     <item>
       <title>MC地图</title>
       <link>https://itscola.github.io/tags/mc%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/mc%E5%9C%B0%E5%9B%BE/</guid>
       <description></description>
@@ -65,7 +83,7 @@
     <item>
       <title>Minecraft</title>
       <link>https://itscola.github.io/tags/minecraft/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/minecraft/</guid>
       <description></description>
