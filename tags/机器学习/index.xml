@@ -14,7 +14,7 @@
       <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/blog/what-is-a-linear-regression-equation/</guid>
-      <description>欢迎, 这是机器学习教程系列的第二篇文章 此文章是我在 Machine Learning 学习过程中以自己的理解做的总结
+      <description>欢迎, 这是机器学习系列的第二篇文章 此文章是我在 Machine Learning 学习过程中以自己的理解做的总结
 文章追求以最通俗的方式, 把机器学习带给所有人爱好者.
 一元线性回归 我们手里有一家公司的员工 工资经验 和 对应薪水 数据, 假如我们有3.4年工作经验, 那我们提出多少工资比较好呢 ?
 阅读之前, 确保你已经读懂了上一篇文章.
