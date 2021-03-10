@@ -7,7 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>作出重大发明的年轻人, 大多是敢于向千年不变的戒规, 定律挑战的人 -- 费尔马</copyright>
-    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>多元线性回归的概念 (Multiple linear regression)</title>
+      <link>https://itscola.github.io/blog/what-is-multiple-linear-regression/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/what-is-multiple-linear-regression/</guid>
+      <description>关于文章 这篇文章较短, 是因为关于线性回归的概念, 都放在了上一篇文章.
+在阅读之前，你大概率需要这个系列的之前文章的基础。
+文章追求通俗易懂，让没有编程基础的读者也能看懂，所以不会用很多专业用语。
+多元线性回归 假如我们要去租房，我们手里有各个房屋的各种数据。此时，我们想预测，根据我们的需求，租到的房子应该在多少钱。
+一个简单的方式就是，建立多元线性回归模型，学习这些数据，然后我们可以通过我们的要求 预测 房价应该在多少。
+什么是多元线性回归 我们说 一元线性回归就是 一个自变量 对应着 一个因变量。
+那么 多元线性回归就是 多个自变量 对应着 一个因变量。
+多元线性回归模型 这个模型可以表达为:
+ y= B0 + B1*X1 + B2*X2 + B3*X3 ... 有多少个自变量，就会有多少个B*X。
+再看 一元线性回归
+y= B0 + B1*X
+它只有一个自变量
+很遗憾的是，由于多元线性回归是多元模型，它可能有很多唯。因此我们无法画出它的图像。
+是否为线性 线性主要是看因变量y的形式，是否为 呈线性。B1*X1+B2*X2</description>
+    </item>
+    
     <item>
       <title>一元线性回归的概念 (A linear regression)</title>
       <link>https://itscola.github.io/blog/what-is-a-linear-regression-equation/</link>
