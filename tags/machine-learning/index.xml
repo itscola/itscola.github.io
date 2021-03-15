@@ -18,13 +18,14 @@
 当然, 预测只是预测, 并不代表准确数据. 但会有一定的参考性.
 所使用语言为Python.
 GDP数据 我们要让机器学习模型学习的数据, 将会来自 国家数据.
-数据导入 import matplotlib.pyplot as plt import numpy as np import pandas as pd Dataset = pd.read_csv(&#39;ChinaGDP.csv&#39;) X = Dataset.iloc[:,:-1].values y = Dataset.iloc[:,-1].values (由于我们只有 自变量年 和 因变量GDP , 很明显 , 不需要进行 特征缩放(Feature Scaling))
+数据导入 import matplotlib.pyplot as plt import numpy as np import pandas as pd Dataset = pd.read_csv(&#39;ChinaGDP.csv&#39;) X = Dataset.iloc[:,:-1].values y = Dataset.iloc[:,-1].values (这里暂时不进行特征缩放)
 观察数据 下面我们将数据画在图上, 更直观的观察我们的GDP数据.
 plt.scatter(X, y) plt.xlabel(&#39;Year&#39;) plt.ylabel(&#39;GDP of China&#39;) plt.title(&#39;GDP&#39;) plt.show() 可以看到, 这令人激动的上升趋势.
 很明显, 我们不能使用线性回归来拟合模型, 因为它并不呈线性.
 所以我们将使用多项式回归 , 来拟合我们的模型.
 (这边我们只需要将数据展示在图上观察数据来判断模型的质量, 所以我们目前不拆分成 训练集 测试集)
-拟合数据 下面我们将多项式回归拟合.</description>
+拟合数据 下面我们将多项式回归拟合.
+from sklearn.preprocessing import PolynomialFeatures Poly_regressor = PolynomialFeatures(degree=2) Poly_X = Poly_regressor.</description>
     </item>
     
     <item>

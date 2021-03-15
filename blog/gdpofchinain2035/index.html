@@ -120,7 +120,7 @@ import pandas as pd
 Dataset = pd.read_csv('ChinaGDP.csv')
 X = Dataset.iloc[:,:-1].values
 y = Dataset.iloc[:,-1].values
-</code></pre><p>(由于我们只有 自变量年 和 因变量GDP , 很明显 , 不需要进行 特征缩放(Feature Scaling))</p>
+</code></pre><p>(这里暂时不进行特征缩放)</p>
 <h3 id="观察数据">观察数据</h3>
 <p>下面我们将数据画在图上, 更直观的观察我们的GDP数据.</p>
 <pre><code>plt.scatter(X, y)
