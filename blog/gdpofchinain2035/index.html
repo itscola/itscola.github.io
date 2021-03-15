@@ -142,6 +142,8 @@ Poly_X = Poly_regressor.fit_transform(X)
 from sklearn.linear_model import LinearRegression
 regressor = LinearRegression()
 regressor.fit(Poly_X,y)
+</code></pre><p>此处的 多项式回归 模型:</p>
+<pre><code>y = b0 + b1x1 + b2x1^2
 </code></pre><h3 id="观察模型的质量">观察模型的质量</h3>
 <p>我们将会使用图像,这种最直观的方式来判断我们的模型质量.</p>
 <pre><code>plt.scatter(X,y)
@@ -154,7 +156,7 @@ plt.show()
 红线表示预测情况 , 蓝点表示实际数据.<br>
 可以看到, 模型的质量较为不错.</p>
 <h2 id="数据预测">数据预测</h2>
-<p>我们将在这里预测 2021 与 2023 年的数据.</p>
+<p>我们将在这里预测 2021 与 2035 年的数据.</p>
 <pre><code>print(regressor.predict(Poly_regressor.fit_transform([[2021]])))
 print(regressor.predict(Poly_regressor.fit_transform([[2035]])))
 </code></pre><p>输出结果:</p>
