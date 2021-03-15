@@ -163,7 +163,12 @@ print(regressor.predict(Poly_regressor.fit_transform([[2035]])))
 <pre><code>[1128658.69592953]
 [2537340.17494488]
 </code></pre><p>可以看到, 我们的预测GDP,分别为大约: 112.8万亿 253.7万亿.<br>
-数据非常可观 <strong>未来可期.</strong></p>
+数据非常可观 <strong>未来可期.</strong><br>
+这里的预测数据为理想数据.</p>
+<pre><code>Poly_regressor = PolynomialFeatures(degree=3)  
+// print(regressor.predict(Poly_regressor.fit_transform([[2021]]))) 输出:  [1091627.35778809]
+</code></pre><p>经过改动degree 为 3时, 预测到2021年数据为 109.1万亿.<br>
+2021年GDP 大概会在109.1万亿 - 112.8万亿附近.</p>
 <h2 id="总结">总结</h2>
 <p>2021年的增长目标为6%, 通过我们的预测结果看来, 这个目标近在眼前.<br>
 2035年距离限制只有15年 , 我们的GDP数据很可能会如此 增长非常巨大.<br>
