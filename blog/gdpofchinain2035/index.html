@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">用多项式回归, 预测国家在2021,2035年的GDP</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gdp数据">GDP数据</a></li>
+    <li><a href="#数据导入">数据导入</a>
+      <ul>
+        <li><a href="#观察数据">观察数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#拟合数据">拟合数据</a>
+      <ul>
+        <li><a href="#观察模型的质量">观察模型的质量</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据预测">数据预测</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    <hr>
+<p>欢迎来到这篇文章, 我将会通过机器学习技术, 来预测我们国家在2035年的GDP.<br>
+当然, 预测只是预测, 并不代表准确数据. 但会有一定的参考性.<br>
+所使用语言为Python.</p>
+<h2 id="gdp数据">GDP数据</h2>
+<p>我们要让机器学习模型学习的数据, 将会来自 <a href="https://data.stats.gov.cn/easyquery.htm?cn=C01">国家数据</a>.<br>
+<img src="/GDPOfChina/1.png" alt="国家数据"><br>
+<img src="/GDPOfChina/2.png" alt="国家数据"></p>
+<h2 id="数据导入">数据导入</h2>
+<pre><code>import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+Dataset = pd.read_csv('ChinaGDP.csv')
+X = Dataset.iloc[:,:-1].values
+y = Dataset.iloc[:,-1].values
+</code></pre><p>(由于我们只有 自变量年 和 因变量GDP , 很明显 , 不需要进行 特征缩放(Feature Scaling))</p>
+<h3 id="观察数据">观察数据</h3>
+<p>下面我们将数据画在图上, 更直观的观察我们的GDP数据.</p>
+<pre><code>plt.scatter(X, y)
+plt.xlabel('Year')
+plt.ylabel('GDP of China')
+plt.title('GDP')
+plt.show()
+</code></pre><p><img src="/GDPOfChina/3.png" alt="GDP1"><br>
+可以看到, 这令人激动的上升趋势.<br>
+很明显, 我们不能使用线性回归来拟合模型, 因为它并不呈线性.<br>
+所以我们将使用多项式回归 , 来拟合我们的模型.<br>
+(这边我们只需要将数据展示在图上观察数据来判断模型的质量, 所以我们目前不拆分成 训练集 测试集)</p>
+<h2 id="拟合数据">拟合数据</h2>
+<p>下面我们将多项式回归拟合.</p>
+<pre><code>from sklearn.preprocessing import PolynomialFeatures
+Poly_regressor = PolynomialFeatures(degree=2)
+Poly_X = Poly_regressor.fit_transform(X)
+
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(Poly_X,y)
+</code></pre><h3 id="观察模型的质量">观察模型的质量</h3>
+<p>我们将会使用图像,这种最直观的方式来判断我们的模型质量.</p>
+<pre><code>plt.scatter(X,y)
+plt.plot(X,regressor.predict(Poly_regressor.fit_transform(X)),color='red')
+plt.xlabel('Year')
+plt.ylabel('GDP of China')
+plt.title('GDP')
+plt.show()
+</code></pre><p><img src="/GDPOfChina/4.png" alt="GDP1"><br>
+红线表示预测情况 , 蓝点表示实际数据.<br>
+可以看到, 模型的质量较为不错.</p>
+<h2 id="数据预测">数据预测</h2>
+<p>我们将在这里预测 2021 与 2023 年的数据.</p>
+<pre><code>print(regressor.predict(Poly_regressor.fit_transform([[2021]])))
+print(regressor.predict(Poly_regressor.fit_transform([[2035]])))
+</code></pre><p>输出结果:</p>
+<pre><code>[1128658.69592953]
+[2537340.17494488]
+</code></pre><p>可以看到, 我们的预测GDP,分别为大约: 112.8万亿 253.7万亿.<br>
+数据非常可观 <strong>未来可期.</strong></p>
+<h2 id="总结">总结</h2>
+<p>2021年的增长目标为6%, 通过我们的预测结果看来, 这个目标近在眼前.<br>
+2035年距离限制只有15年 , 我们的GDP数据很可能会如此 增长非常巨大.<br>
+<strong>我们的国家正在发生翻天覆地的变化, 作为一个学生, 真是对未来充满期待.</strong></p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/what-is-multiple-linear-regression/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">还记得梦想最开始的模样,别期望 等待结果会很漫长.不后悔的人,一定有梦想. -- 最开始的模样</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
