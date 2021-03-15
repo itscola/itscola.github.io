@@ -18,7 +18,7 @@
 当然, 预测只是预测, 并不代表准确数据. 但会有一定的参考性.
 所使用语言为Python.
 GDP数据 我们要让机器学习模型学习的数据, 将会来自 国家数据.
-数据导入 import matplotlib.pyplot as plt import numpy as np import pandas as pd Dataset = pd.read_csv(&#39;ChinaGDP.csv&#39;) X = Dataset.iloc[:,:-1].values y = Dataset.iloc[:,-1].values (这里暂时不进行特征缩放)
+数据导入 import matplotlib.pyplot as plt import numpy as np import pandas as pd Dataset = pd.read_csv(&#39;ChinaGDP.csv&#39;) X = Dataset.iloc[:,:-1].values y = Dataset.iloc[:,-1].values (由于我们会用到线性回归的函数,已经包含了特征缩放的步骤 所以此处不需要再特征缩放了)
 观察数据 下面我们将数据画在图上, 更直观的观察我们的GDP数据.
 plt.scatter(X, y) plt.xlabel(&#39;Year&#39;) plt.ylabel(&#39;GDP of China&#39;) plt.title(&#39;GDP&#39;) plt.show() 可以看到, 这令人激动的上升趋势.
 很明显, 我们不能使用线性回归来拟合模型, 因为它并不呈线性.
