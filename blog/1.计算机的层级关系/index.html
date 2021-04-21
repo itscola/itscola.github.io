@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">1.1计算机系统层次结构</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-计算机系统的层次">一. 计算机系统的层次</a>
+      <ul>
+        <li><a href="#1-概念">1. 概念</a></li>
+        <li><a href="#2-分机器级的意义">2. 分机器级的意义</a></li>
+      </ul>
+    </li>
+    <li><a href="#二机器级的实现">二.机器级的实现</a>
+      <ul>
+        <li><a href="#1实现的两种方式">1.实现的两种方式</a></li>
+        <li><a href="#2翻译和解释的特点">2.翻译和解释的特点</a></li>
+        <li><a href="#3机器级间的特点">3.机器级间的特点</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="a计算机系统层级结构">A.计算机系统层级结构</h1>
+<p>这一篇，来说下计算机的 <strong>基础理论知识</strong>。<br>
+它属于<strong>计算机系统结构</strong>的内容。<br>
+关于计算机系统结构，可能会做一个系列。</p>
+<h2 id="一-计算机系统的层次">一. 计算机系统的层次</h2>
+<h3 id="1-概念">1. 概念</h3>
+<p>通用计算机系统层次 分为6个级，每个级我们称之为 “机器级”。 距离人的使用越近的，越为高级，反之，越远，越为低级。</p>
+<p>从高级到低级，分别有 <strong>应用语言机器级，高级语言机器级，汇编语言机器级，操作系统机器级，传统机器语言机器级，微程序机器级</strong>。</p>
+<p><img src="/ComputerSystem/1.png" alt="image"></p>
+<p><del>记得有张图，有个大学教授问“vscode是什么语言？”，引起很多人“嘲讽”。 我认为它大概问的就是机器级。 应回答 “应用语言”。</del></p>
+<h3 id="2-分机器级的意义">2. 分机器级的意义</h3>
+<p><strong>透明的概念</strong>：在分级的情况下，任意一级的下级，<em>对于这级通常都是不必太关心的。但下级是客观存在的</em>。</p>
+<p>举个例子：我们要用java语言开发一个程序，我们通常不需要在乎，这个电脑用的什么显卡，用的什么主板，用的什么处理方式。 <br>
+这些对于我们来说都是透明的。</p>
+<h2 id="二机器级的实现">二.机器级的实现</h2>
+<h3 id="1实现的两种方式">1.实现的两种方式</h3>
+<p>机器级等实现主要通过两种方式。<br>
+<strong>翻译 或 解释</strong>  或是 <strong>解释翻译</strong> 并用。</p>
+<p><strong>翻译技术</strong>：先用转换器，将上一级机器级的程序翻译为下一级等效的程序。然后在下一级机器级继续实现。</p>
+<p>举个例子：C语言程序会由编译程序翻译成汇编程序，汇编程序由汇编器翻译成机器语言程序。</p>
+<p><strong>解释技术</strong>：用第一级的机器级上的一串语句或指令来仿真高级机器级的一条语句，或指令功能。（运行过程中 逐条逐句的解释）</p>
+<p>例子：JavaScript由浏览器解释执行，如果有错误，通常不会影响到前面的代码。</p>
+<h3 id="2翻译和解释的特点">2.翻译和解释的特点</h3>
+<ol>
+<li>翻译往往是所有程序做完再执行，而解释是一边解释一边执行。</li>
+<li>解释过程中 解释一条 运行一条 灵活性更高。</li>
+</ol>
+<p><a href="https://whitecola.top/blog/compiler-and-interpreter/">什么是编译器,解释器? (一文理解编译型和解释型语言)</a></p>
+<h3 id="3机器级间的特点">3.机器级间的特点</h3>
+<ol>
+<li>应用语言 程序通过程序包翻译成高级语言程序。</li>
+<li>高级语言 程序通过编译程序编译成汇编语言程序。（或是 中间代码，再或是 机器语言程序）</li>
+<li>汇编语言 程序通过汇编程序翻译成机器语言程序。</li>
+<li>操作系统 通过机器语言程序 解释 控制语句作业。</li>
+<li>传统机器机器级由**微程序（固件）**实现。 而前四个都由软件实现。</li>
+</ol>
+<p>固件是指通过硬件实现软件功能。 如常见的BIOS ，它通常不会改变，但又不是不可改变。</p>
+<p>通过 微程序 来 解释微指令。</p>
+<ol start="6">
+<li>微程序机器级由硬件实现，可以执行微指令。 （一条微指令往往有多个微操作【步骤】微操作可并发来执行）</li>
+</ol>
+<p><a href="https://baike.baidu.com/item/%E5%BE%AE%E6%8C%87%E4%BB%A4">微指令-百度百科</a></p>
+<p>通常把前四个成为虚拟机器，后两个称为实际机器（由硬件实现）。</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/gdpofchinain2035/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">思维不受限,创意无极限.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
