@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">1.2.2计算机的组成和实现以及它们之间的关系</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-计算机组成">1. 计算机组成</a>
+      <ul>
+        <li><a href="#1-什么是计算机组成">1. 什么是计算机组成</a></li>
+        <li><a href="#2-计算机组成的研究">2. 计算机组成的研究</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-计算机实现">2. 计算机实现</a>
+      <ul>
+        <li><a href="#1-什么是计算机实现">1. 什么是计算机实现</a></li>
+        <li><a href="#2-计算机实现的研究着眼于">2. 计算机实现的研究（着眼于）</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-计算机系统结构组成实现的互相关系和影响">3. 计算机系统结构，组成，实现的互相关系和影响</a>
+      <ul>
+        <li><a href="#1-相互关系">1. 相互关系</a></li>
+        <li><a href="#2-相互影响">2. 相互影响</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="a-计算机系统结构-组成-和-实现-2">A. 计算机系统结构 组成 和 实现 2</h1>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列并不是普通的“笔记”，而是以我个人的理解，来讲解 <strong>计算机系统结构</strong>。 <strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a></p>
+<h2 id="1-计算机组成">1. 计算机组成</h2>
+<h3 id="1-什么是计算机组成">1. 什么是计算机组成</h3>
+<p><strong>计算机组成就是 计算机系统结构 的逻辑实现</strong>。 包括机器级内部的控制流 数据流的组成 逻辑设计等。</p>
+<blockquote>
+<p>着眼于机器级内部各事件的排序方式，控制结构，各部件的功能及其联系。</p>
+</blockquote>
+<p>比如要处理一个事件，事件的处理顺序，方式 （逻辑）。这都属于计算机组成。</p>
+<p><strong>计算机组成对于系统结构来说是透明的，</strong></p>
+<h3 id="2-计算机组成的研究">2. 计算机组成的研究</h3>
+<p>它要研究的是：如何在一定资金和性能下，做到更好更合理的组成计算机，实现所需的系统结构。</p>
+<h2 id="2-计算机实现">2. 计算机实现</h2>
+<h3 id="1-什么是计算机实现">1. 什么是计算机实现</h3>
+<p><strong>计算机实现是计算机组成的物理实现。</strong></p>
+<p>电路怎么设计，采用什么工艺制作，器件集成度和速度 ，模块底板的划分和连接  &hellip;&hellip; 这都属于 计算机实现。（主要是一些能看得到摸得着的东西）</p>
+<h3 id="2-计算机实现的研究着眼于">2. 计算机实现的研究（着眼于）</h3>
+<p>它主要着眼于 <strong>器件技术 和 微组装技术</strong>，<br>
+其中<strong>器件技术起主导地位</strong>。</p>
+<h2 id="3-计算机系统结构组成实现的互相关系和影响">3. 计算机系统结构，组成，实现的互相关系和影响</h2>
+<h3 id="1-相互关系">1. 相互关系</h3>
+<ol>
+<li>它们互不相同，却互相影响。</li>
+<li>相同结构的计算机，可以有多种组成方式。</li>
+<li>相同组成的计算机，可以有多种实现方式。</li>
+</ol>
+<p>（就比如系统结构相同，但是逻辑实现并不一定相同。比如相同的系统，当随着版本更新，实现逻辑可能有变化）</p>
+<p>（又比如逻辑实现相同，但是物理实现可能不同。比如芯片制作工艺不一样。）</p>
+<h3 id="2-相互影响">2. 相互影响</h3>
+<ol>
+<li>计算机组成向上决定于 计算机系统结构 ，向下受限于实现技术。 应当在所需条件下，应在计算机组成 和 实现之间做权衡。</li>
+<li>组成也会影响结构，没有计算机组成的进步，就没有计算机系统结构的进步。</li>
+<li>计算机系统结构不但要考虑上级的算法，软件，界面 支持。还要考虑下级的可能采用和准备采用的组成和实现技术。</li>
+<li>不同时期不同系统，结构，组成，实现之间也有差异。在某些系统中作为结构的内容，在另一些系统中可能是组成和实现技术的内容。</li>
+</ol>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/1.computersystemframework-1/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a href="https://itscola.github.io/blog/2.computersystemframework-1.2.1/"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">思维不受限,创意无极限.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
