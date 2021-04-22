@@ -7,13 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>思维不受限,创意无极限.</copyright>
-    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.2.1计算机系统结构的概念</title>
+      <link>https://itscola.github.io/blog/2.computersystemframework-1.2.1/</link>
+      <pubDate>Thu, 22 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/2.computersystemframework-1.2.1/</guid>
+      <description>A. 计算机系统结构 和 组成 和 实现 1 要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解计算机系统结构。 如果你正在学这门科目，那这个系列将非常适合你。
+这个系列并不是普通的“笔记”，而是以我个人的理解，来讲解 计算机系统结构。 不同的是，我会用尽可能简洁通俗的语言来讲解。
+计算机系统结构系列
+1. 什么是计算机系统结构 1. 透明性 先要清楚一个概念，什么是透明性？
+透明性： 一些客观存在的属性或事物，在某个角度看不到，那么就说那些属性或事物对于这个角度是透明的。
+举个例子：我们在使用操作系统时，我们是看不到 组成这台计算机的零件 是如何运作的。
+可以说 “组成这台计算机的零件 是如何运作的”对于我们从使用操作系统这个角度，是透明的。
+2. 透明性的作用 理解了透明性，那大概能猜出这样的作用了。
+ 简化所在机器级的设计。(好处) 透明也会带来一些无法控制的问题。(坏处)  我们在一个角度上，不怎么需要太在意对我们透明的事物属性。这大大简化了我们的使用。
+但是有时候，我们在一个角度上，必须要在意对我们透明的事物属性，这会给我们带来不利。这也是无法控制的问题。
+3. 系统结构 及其研究 在研究计算机系统结构前，先来了解下什么是 系统结构。
+系统结构：以计算机系统结构的角度说，系统结构指的是，计算机系统中 各机器级界面的定义 以及上下功能的分配。
+什么意思？ 各机器级上的界面，定义为什么。 上下级功能分配了什么。我们将这 定义 分配 称为系统结构。
+系统结构的研究： 在定义 和 分配时 我们要对 某些事物属性进行划分。哪些属于这里，哪些属于那里。换言说，我们就是在 研究 哪些属性应该透明，哪些属性不应该透明。
+4. 计算机系统结构 及其研究 概念： 计算机系统结构 是 系统结构 的一部分。
+它又被称为 计算机系统的结构体系。 它指的就是 传统机器语言机器级 的系统结构。</description>
+    </item>
+    
     <item>
       <title>1.1计算机系统层次结构</title>
-      <link>https://itscola.github.io/blog/1.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%B1%82%E7%BA%A7%E5%85%B3%E7%B3%BB/</link>
+      <link>https://itscola.github.io/blog/1.computersystemframework-1/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://itscola.github.io/blog/1.%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%B1%82%E7%BA%A7%E5%85%B3%E7%B3%BB/</guid>
+      <guid>https://itscola.github.io/blog/1.computersystemframework-1/</guid>
       <description>A.计算机系统层级结构 这一篇，来说下计算机的 基础理论知识。
 它属于计算机系统结构的内容. 关于计算机系统结构，可能会做一个系列。
 一. 计算机系统的层次 1. 概念 通用计算机系统层次 分为6个级，每个级我们称之为 “机器级”。 距离人的使用越近的，越为高级，反之，越远，越为低级。

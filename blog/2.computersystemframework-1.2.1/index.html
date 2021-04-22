@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">1.2.1计算机系统结构的概念</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-什么是计算机系统结构">1. 什么是计算机系统结构</a>
+      <ul>
+        <li><a href="#1-透明性">1. 透明性</a></li>
+        <li><a href="#2-透明性的作用">2. 透明性的作用</a></li>
+        <li><a href="#3-系统结构-及其研究">3. 系统结构 及其研究</a></li>
+        <li><a href="#4-计算机系统结构-及其研究">4. 计算机系统结构 及其研究</a></li>
+      </ul>
+    </li>
+    <li><a href="#下一篇计算机系统组成和实现">下一篇：计算机系统组成和实现</a></li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="a-计算机系统结构-和-组成-和-实现-1">A. 计算机系统结构 和 组成 和 实现 1</h1>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列并不是普通的“笔记”，而是以我个人的理解，来讲解 <strong>计算机系统结构</strong>。 <strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a></p>
+<h2 id="1-什么是计算机系统结构">1. 什么是计算机系统结构</h2>
+<h3 id="1-透明性">1. 透明性</h3>
+<p>先要清楚一个概念，什么是透明性？</p>
+<p><strong>透明性：</strong> <strong>一些客观存在的属性或事物，在某个角度看不到，那么就说那些属性或事物对于这个角度是透明的。</strong></p>
+<p>举个例子：我们在使用操作系统时，我们是看不到 组成这台计算机的零件 是如何运作的。</p>
+<p>可以说 “组成这台计算机的零件 是如何运作的”对于我们从使用操作系统这个角度，是透明的。</p>
+<h3 id="2-透明性的作用">2. 透明性的作用</h3>
+<p>理解了透明性，那大概能猜出这样的作用了。</p>
+<ol>
+<li><strong>简化所在机器级的设计。(好处)</strong></li>
+<li><strong>透明也会带来一些无法控制的问题。(坏处)</strong></li>
+</ol>
+<p>我们在一个角度上，不怎么需要太在意对我们透明的事物属性。这大大简化了我们的使用。</p>
+<p>但是有时候，我们在一个角度上，必须要在意对我们透明的事物属性，这会给我们带来不利。这也是无法控制的问题。</p>
+<h3 id="3-系统结构-及其研究">3. 系统结构 及其研究</h3>
+<p>在研究计算机系统结构前，先来了解下什么是 系统结构。</p>
+<p><strong>系统结构：以计算机系统结构的角度说，系统结构指的是，计算机系统中 各机器级界面的定义 以及上下功能的分配。</strong></p>
+<p>什么意思？
+各机器级上的界面，定义为什么。 上下级功能分配了什么。我们将<strong>这 定义 分配</strong> 称为系统结构。</p>
+<p><strong>系统结构的研究：</strong> 在定义 和 分配时 我们要对 某些事物属性进行划分。哪些属于这里，哪些属于那里。换言说，我们就是在 <strong>研究 哪些属性应该透明，哪些属性不应该透明。</strong></p>
+<h3 id="4-计算机系统结构-及其研究">4. 计算机系统结构 及其研究</h3>
+<p><strong>概念：</strong> 计算机系统结构 是 系统结构 的一部分。<br>
+它又被称为 <strong>计算机系统的结构体系</strong>。
+它指的就是 <strong>传统机器语言机器级</strong> 的系统结构。</p>
+<p>它有几个<strong>特点</strong>，也是我们要以它的角度进行研究的原因。</p>
+<ol>
+<li>它的界面之上有 操作系统机器级，汇编语言机器级 ，高级语言机器级，应用语言机器级。 界面之下有 固件和硬件。 所以说，<strong>它是 软件和硬件的交界面。</strong>。</li>
+</ol>
+<p><a href="https://whitecola.top/blog/1.computersystemframework-1/"><!-- raw HTML omitted -->机器级的概念<!-- raw HTML omitted --></a></p>
+<ol start="2">
+<li>它是 汇编语言程序设计或是编译程序设计者 所看到的机器物理抽象。<br>
+（因为设计时 设计者需要“看到” 计算机系统结构”。）</li>
+</ol>
+<p>我们说<br>
+“系统结构指的是，计算机系统中 各机器级界面的定义 以及上下功能的分配。”</p>
+<p>那么 计算机系统结构(传统机器语言机器级系统结构） 就是 <strong>传统语言机器级上的界面定义，以及该级上下功能的分配</strong>。
+它研究的就是：</p>
+<p><strong>计算机系统结构的研究：</strong></p>
+<ol>
+<li>传统语言机器级界面的定义。</li>
+<li>软硬件之间的分配。</li>
+<li>为各级之间正常运作，提供看得见的 应遵循的 规范。</li>
+</ol>
+<h2 id="下一篇计算机系统组成和实现">下一篇：计算机系统组成和实现</h2>
+<p>下一篇文章为1.2.2，我将带你研究两个概念，计算机系统组成和实现。</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/1.computersystemframework-1/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">思维不受限,创意无极限.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
