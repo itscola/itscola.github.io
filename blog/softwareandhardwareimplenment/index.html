@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">软件实现和硬件实现的比例关系与推倒过程</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#生产软硬件分别需要支付的费用">生产软硬件分别需要支付的费用</a></li>
+    <li><a href="#实际生产费用">实际生产费用</a>
+      <ul>
+        <li><a href="#每台设备的软件生产费用">每台设备的软件生产费用</a></li>
+        <li><a href="#每台设备的硬件生产费用">每台设备的硬件生产费用</a></li>
+      </ul>
+    </li>
+    <li><a href="#每台设备软件生产费用和硬件生产费用的关系">每台设备软件生产费用和硬件生产费用的关系</a></li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="软件实现和硬件实现的比例关系">软件实现和硬件实现的比例关系</h1>
+<p>通常，<strong>同一个功能，我们既可以用软件实现也可以用硬件来实现。</strong></p>
+<p>用软件来实现更灵活，更强大，设计和重复生产费用更低。但效率远不如硬件实现。<br>
+用硬件实现效率更高，性能更高，但设计和生产费用较为高昂，灵活性不如软件。<br>
+（通常不存在只用软件实现或只用硬件实现的类计算机设备）</p>
+<p>通过这篇文章，你将了解到，计算机 手机 设备 等设计 软硬件取舍，以及设备产量与硬件费用的关系。<br>
+（生产量越多，设备在一定资金下，能用的硬件越多？）</p>
+<h2 id="生产软硬件分别需要支付的费用">生产软硬件分别需要支付的费用</h2>
+<p>生产软硬件 都需要 研发费用(Design) 和 生产费用(Manufacture)。<br>
+软件通常需要多次设计(研发)，硬件通常只需要设计一次。</p>
+<p>我们设硬件每次的研发费用为D(hardware) 简称 D(h).  同时设每次重复生产费用为M(h)。<br>
+设软件研发每次的研发费用为 D(software) 简称 D(s). 同时设每次重复生产费用为 M(s)。</p>
+<p>D(h) 约等于 100D(s).  每研发一个硬件的费用 大概为 研发100个软件的费用。 <br>
+M(h)约等于 100M(h). 每生产一个硬件的费用 大概为 生产100个软件的费用。<br>
+(可以说硬件和软件比 是非常贵的。)</p>
+<h2 id="实际生产费用">实际生产费用</h2>
+<p>我们设生产了V个设备，同时设研发了C次。<br>
+设一个功能在一台设备上出现了R次。</p>
+<h3 id="每台设备的软件生产费用">每台设备的软件生产费用</h3>
+<p>那么每台设备 软件实际生产费用为 <br>
+<code>C * D(s) / V + R * M(s)</code>.<br>
+指的是  <br>
+<code>研发次数 * 研发软件费用 / 设备生产数 + 功能在设备上出现次数 * 软件重复生产费用</code></p>
+<h3 id="每台设备的硬件生产费用">每台设备的硬件生产费用</h3>
+<p>那么每台设备 硬件实际生产费用为<br>
+<code>D(h)/v + M(h)</code><br>
+指的是<br>
+<code>研发硬件费用 / 设备生产数 + 硬件重复制造费用</code>.<br>
+(硬件通常只需要研发一次，每台设备上 硬件重复出现通常也一次 因此只需要制造一次)</p>
+<h2 id="每台设备软件生产费用和硬件生产费用的关系">每台设备软件生产费用和硬件生产费用的关系</h2>
+<p>我们假设一个功能实现最省钱的情况 我们尽可能使用 硬件(性能极高)。 <br>
+当 我们 每台设备的硬件费用 小于 每台设备的软件费用 此时   用硬件最为合适。<br>
+也就是说  <code>D(h)/v + M(h) &lt; C * D(s) / V + R * M(s)</code> 时 此功能用硬件最合适。</p>
+<p>那么我们把通常的情况代入 <br>
+使 D(h) 约等于 100D(s) .<br>
+使 M(h)约等于 100M(h) .</p>
+<p>得到: <br>
+<code>100D(s)/v + 100M(s) &lt; C * D(s) / V + R * M(s)</code>.    <br>
+所以，C和R要足够大，才能使等式成立。<br>
+<strong>也就是说 一个功能 经常用到 经常出现 才适合用硬件。</strong></p>
+<p>我们可以假设 D(s) = 10^4 M(s)  设计费远大于软件的出现费用。</p>
+<p>得到: <br>
+<code>10^6 * M(s)/v + 100M(s) &lt; C * 10^4 * M(s) / V + R * M(s)</code>.   <br>
+M(s)一定为正数，所以我们两边同时除以M(s)。</p>
+<p>得到: <br>
+<code>10^6 / v + 100 &lt; C * 10^4 / V + R</code>.</p>
+<p>C 一般小于 100.      + 100 和 R 较小 我们可以在这忽视。</p>
+<p>那么有
+<code>10^6 / v &lt; C * 10^4 / V </code>.</p>
+<p>可以看到 只有V的量越大 这个不等式才越接近。</p>
+<p>也就是说 当设备的产量越大 用硬件的部分在划算的情况下 就可以越多。<br>
+(即使不等式不会成立)</p>
+<h1 id="总结">总结</h1>
+<ol>
+<li>也就是说 一个功能 经常用到 经常出现 才更适合用硬件。</li>
+<li>当我们要生产的设备产量越大，我们用硬件的比例就可以越多(越适合)。</li>
+<li>并不是用硬件实现功能的比列越大越好。这还要考虑资金等问题。</li>
+</ol>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/3.computersystemframework-1.2.2/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">思维不受限,创意无极限.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

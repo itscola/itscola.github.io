@@ -7,7 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>思维不受限,创意无极限.</copyright>
-    <lastBuildDate>Thu, 22 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>软件实现和硬件实现的比例关系与推倒过程</title>
+      <link>https://itscola.github.io/blog/softwareandhardwareimplenment/</link>
+      <pubDate>Fri, 23 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/softwareandhardwareimplenment/</guid>
+      <description>软件实现和硬件实现的比例关系 通常，同一个功能，我们既可以用软件实现也可以用硬件来实现。
+用软件来实现更灵活，更强大，设计和重复生产费用更低。但效率远不如硬件实现。
+用硬件实现效率更高，性能更高，但设计和生产费用较为高昂，灵活性不如软件。
+（通常不存在只用软件实现或只用硬件实现的类计算机设备）
+通过这篇文章，你将了解到，计算机 手机 设备 等设计 软硬件取舍，以及设备产量与硬件费用的关系。
+（生产量越多，设备在一定资金下，能用的硬件越多？）
+生产软硬件分别需要支付的费用 生产软硬件 都需要 研发费用(Design) 和 生产费用(Manufacture)。
+软件通常需要多次设计(研发)，硬件通常只需要设计一次。
+我们设硬件每次的研发费用为D(hardware) 简称 D(h). 同时设每次重复生产费用为M(h)。
+设软件研发每次的研发费用为 D(software) 简称 D(s). 同时设每次重复生产费用为 M(s)。
+D(h) 约等于 100D(s). 每研发一个硬件的费用 大概为 研发100个软件的费用。 M(h)约等于 100M(h). 每生产一个硬件的费用 大概为 生产100个软件的费用。
+(可以说硬件和软件比 是非常贵的。)
+实际生产费用 我们设生产了V个设备，同时设研发了C次。
+设一个功能在一台设备上出现了R次。
+每台设备的软件生产费用 那么每台设备 软件实际生产费用为 C * D(s) / V + R * M(s).
+指的是 研发次数 * 研发软件费用 / 设备生产数 + 功能在设备上出现次数 * 软件重复生产费用
+每台设备的硬件生产费用 那么每台设备 硬件实际生产费用为</description>
+    </item>
+    
     <item>
       <title>计算机的组成和实现以及它们之间的关系1.2.2</title>
       <link>https://itscola.github.io/blog/3.computersystemframework-1.2.2/</link>
