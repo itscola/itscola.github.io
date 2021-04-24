@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">阿姆达尔定律(计算机加速比)</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#阿姆达尔定律的背景">阿姆达尔定律的背景</a></li>
+    <li><a href="#阿姆达尔定律的推导过程">阿姆达尔定律的推导过程</a></li>
+    <li><a href="#阿姆达尔定律的应用">阿姆达尔定律的应用</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="阿姆达尔定律计算机加速比">阿姆达尔定律(计算机加速比)</h1>
+<p>当我们通过改进计算机来对计算机进行加速时，究竟加速了多少？</p>
+<p>我们对计算机的部分硬件进行重量级提升，花费大量资金，但计算机性能并没有显著提升，这是为什么？</p>
+<p>这就是这篇文章要讲的话题，<strong>阿姆达尔定律</strong>。</p>
+<h2 id="阿姆达尔定律的背景">阿姆达尔定律的背景</h2>
+<p>阿姆达尔定律 由 阿姆达尔在1967年提出。他是IBM360系列机的主要设计者。</p>
+<p>定理可以确定对系统中性能难以提升的部分改进后的改进程度。</p>
+<p>整个定律由数学公式计算，具有一定参考价值。从定律中，也可以得到一些对计算机改进方面的结论。</p>
+<p><strong>也许现实中并不好测量然后计算，但它带给我们的结论才是最重要的。</strong></p>
+<h2 id="阿姆达尔定律的推导过程">阿姆达尔定律的推导过程</h2>
+<p><strong>提示：如果对推导过程不感兴趣，可以直接看结论。</strong></p>
+<p>第一点，要知道的是。</p>
+<p><strong><code>加速比 = 系统改进后的性能 / 系统改进前的性能 = 改进前的总执行时间 / 改进后的总执行时间</code></strong></p>
+<p>看不懂？ 那就对了，我们继续往下。</p>
+<p>第二点要知道的是：</p>
+<p><strong><code>改进前￼的总执行时间 = 不可改进部分的执行时间 + 可改进部分的执行时间</code></strong></p>
+<p><strong><code>改进后的总执行时间 = (1 - 可改进比例) * 总执行时间 + (可改进比例 * 总执行时间)/部件加速比</code></strong></p>
+<hr>
+<p>首先，我们改进一个机器，通常不是全部改进，而是只改进一部分。所以有了可改进比例 和 不可改进比例。</p>
+<p>那么来看第二条，<br>
+<strong>我们的可改进比例有了，那不可改进比例呢？ 是不是就是 1 - 可改进比例。</strong></p>
+<p>再来看 <br>
+<strong>(可改进比例 * 总执行时间) / 部件加速比</strong><br>
+这个 部件加速比 是什么？<br>
+我们试着去掉它 得到<br>
+<strong>(可改进比例 * 总执行时间)</strong></p>
+<p>一目了然了，去掉后就是 <strong>我们改进前的 可改进部分的总执行时间</strong> 。<br>
+也就是说 正因为有这个 除以 部件加速比 我们才有了加速后的 <strong>可改进比例的总执行时间</strong>。</p>
+<hr>
+<p>继续看公式 <br>
+<strong><code>改进后的总执行时间 = (1 - 可改进比例) * 总执行时间 + (可改进比例 * 总执行时间)/部件加速比</code></strong></p>
+<p>我们可以把 总执行时间 提出来 然后得到</p>
+<p><strong><code>改进后的总执行时间 = [(1 - 可改进比例)  + (可改进比例)/部件加速比] * 总执行时间</code></strong></p>
+<p>非常好，我们有了 改进前的总执行时间 和 改进后的总执行时间。 看回第一个公式</p>
+<p><strong><code>加速比 = 系统改进后的性能 / 系统改进前的性能 = 改进前的总执行时间 / 改进后的总执行时间</code></strong></p>
+<p>我们将这两个公式 带入第一个公式。</p>
+<p><strong><code>加速比 = 改进前总执行时间 / 改进后总执行时间 = （不可改进部分的执行时间 + 可改进部分的执行时间）/  [(1 - 可改进比例)  + (可改进比例)/部件加速比] * 总执行时间 =  总执行时间 /  [(1 - 可改进比例)  + (可改进比例)/部件加速比] * 总执行时间</code></strong></p>
+<p>得到</p>
+<p><strong><code>加速比 = 总执行时间 /  [(1 - 可改进比例)  + (可改进比例)/部件加速比] * 总执行时间</code></strong></p>
+<p>上下约分</p>
+<p><strong><code>加速比 = 1 / (1 - 可改进比例)  + (可改进比例)/部件加速比</code></strong></p>
+<p>三条公式合体了，变成了一条非常简洁的公式。 这就是它的推导过程里了 也是我们最终的公式。</p>
+<h2 id="阿姆达尔定律的应用">阿姆达尔定律的应用</h2>
+<p>如果系统中的一个部件处理速度提高了15倍，该功能处理时间占整个系统的 40% ，那么改后，系统的加速比是多少？</p>
+<p>根据已给信息，我们可以知道部件加速比为15。改进比为40% = 0.4。</p>
+<p>将信息带入公式<br>
+<strong><code>加速比 = 1 / (1 - 可改进比例)  + (可改进比例)/部件加速比</code></strong></p>
+<p>得到</p>
+<p>加速比 = 1 / ( 1 - 0.4 ) + 0.4 / 15 约等于 1.6倍</p>
+<p>假如将部件加速比增加10倍 150</p>
+<p>那么 加速比 = 1 / ( 1 - 0.4 ) + 0.4 / 150 约等于 1.7。
+仅仅约提高了 ￼￼0.1倍。</p>
+<p>这说明了一个问题，<strong>当提升系统的单个部件即使提升非常大，实际上对整个系统的提升并不大。</strong></p>
+<p><strong>也就是说如果我们要升级一台计算机的性能，我们更应该倾向于整体提升，而不是单个提升。</strong></p>
+<p><del>记得我曾经的一个朋友，花很多钱 上了特别好的的cpu 但整体系统提升没什么明显感觉。只是“跑分”高了。</del></p>
+<h2 id="总结">总结</h2>
+<ol>
+<li>当提升系统的单个部件 即使提升非常大，实际上对整个系统的提升并不算大。</li>
+<li>如果我们要升级一台计算机的性能，我们更应该倾向于整体提升，而不是单个提升。</li>
+<li>我们购买电脑时，应注重整体设备部件性能。</li>
+</ol>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/softwareandhardwareimplenment/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

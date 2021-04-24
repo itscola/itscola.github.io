@@ -6,8 +6,38 @@
     <description>Recent content in 公告栏 on White_cola Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>思维不受限,创意无极限.</copyright>
-    <lastBuildDate>Fri, 23 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>志存高远 , 以梦为马.</copyright>
+    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>阿姆达尔定律(计算机加速比)</title>
+      <link>https://itscola.github.io/blog/amdhallaw/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/amdhallaw/</guid>
+      <description>阿姆达尔定律(计算机加速比) 当我们通过改进计算机来对计算机进行加速时，究竟加速了多少？
+我们对计算机的部分硬件进行重量级提升，花费大量资金，但计算机性能并没有显著提升，这是为什么？
+这就是这篇文章要讲的话题，阿姆达尔定律。
+阿姆达尔定律的背景 阿姆达尔定律 由 阿姆达尔在1967年提出。他是IBM360系列机的主要设计者。
+定理可以确定对系统中性能难以提升的部分改进后的改进程度。
+整个定律由数学公式计算，具有一定参考价值。从定律中，也可以得到一些对计算机改进方面的结论。
+也许现实中并不好测量然后计算，但它带给我们的结论才是最重要的。
+阿姆达尔定律的推导过程 提示：如果对推导过程不感兴趣，可以直接看结论。
+第一点，要知道的是。
+加速比 = 系统改进后的性能 / 系统改进前的性能 = 改进前的总执行时间 / 改进后的总执行时间
+看不懂？ 那就对了，我们继续往下。
+第二点要知道的是：
+改进前￼的总执行时间 = 不可改进部分的执行时间 + 可改进部分的执行时间
+改进后的总执行时间 = (1 - 可改进比例) * 总执行时间 + (可改进比例 * 总执行时间)/部件加速比
+ 首先，我们改进一个机器，通常不是全部改进，而是只改进一部分。所以有了可改进比例 和 不可改进比例。
+那么来看第二条，
+我们的可改进比例有了，那不可改进比例呢？ 是不是就是 1 - 可改进比例。
+再来看 (可改进比例 * 总执行时间) / 部件加速比
+这个 部件加速比 是什么？
+我们试着去掉它 得到
+(可改进比例 * 总执行时间)
+一目了然了，去掉后就是 我们改进前的 可改进部分的总执行时间 。</description>
+    </item>
+    
     <item>
       <title>软件实现和硬件实现的比例关系与推导过程</title>
       <link>https://itscola.github.io/blog/softwareandhardwareimplenment/</link>
