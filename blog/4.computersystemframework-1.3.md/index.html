@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">计算机系统软硬件取舍与定量设计1.3</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机系统软硬件取舍与定量设计">计算机系统软硬件取舍与定量设计</a></li>
+    <li><a href="#一-软硬件取舍">一 软硬件取舍</a>
+      <ul>
+        <li><a href="#1-成本方面考虑">1. 成本方面考虑</a></li>
+        <li><a href="#2-取舍基本原则">2. 取舍基本原则</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-定量设计原理">二 定量设计原理</a>
+      <ul>
+        <li><a href="#1-哈夫曼压缩原理">1. 哈夫曼压缩原理</a></li>
+        <li><a href="#2-amdahl阿姆达尔定律">2. Amdahl(阿姆达尔)定律</a></li>
+        <li><a href="#3-程序访问的局部性定律">3. 程序访问的局部性定律</a></li>
+      </ul>
+    </li>
+    <li><a href="#三-计算机性能描述使用者角度">三 计算机性能描述（使用者角度）</a>
+      <ul>
+        <li><a href="#1-时钟频率处理主频">1. 时钟频率（处理主频）</a></li>
+        <li><a href="#2-每秒百万条指令mips">2. 每秒百万条指令（MIPS）</a></li>
+        <li><a href="#3-每秒百万条浮点指令mflops">3. 每秒百万条浮点指令（MFLOPS）</a></li>
+        <li><a href="#4-真实程序运行时间">4. 真实程序运行时间</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a></p>
+<h2 id="计算机系统软硬件取舍与定量设计">计算机系统软硬件取舍与定量设计</h2>
+<blockquote>
+<p>计算机的功能可以通过硬件实现，也可以通过软件实现。但不存在纯硬件实现或纯软件实现的计算机。</p>
+</blockquote>
+<p>这意味着什么？ <br>
+意味着在设计一台计算机时，功能即可以使用软件实现，又可以使用硬件实现。它们的使用边界变得模糊。   这是要讲的 <strong>软硬件取舍</strong></p>
+<p>在设计一台计算机时，我们要怎么样做，才能做到好？ 我们需要一些依据，来帮助更好的设计。 这是要讲的 <strong>定量设计原理</strong></p>
+<p>以及作为使用者，该如何判断一个计算机到底如何？ 这是要讲的 <strong>计算机性能描述（使用者角度）</strong></p>
+<h2 id="一-软硬件取舍">一 软硬件取舍</h2>
+<h3 id="1-成本方面考虑">1. 成本方面考虑</h3>
+<p>作为计算机设计者，成本是一个很重要的方面。它包括了软硬件的 <strong>设计成本</strong> 和 <strong>制造成本</strong>。</p>
+<p>根据我曾经的文章   (这里不再重复解释，请先去看这篇文章)<br>
+<a href="https://whitecola.top/blog/softwareandhardwareimplenment/">软件实现和硬件实现的比例关系与推导过程</a></p>
+<p>我们可以得知：</p>
+<ol>
+<li>用软件来实现更灵活，更强大，设计和重复生产费用更低。但效率远不如硬件实现。</li>
+<li>用硬件实现效率更高，性能更高，但设计和生产费用较为高昂，灵活性不如软件。</li>
+<li>硬件对研发与制造费用极其高，费用为软件的100倍是完全可能的。</li>
+</ol>
+<p>以及结论：</p>
+<ol>
+<li>也就是说 一个功能 经常用到 经常出现 才更适合用硬件。</li>
+<li>当我们要生产的设备产量越大，我们用硬件的比例就可以越多(越适合)。</li>
+<li>并不是用硬件实现功能的比列越大越好。这还要考虑资金等问题。</li>
+</ol>
+<h3 id="2-取舍基本原则">2. 取舍基本原则</h3>
+<p>加上成本方面与其它方面，可以有以下几点取舍原则。</p>
+<blockquote>
+<ol>
+<li>在现有硬、器件条件下，应从实现费用，速度，其它性能性能 综合考虑，以获得高的性能价格比。【性能价格比】</li>
+<li>应考虑采用或可能采用组成技术，使其不要过多或不合理地限制各种实现和组成技术。【组成技术】</li>
+<li>不能光从“硬”的角度去考虑如何便于应用组成技术的成功 和 发挥器件技术的发展，还要从“软”的角度把 如何为 编译和操作系统的实现 以及 高级语言程序的设计 提供更多，更好的硬件支持 放在首位。【兼容度】</li>
+</ol>
+</blockquote>
+<p>第一点是，要从费用、速度、其它性能综合考虑获得性价比。</p>
+<p>第二点和第三点就是。一个说如何更好的兼容实现 组成技术，另一个说如何更好的兼容软件。</p>
+<h2 id="二-定量设计原理">二 定量设计原理</h2>
+<p>懂了要注意的软硬件问题。
+再以计算机设计者的角度，我们又应该遵循什么原则，或通过什么方式，才能设计一个更好的计算机。</p>
+<p>我们要遵循的原则有三点。</p>
+<hr>
+<h3 id="1-哈夫曼压缩原理">1. 哈夫曼压缩原理</h3>
+<p>计算机中，会有各种事件，有出现概率高的，也有出现概率低的。</p>
+<p><strong>我们可以通过更注重加速处理那些 出现概率高的事件，以达到用更低的成本，达到更好的加速效果。</strong></p>
+<p><del>其实，我们在写程序的时候，也可以遵循这个原则，把较多的精力放在加速出现频率更高的问题上。</del></p>
+<h3 id="2-amdahl阿姆达尔定律">2. Amdahl(阿姆达尔)定律</h3>
+<p>关于这个问题的讲解，请看我过去的文章。我们直接来说结论。<br>
+<a href="https://whitecola.top/blog/amdhallaw/">阿姆达尔定律（加速比）</a></p>
+<ol>
+<li>我们可以通过 阿姆达尔定律公式，来计算加速比，以知道 我们在原计算机基础上 进行改进后 到底改进了多少。</li>
+<li>如果我们要升级一台计算机的性能，我们更应该倾向于整体提升，而不是单个提升。
+<del>3. 我们购买电脑时，应注重整体设备部件性能。</del></li>
+</ol>
+<p><del>给一个设备加两个cpu，根据阿姆达尔定律，性能不会变为两倍。</del></p>
+<h3 id="3-程序访问的局部性定律">3. 程序访问的局部性定律</h3>
+<p>程序访问的 局部性包括 <strong>时间局部性</strong> 和 <strong>空间局部性</strong>。</p>
+<p><strong>时间局部性</strong>：之前调用过的数据，之后还会调用。</p>
+<p><strong>空间局部性</strong>： 现在调用这些数据，靠近它的数据，很有可能被调用。</p>
+<hr>
+<p>我们可以分别从 <strong>指令 和 数据 的角度</strong>来说。</p>
+<p>从 <strong>指令的角度</strong>，<br>
+指令在时间局部性中的体现 主要为 循环语句。 现在执行一遍，过一会还会执行。</p>
+<p>指令在空间局部性中，体现在顺序语句。这边的代码执行了，下面的代码也很可能被执行。</p>
+<p>从 <strong>数据角度</strong>，<br>
+数据在时间局部性中体现为变量，数据。
+现在用到的数据，之后还可能需要。</p>
+<p>数据在空间局部性中，体现在 字符串 和 数组。字符串上一个字符被调用，下一个也很可能被调用。上一个数组元素被调用，下一个也可能被调用。</p>
+<h2 id="三-计算机性能描述使用者角度">三 计算机性能描述（使用者角度）</h2>
+<p>以一个使用者角度来描述计算机性能，主要有三种方式，其中只有一种方式是准确的。</p>
+<h3 id="1-时钟频率处理主频">1. 时钟频率（处理主频）</h3>
+<p>先来说<strong>CPU主频</strong>，cpu工作频率。在“相同情况下”我们可以进行比较。<br>
+相同情况？</p>
+<p>一个工作频率高的cpu，不一定比一个工作频率低的cpu主频性能好。</p>
+<p>这里面有<strong>多核</strong>问题。 一个更多核心的cpu<strong>工作频率可能很高，但它的性能不一定更好</strong>。</p>
+<p><del>如intel的cpu，新的一代工作频率更高了，但单核性能并不一定比上一代高，也许只是核数增加了。</del></p>
+<p><strong>所以说，以主频来描述电脑性能，并不靠谱</strong>。</p>
+<h3 id="2-每秒百万条指令mips">2. 每秒百万条指令（MIPS）</h3>
+<p>曾经人们认为。单位时间内，执行程序越多，性能就越好。于是有了MIPS。</p>
+<p>MIPS = 执行条数 / 执行时间 * 10^6</p>
+<p>但是有个问题，系统执行的指令不一定相同。</p>
+<blockquote>
+<p>计算机的功能可以通过硬件实现，也可以通过软件实现。但不存在纯硬件实现或纯软件实现的计算机。</p>
+</blockquote>
+<p>比如一个游戏的光影，用软件实现，可能需要100000多条指令。 而用显卡实现，可能只需要100条指令。<br>
+这100条的不一定比100000条的差。</p>
+<p>所以拿它作为指标也不靠谱。</p>
+<h3 id="3-每秒百万条浮点指令mflops">3. 每秒百万条浮点指令（MFLOPS）</h3>
+<p>MIPS用的整数，这个就用的小数。只能说更精准了，但依然不行，原因如MIPS的原因一样。</p>
+<p>超级计算机比赛通常用这个，因为执行的指令一样。</p>
+<h3 id="4-真实程序运行时间">4. 真实程序运行时间</h3>
+<p>这是这4个中，唯一靠谱的。<br>
+多个计算机做同一个任务，谁完成的早，谁就更好。 单任务会关注响应时间，多任务会关注吞吐量。</p>
+<p>通过都会用一些公认的程序来测试。<br>
+<del>娱乐大师直呼内行</del></p>
+<p>为了防止一台计算机做这个擅长，而另一台计算机做那个擅长。通常都会把所有的程序跑一遍，不存在这个问题。</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/amdhallaw/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

@@ -7,7 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机系统软硬件取舍与定量设计1.3</title>
+      <link>https://itscola.github.io/blog/4.computersystemframework-1.3.md/</link>
+      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/4.computersystemframework-1.3.md/</guid>
+      <description>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解计算机系统结构。 如果你正在学这门科目，那这个系列将非常适合你。
+这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。
+这个系列并不是普通的“笔记”，不同的是，我会用尽可能简洁通俗的语言来讲解。
+计算机系统结构系列
+计算机系统软硬件取舍与定量设计  计算机的功能可以通过硬件实现，也可以通过软件实现。但不存在纯硬件实现或纯软件实现的计算机。
+ 这意味着什么？ 意味着在设计一台计算机时，功能即可以使用软件实现，又可以使用硬件实现。它们的使用边界变得模糊。 这是要讲的 软硬件取舍
+在设计一台计算机时，我们要怎么样做，才能做到好？ 我们需要一些依据，来帮助更好的设计。 这是要讲的 定量设计原理
+以及作为使用者，该如何判断一个计算机到底如何？ 这是要讲的 计算机性能描述（使用者角度）
+一 软硬件取舍 1. 成本方面考虑 作为计算机设计者，成本是一个很重要的方面。它包括了软硬件的 设计成本 和 制造成本。
+根据我曾经的文章 (这里不再重复解释，请先去看这篇文章)
+软件实现和硬件实现的比例关系与推导过程
+我们可以得知：
+ 用软件来实现更灵活，更强大，设计和重复生产费用更低。但效率远不如硬件实现。 用硬件实现效率更高，性能更高，但设计和生产费用较为高昂，灵活性不如软件。 硬件对研发与制造费用极其高，费用为软件的100倍是完全可能的。  以及结论：
+ 也就是说 一个功能 经常用到 经常出现 才更适合用硬件。 当我们要生产的设备产量越大，我们用硬件的比例就可以越多(越适合)。 并不是用硬件实现功能的比列越大越好。这还要考虑资金等问题。  2. 取舍基本原则 加上成本方面与其它方面，可以有以下几点取舍原则。
+  在现有硬、器件条件下，应从实现费用，速度，其它性能性能 综合考虑，以获得高的性能价格比。【性能价格比】 应考虑采用或可能采用组成技术，使其不要过多或不合理地限制各种实现和组成技术。【组成技术】 不能光从“硬”的角度去考虑如何便于应用组成技术的成功 和 发挥器件技术的发展，还要从“软”的角度把 如何为 编译和操作系统的实现 以及 高级语言程序的设计 提供更多，更好的硬件支持 放在首位。【兼容度】   第一点是，要从费用、速度、其它性能综合考虑获得性价比。</description>
+    </item>
+    
     <item>
       <title>阿姆达尔定律(计算机加速比)</title>
       <link>https://itscola.github.io/blog/amdhallaw/</link>
