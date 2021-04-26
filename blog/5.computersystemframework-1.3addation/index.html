@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">计算机系统设计的主要任务和方法1.3(Addtion)</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#计算机系统设计的主要任务和方法">计算机系统设计的主要任务和方法</a></li>
+    <li><a href="#主要任务">主要任务</a></li>
+    <li><a href="#计算机设计的主要方法">计算机设计的主要方法</a>
+      <ul>
+        <li><a href="#从上往下">从上往下</a></li>
+        <li><a href="#从下往上">从下往上</a></li>
+        <li><a href="#由中间开始">由中间开始</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<h2 id="计算机系统设计的主要任务和方法">计算机系统设计的主要任务和方法</h2>
+<p>知道了计算机系统的层次结构，知道了机器级。这篇文章，将基于 机器级分层原理 来讲述 <strong>计算机系设计的方法</strong>。</p>
+<h2 id="主要任务">主要任务</h2>
+<p>计算机系统设计的主要任务包括 <strong>系统结构、组成、实现</strong>。 这些分别是什么，以及有什么区别，请看我之前的文章。</p>
+<p><a href="https://whitecola.top/blog/2.computersystemframework-1.2.1/">计算机系统结构的概念</a></p>
+<p><a href="https://whitecola.top/blog/3.computersystemframework-1.2.2/">计算机的组成和实现以及它们之间的关系</a></p>
+<p>这里简单概括一下。</p>
+<ol>
+<li><strong>计算机系统结构</strong>又称计算机层次结构，是传统机器级的系统结构。它是软硬件的交界面 它研究的内容是</li>
+</ol>
+<ul>
+<li>传统机器级上界面的定义。</li>
+<li>软硬件功能的分配。</li>
+<li>为各机器级提供应有应遵循的规范。</li>
+</ul>
+<ol start="2">
+<li>
+<p><strong>计算机组成</strong> 是计算机系统结构逻辑的实现，包括内部控制流，数据流的组成，逻辑设计等。</p>
+</li>
+<li>
+<p><strong>计算机实现</strong> 是计算机组成的物理实现，它主要研究 器件技术 和 微组装技术 。以<strong>器件技术</strong>为主导。</p>
+</li>
+</ol>
+<h2 id="计算机设计的主要方法">计算机设计的主要方法</h2>
+<p>计算机设计的主要方法有三种。分别是 从上往下，从下往上，从中间向两边。第三种方法为目前最佳的设计方式。</p>
+<h3 id="从上往下">从上往下</h3>
+<p>也称“从顶向低”设计。</p>
+<p>它的方法为：<br>
+<strong>先考虑满足应用要求，定好面向应用的那个虚拟机器级的特性和环境，在逐级向下设计。</strong></p>
+<p>它的特点为：</p>
+<ol>
+<li>每设计下一级，都要考虑对下一级的优化。【优化问题】</li>
+<li>要串行设计，设计周期长。【设计效率】</li>
+<li>通用机的应用对象和环境不停改变，一旦改变，软硬件很快就会不适应，系统效率极具下降。【应用易改变】</li>
+<li>其传统机器级和微程序机器级，都在已有机器中选型。通常不专门设计。【不专门设计】</li>
+<li>实际很难做到面向应用优化。【难优化】</li>
+</ol>
+<h3 id="从下往上">从下往上</h3>
+<p>也称 “由底向顶”设计。</p>
+<p>方法：先不管应用要求，按照已有机器的特点来做器件，将传统机器机器级和微程序机器级研发。然后适配不同领域的操作系统和编译系统软件，<strong>采用合适的系统软件和算法来满足应用需求</strong>。</p>
+<p>特点：</p>
+<ol>
+<li>硬件不能改变，仅靠设计软件来被动适配硬件。有时候仅仅需要稍微更改或增加硬件的功能就能大大简化软件设计，都做不到。【硬件不可变】</li>
+<li>软硬件脱节，软件得不到硬件的支持而变得繁杂，部分机器指标不真实。【软硬件脱节】</li>
+<li>串行设计，会延长设计周期。同样已经很少使用。【设计周期长】</li>
+</ol>
+<h3 id="由中间开始">由中间开始</h3>
+<p>方法：由中间开始向两边设计。<br>
+这是通用机通常使用的方法。</p>
+<p>特点：</p>
+<ol>
+<li>克服前两种，软硬件设计分离和脱节的问题。【无脱节问题】</li>
+<li>从 中间开始 设计往往选择一个软硬件界面，然后从这个界面，分别向上下进行软硬件设计。【分别向上下设计】</li>
+</ol>
+<p>软件设计人员：<br>
+操作系统机器级-&gt;汇编语言机器级-&gt;高级语言机器级-&gt;应用语言机器级</p>
+<p>硬件设计人员：
+传统计算机机器级-&gt;微程序机器级-&gt;数字逻辑</p>
+<ol start="3">
+<li>软件和硬件并行设计，设计周期较短。【周期短】</li>
+<li>两部分设计人员可以交流协调，适当微调软、硬件实现的比例。【可交流协调】</li>
+</ol>
+<p><strong>这是较好的交互方式，也是通用机设计注意常用的。</strong></p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/updownbeforeafter/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
