@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="https://space.bilibili.com/20652575"
+                
+                    target="_blank"
+                
+            >
+                <i class="bilibili"></i>
+                <span>bilibili</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">[1.4]软件的发展对系统结构的影响1.4-1</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#软件的发展对系统结构的影响">软件的发展对系统结构的影响</a>
+      <ul>
+        <li><a href="#1-软件的可以移植性">1. 软件的可以移植性</a></li>
+        <li><a href="#2-可移植性特点">2. 可移植性特点</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现可移植性的几种方法">实现可移植性的几种方法</a>
+      <ul>
+        <li><a href="#1-统一高级语言">1. 统一高级语言</a></li>
+        <li><a href="#2-采用系列机">2. 采用系列机</a></li>
+        <li><a href="#3-模拟和仿真">3. 模拟和仿真</a></li>
+      </ul>
+    </li>
+    <li><a href="#模拟和仿真的区别和关系">模拟和仿真的区别和关系</a>
+      <ul>
+        <li><a href="#1-区别">1. 区别：</a></li>
+        <li><a href="#2-关系">2. 关系：</a></li>
+        <li><a href="#3-使用">3. 使用：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a></p>
+<h2 id="软件的发展对系统结构的影响">软件的发展对系统结构的影响</h2>
+<p>软件发展对系统结构的影响，主要体现在可移植性方面。</p>
+<h3 id="1-软件的可以移植性">1. 软件的可以移植性</h3>
+<p><strong>可移植性的概念</strong>：一款程序不经修改，或只需要少量的修改，就可以由一台计算机移植到另一台计算机。同一软件应用于不同环境。</p>
+<p><strong>一台计算机移植到另一台计算机，不经修改，或修改的很少，我们就说 可移植性 越好。反之 越差。</strong></p>
+<p>每次发布新硬件，都要考虑可移植性，可移植性越高越好。</p>
+<p><del>假如我发布了一个显卡，性能比市面上显卡性能普遍较高，但是显卡的 可移植性很差，不兼容市面上所有程序。也就是说程序完全需要从0设计。 通常是不会有生命力的。</del></p>
+<h3 id="2-可移植性特点">2. 可移植性特点</h3>
+<ol>
+<li>软件能长期使用，不会因为机器更新需要重新编写。</li>
+<li>大大减少了编程软件的工作量。</li>
+<li>能迅速用上新的硬件技术，更新系统，让新系统立即发挥效能。</li>
+<li>软件设计者将更有精力开发全新的软件。</li>
+</ol>
+<h2 id="实现可移植性的几种方法">实现可移植性的几种方法</h2>
+<p>实现可移植性主要有三种方法。</p>
+<h3 id="1-统一高级语言">1. 统一高级语言</h3>
+<p>统一高级语言，是一种理想的软件移植方法。</p>
+<p>让所有程序员使用统一的高级语言，这样只需要各个操作系统对这种语言适配（操作系统的全部或一部分使用这种语言），即可实现软件的高可移植性。</p>
+<p><strong>但直到如今，没有一种是对各种应用真正通用的高级语言。</strong></p>
+<p><del>又很多语言去尝试，比如跨平台比较优秀的 haxe语言，它可以编译成Java，CPP，JavaScript，C#，JVM，PHP，Python&hellip;&hellip; 。以及几乎支持所有常见平台。实现真正跨平台。但目前还是小众语言，原因也如下列所说。</del> <br>
+<a href="https://github.com/HaxeFoundation/haxe">Haxe - Github</a></p>
+<p>原因如下：<br>
+（如果理解加粗字体，就可以不用看后面的内容）</p>
+<ol>
+<li>
+<p><strong>不同用途要求语言语法不同</strong>，如Julia语言面向科学计算，Java面向程序开发。它们的语义语法结构，差异较大。难以统一。 如果强制去统一，语言又会变得难以掌握，编译程序较大，编译效率低。</p>
+</li>
+<li>
+<p><strong>人们对语言基础结构看法不同</strong>，如 有的人觉着GOTO语句能让语言更灵活 应该保留。而有的人觉着它会降低代码可读性 应取消。</p>
+</li>
+<li>
+<p>**即使同一种高级语言在不同厂家的机器上也不能完全通用。**各厂家机器的  I/O设备种类和数量，子程序结构，寻址空间，操作系统等 并不相同。 部分厂家为发展自己特色，常用自己的 “专有语言” 。<del>为节省储存空间，提高执行速度</del>，在高级语言软件中部分嵌入汇编语言，使同种高级语言难以移植。</p>
+</li>
+<li>
+<p><strong>语言习惯问题，人们不愿意抛弃自己习惯的语言</strong>，不愿意抛弃自己长期积累的经验 和 在原有语言编写已被实践证明正确的软件。</p>
+</li>
+</ol>
+<p><del>为此，各种机器都得适配较多通用的高级语言编译系统。<strong>同一种高级语言，各个机器的编译系统软件不同，无法通用，不利于系统结构的发展</strong></del></p>
+<hr>
+<blockquote>
+<p>尽管难以实现，当从长远看，仍是需要解决的问题。统一高级语言对 节约软件研发的人力，物力和费用，加快人员的培养，都有重要意义。</p>
+</blockquote>
+<blockquote>
+<p>Java等语言的出现就是朝此方向发展。</p>
+</blockquote>
+<p><del>真就要让内卷更严重呗。</del></p>
+<h3 id="2-采用系列机">2. 采用系列机</h3>
+<p><strong>同一厂家生产具有相同等系统结构，但具有不同组成和实现的计算机。</strong></p>
+<p>不同系列机间 <strong>系统结构相同，软件的可移植性就好很多</strong>。（但软件不是100%兼容的）</p>
+<p>在说系列机的软件兼容问题之前，先来了解下分别有哪几种兼容种类。<br>
+<a href="https://whitecola.top/blog/updownbeforeafter/">向下兼容 向上兼容 向前兼容 向后兼容</a></p>
+<p><strong>特点</strong>：</p>
+<ol>
+<li><strong>向上兼容一般没问题，向下兼容不一定</strong>。</li>
+</ol>
+<p><strong>同一系列内的软件一般应做到向上兼容</strong>，低档次机器上的软件在高档次机器上运行一般是可以通过的，只是机器效率没有得到充分发挥而已。</p>
+<p><strong>同一系列内的软件一般应做到向下兼容就不一定了</strong>，特别是与机器速度有关的实时性软件向下兼容就更难了。低档次机器的性能，可能达不到需求。</p>
+<ol start="2">
+<li><strong>系列内后续研制出来的各档次机器的系统结构应允许发展和变化</strong>。</li>
+</ol>
+<p><strong>扩展没问题。<br>
+改和删除就有问题了</strong></p>
+<p>比如一个软件调用了我提供的函数，有次更新，我把函数删除了。那那个软件就要出问题了。【不能删】</p>
+<p>比如一个软件调用了我提供的函数，有次更新，我把函数改了，那那个软件也很可能要出问题。【尽量不要改】</p>
+<p>比如一个软件调用了我提供的函数，有次更新，我加了个其他函数。这样软件调用时，可以更方便的达到目的。这没问题，不影响软件。【增加没问题】</p>
+<p><del>mirai机器人框架那个重构怪，说你呢！</del><br>
+<del>某P开头的 胶 水 语 言 也耗子尾汁</del></p>
+<h3 id="3-模拟和仿真">3. 模拟和仿真</h3>
+<p>这是两个很重要的概念。</p>
+<ol>
+<li><strong>模拟：用软件的方法，在一台现有机器上（宿主机），实现另一台机器（虚拟机）的指令集。</strong></li>
+</ol>
+<p><strong>通常用解释的方法来实现，运行速度较慢，性能较差，但功能没问题。</strong></p>
+<p>是不是很熟悉？<br>
+<del>VMware Workstation，VirtualBox 虚拟机 <strong>直呼内行</strong>。有多少人拿它们测试病毒，搞逆向？</del>
+就比如，我目前是Macos系统，我可以通过虚拟机，在Macos里运行个Windows 10 。</p>
+<p>记住，这种方式是通过软件实现的。</p>
+<ol start="2">
+<li><strong>仿真：用一台现有机器（宿主机）上的微程序，去解释实现另一台机器（目标机器）的指令集。</strong></li>
+</ol>
+<p>这种方式更底层，更复杂，有时候做不了。</p>
+<p><strong>通过硬件来实现，运行速度比模拟方法快，仿真只能在系统结构相差不大的机器之间使用。</strong></p>
+<h2 id="模拟和仿真的区别和关系">模拟和仿真的区别和关系</h2>
+<h3 id="1-区别">1. 区别：</h3>
+<ol>
+<li>模拟和仿真的主要区别在于解释用的语言。</li>
+</ol>
+<p><strong>模拟用的 机器语言（传统机器语言级）程序解释 解释程序存储在 主存（内存条） 当中。</strong></p>
+<p><strong>仿真用的 微程序解释 解释程序在 控制储存器之中。</strong></p>
+<h3 id="2-关系">2. 关系：</h3>
+<ol>
+<li>仿真可以提高被移植软件的运行速度，但由于 微程序机器级结构 深依赖于 传统机器级结构 。两种机器结构差异较大时，很难仿真。（特别是IO系统差异较大时）</li>
+</ol>
+<h3 id="3-使用">3. 使用：</h3>
+<ol>
+<li>不同系列的软件移植一般是模拟和仿真并行。</li>
+<li><strong>频繁使用的</strong> 和 <strong>易于仿真</strong> 的机器指令，易用仿真，以提高速度。</li>
+<li>很少使用的 和 难以仿真的指令以及I/O操作 用模拟。</li>
+<li>两种机器差别不大时，往往也需要用模拟来完成机器间的映像。</li>
+</ol>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/5.computersystemframework-1.3addition/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
