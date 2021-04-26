@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>公告栏 on White_cola Blog</title>
-    <link>https://itscola.github.io/blog/</link>
-    <description>Recent content in 公告栏 on White_cola Blog</description>
+    <title>ComputerSystemFramework on White_cola Blog</title>
+    <link>https://itscola.github.io/tags/computersystemframework/</link>
+    <description>Recent content in ComputerSystemFramework on White_cola Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/computersystemframework/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[1.4]应用 器件 的发展对系统结构的影响1.4-2</title>
       <link>https://itscola.github.io/blog/7.computersystemframework-1.4-2/</link>
@@ -270,169 +270,6 @@ D(h) 约等于 100D(s). 每研发一个硬件的费用 大概为 研发100个软
 例子：JavaScript由浏览器解释执行，如果有错误，通常不会影响到前面的代码。
 2.翻译和解释的特点  翻译往往是所有程序做完再执行，而解释是一边解释一边执行。 解释过程中 解释一条 运行一条 灵活性更高。  什么是编译器,解释器? (一文理解编译型和解释型语言)
 3.机器级间的特点  应用语言 程序通过程序包翻译成高级语言程序。 高级语言 程序通过编译程序编译成汇编语言程序。（或是 中间代码，再或是 机器语言程序） 汇编语言 程序通过汇编程序翻译成机器语言程序。 操作系统 通过机器语言程序 解释 控制语句作业。 传统机器机器级由 微程序(固件) 实现。 而前四个都由软件实现。  固件是指通过硬件实现软件功能。 如常见的BIOS ，它通常不会改变，但又不是不可改变。</description>
-    </item>
-    
-    <item>
-      <title>用多项式回归, 预测国家在2021,2035年的GDP</title>
-      <link>https://itscola.github.io/blog/gdpofchinain2035/</link>
-      <pubDate>Mon, 15 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/gdpofchinain2035/</guid>
-      <description>欢迎来到这篇文章, 我将会通过机器学习技术, 来预测我们国家在2035年的GDP.
-当然, 预测只是预测, 并不代表准确数据. 但会有一定的参考性.
-所使用语言为Python.
-GDP数据 我们要让机器学习模型学习的数据, 将会来自 国家数据.
-数据导入 import matplotlib.pyplot as plt import numpy as np import pandas as pd Dataset = pd.read_csv(&#39;ChinaGDP.csv&#39;) X = Dataset.iloc[:,:-1].values y = Dataset.iloc[:,-1].values (由于我们会用到线性回归的函数,已经包含了特征缩放的步骤 所以此处不需要再特征缩放了)
-观察数据 下面我们将数据画在图上, 更直观的观察我们的GDP数据.
-plt.scatter(X, y) plt.xlabel(&#39;Year&#39;) plt.ylabel(&#39;GDP of China&#39;) plt.title(&#39;GDP&#39;) plt.show() 可以看到, 这令人激动的上升趋势.
-很明显, 我们不能使用线性回归来拟合模型, 因为它并不呈线性.
-所以我们将使用多项式回归 , 来拟合我们的模型.
-(这边我们只需要将数据展示在图上观察数据来判断模型的质量, 所以我们目前不拆分成 训练集 测试集)
-拟合数据 下面我们将多项式回归拟合.
-from sklearn.preprocessing import PolynomialFeatures Poly_regressor = PolynomialFeatures(degree=2) Poly_X = Poly_regressor.</description>
-    </item>
-    
-    <item>
-      <title>多元线性回归的概念 (Multiple linear regression)</title>
-      <link>https://itscola.github.io/blog/what-is-multiple-linear-regression/</link>
-      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/what-is-multiple-linear-regression/</guid>
-      <description>关于文章 这篇文章较短, 是因为关于线性回归的概念, 都放在了上一篇文章.
-在阅读之前，你大概率需要这个系列的之前文章的基础。
-文章追求通俗易懂，让没有编程基础的读者也能看懂，所以不会用很多专业用语。
-多元线性回归 假如我们要去租房，我们手里有各个房屋的各种数据。此时，我们想预测，根据我们的需求，租到的房子应该在多少钱。
-一个简单的方式就是，建立多元线性回归模型，学习这些数据，然后我们可以通过我们的要求 预测 房价应该在多少。
-什么是多元线性回归 我们说 一元线性回归就是 一个自变量 对应着 一个因变量。
-那么 多元线性回归就是 多个自变量 对应着 一个因变量。
-多元线性回归模型 这个模型可以表达为:
- y= B0 + B1*X1 + B2*X2 + B3*X3 ... 有多少个自变量，就会有多少个B*X。
-再看 一元线性回归
-y= B0 + B1*X
-它只有一个自变量
-很遗憾的是，由于多元线性回归是多元模型，它可能有很多唯。因此我们无法画出它的图像。
-是否为线性 线性主要是看因变量y的形式，是否为 呈线性。B1*X1+B2*X2</description>
-    </item>
-    
-    <item>
-      <title>一元线性回归的概念 (A linear regression)</title>
-      <link>https://itscola.github.io/blog/what-is-a-linear-regression-equation/</link>
-      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/what-is-a-linear-regression-equation/</guid>
-      <description>欢迎, 这是机器学习系列的第二篇文章 此文章是我在 Machine Learning 学习过程中以自己的理解做的总结
-文章追求以最通俗的方式, 把机器学习带给所有人爱好者.
-一元线性回归 我们手里有一家公司的员工 工资经验 和 对应薪水 数据, 假如我们有3.4年工作经验, 那我们提出多少工资比较好呢 ?
-阅读之前, 确保你已经读懂了上一篇文章.
-什么是一元线性回归 你可以理解为 我们通过 最合适的方式 把零散的数据变成规律的线(面). 从而用来进行对 因变量(我们需要预测的数据) 预测.
-最合适的方式? 通过 某种函数关系(后面会讲) 得到的最为公平的 理想数据 它是规律的线 面.
-一元指的是 这些数据只有一个自变量(特征). 例如上方的图片, 这个数据只有 一个自变量(工作经验(年)) 一个因变量(工资).
-当然, 有一元 还会有 多元, 这就是后面的文章了.
-一元线性回归模型 什么是模型? 模型是我们上一篇提到过的 &amp;ldquo;机器学习模型&amp;rdquo; 你可能不记得了, 这边再说一下.
-如果我们想实现通过 自变量(特征) 来预测 因变量. 那么我们需要建立一个模型, 先让 机器学习模型 进行学习, 然后我们就可以用 机器学习的成果 来用 自变量(特征) 预测 因变量.
-一元线性回归模型, 就说一个简单的模型, 我们通常可以直接使用.
-这个模型可以表达为:</description>
-    </item>
-    
-    <item>
-      <title>机器学习的概念 (Machine Learning)</title>
-      <link>https://itscola.github.io/blog/what-is-machine-learning/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/what-is-machine-learning/</guid>
-      <description>此文章是我在 Machine Learning 学习过程中以自己的理解做的总结
-文章追求以最通俗的方式, 让所有阅读者理解机器学习的概念.
-什么是机器学习？ 当我们建立一个机器学习模型。机器学习模型中会包含了自变量（特征），和因变量。 然后基于模型让机器学习数据，之后我们可以做到 通过自变量 (特征) 让机器学习告诉我们因变量。 这就是机器学习。
-总结来讲, 机器学习就是让机器学习数据之间的关系, 我们可以用学习到的结果,对新数据进行预测.
-简单的例子 假如我们有一些用户数据。其中每个用户的数据包括了 年龄 薪水 地区 和 是否该买了我们的产品。 我们可以通过机器学习 实现 只要有 年龄 薪水 地区 就可以让机器预判出 是否会购买我们的产品。
-机器学习是未来？ 这个问题，与其说一大堆，不如由你自己判断。对于它的好坏，我们都应该理性看待。而不是人云亦云。
-它和深度学习 人工智能的关系 人工智能包括了机器学习 而机器学习又包括了深度学习。
-人工智能 &amp;gt; 机器学习&amp;gt; 深度学习
-人工智能: 使计算机能模拟人的思维.
-它和深度学习的区别 深度学习的实现 借鉴了人脑的神经元。它通常用于处理很复杂的事情。比如很多生活中的事情，要考虑很多因素。
-深度学习可以自动提取 特征(因变量). 而机器学习需要手动提取 特征(因变量).</description>
-    </item>
-    
-    <item>
-      <title>什么是编译器,解释器? (一文理解编译型和解释型语言)</title>
-      <link>https://itscola.github.io/blog/compiler-and-interpreter/</link>
-      <pubDate>Thu, 25 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/compiler-and-interpreter/</guid>
-      <description>编程语言  我们所用的程序都是用某种语言写的, 但是它会先被翻译成能被计算机执行的语言之后才能运行. 通常人们会通过它用了 编译器(compiler) 还是 解释器(interpreter) 来判定他解释型还是编译型语言. 如java这种又用了 编译器 又用了 解释器 通常被我们称为 半解释半编译型语言.  编译器和解释器 编译器 编译器就是一个程序.它会把我们的 源代码写的程序 翻译成 一种等价的 另一种语言 写的程序.
-在它进行翻译的过程中, 还会报告它在源代码中发现的错误.
- 源代码写的程序 -编译器-&amp;gt; 目标程序
-目标程序就可以处理 用户的输入 得到对应的 输出  解释器 解释器不会进行翻译来生成目标程序, 而是直接通过 用户的输入 和 源程序 来生成目标程序.
- 源代码写的程序 + 用户的输入 -解释器-&amp;gt; 目标程序  优缺点  通过编译器生成的目标程序 来处理用户的输入 通常比用一个解释器快很多. 通过解释器来运行 由于它是逐个语句来执行 错误诊断效果通常比编译器好.  Java的半编译半解释 Java就是个半编译半解释形语言 java源程序会被编译成字节码(bytecode)(中间代码),然后再由JVM(java虚拟机) 解释执行. 也通过中间代码 实现了跨平台.
-补充 在编译器和解释器前后, 还会有一些其他步骤. 这边主要聊编译器和解释器.</description>
-    </item>
-    
-    <item>
-      <title>Gradle快速掌握基础用法</title>
-      <link>https://itscola.github.io/blog/gradle-basic/</link>
-      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/gradle-basic/</guid>
-      <description>Why Gradle？  Gradle是一款自动化构建项目的开源工具。 它使用Groovy来声明项目设置。和maven相比，它抛弃了繁杂的xml配置，同时配置文件做到简洁美观。 很多开源项目 需要使用gradle构建。 Java应用为主 目前支持 Java、Groovy、Kotlin和Scala.  下载并配置 下载地址： 点击下载 这里下载all版本，包含了源码、文档、示例等内容。
-配置环境变量：  将压缩包解压到任意目录. 打开环境变量配置，添加系统变量到这个目录，命名为Gradle_Home。 选择用户变量中的path，添加%Gradle_Home%/bin 。 在cmd中输入 gradle -v 如果出现显示的gradle版本，代表配置成功。  使用本地maven仓库 如果每个项目都要从maven仓库下载一次依赖, 那么将会占用很多空间, 并影响开发效率. 我们可以通过配置环境变量, 先让gradle找本地下载过的依赖, 如果没有 那再去maven仓库下载.
-首先选择一个本地的maven仓库文件夹路径. 然后打开环境变量配置, 在系统变量新建一个变量 变量名为 GRADLE_USER_HOME 变量值为上一步选择的本地 maven仓库文件夹.
-今后gradle会先从本地maven仓库找jar包 , 找不到再去maven仓库下载到本地maven仓库.
-IDEA创建gradle项目与配置 在Idea中创建Gradle项目 配置build.gradle  主要配置内容:
-   repositories主要是选定的maven仓库 默认为maven中央仓库
-当然你也可以添加仓库 可以参考 阿里的Maven仓库镜像 的教程来设定  在denpdencies添加jar坐标(依赖):   从你所添加的maven仓库添加:
-这里用默认的 maven中央仓库. 首先打开你所要添加的仓库页面, 搜索你要添加的jar. 点击search. 找到后点击.</description>
-    </item>
-    
-    <item>
-      <title>关于更好的白名单插件</title>
-      <link>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</link>
-      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</guid>
-      <description>为什么所有贴都删了 很多原因, 从MCBBS的贴被限制手机访问 删帖, 到MineBBS 删帖.
-其中经历了各种各样的奇葩事, 虽然说也学到了很多.
-这个插件之后会怎么样? 开发者不会再继续更新插件 也不一定会继续维护.
-最终决定将插件开源.
-github WL
-github WB
-如果将来有人需要的, 那可以基于项目制作, 或是参考.
-计划的更强大的MagicList呢? MagicList已经制作完成, 在我的Github私有仓库那里. 但是并不一定发布.
-MagicList是我所有白名单的制作经验的合体. 也用上了我制作的&amp;quot;先进&amp;quot;插件制作框架HiPlugin.
-目前想着, 就把他当作自己的武器库了.
-还会有地方交流吗? 还能下载到吗? 插件不更新后 还能用吗? 你可以加群 703246558 下载到最新的完整插件.
-由于插件的计算和储存都在本地, 所以停止更新, 不会对插件有任何影响.
-这个插件能做好的原因(个人想法) Think Different
-开发者的创意 创新能力 是这个插件能做好的关键因素.
-在开发者看来 其中的创意价值远超插件本身.
-正因如此 开发者认为 这个插件可能会被模仿 但却永远不会被代替 因为独特创新能力没办法模仿.</description>
-    </item>
-    
-    <item>
-      <title>地图推荐系列第一期 [长期更新]</title>
-      <link>https://itscola.github.io/blog/minecraft-maps-1/</link>
-      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/minecraft-maps-1/</guid>
-      <description>地图推荐角度  地图规模: 地图实际展示方块的规模. 游玩时长: 主观游玩地图时长. 简易层度: 地图的难易程度. 相关评分: 地图在发布网站的受欢迎程度. 相关视频: 相关UP主做过的视频. 是否适合实况: 是否适合实况 适合多少人. 游玩感想及补充: 实际游玩的感想和补充.  地图推荐 来自于各个网站, 这里不做转载仅做推荐.
-如果你是原作者, 你不希望你的地图被推荐, 请联系.
-游玩感想为不会详细介绍 防止具体. 具体介绍请去原地址. 点击眼睛emojil来查看地图.
-冒险地图: 1.Unreality - (并非真实) [基础英文] [支持多人和单人] [适合录制] 👁‍🗨 地图规模: 中等偏小
-游玩时长: 一小时左右
-简易程度: 前半部分简单,后半部分需大量动脑.
-相关评分: 3.8星
-相关视频: 1.官方攻略 Youtube
-2. White_cola Bilibili
-是否适合实况: 非常适合
- 游玩感想: 这真是一张很棒的地图, 它一张地图包含了RPG 解谜 PVE 跑酷 红石 任务等多种元素. 剧情不会直接 显现出来, 而是慢慢出现, 让游玩的人难以猜透背后的剧情. 随着剧情的推进, 玩家的心情也会 随之改变. 游戏难度适中. 英文对话不算多,大部分为基础单词.</description>
-    </item>
-    
-    <item>
-      <title>思维不受限, 创意无极限.</title>
-      <link>https://itscola.github.io/blog/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://itscola.github.io/blog/markdown-syntax/</guid>
-      <description></description>
     </item>
     
   </channel>
