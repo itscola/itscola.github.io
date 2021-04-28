@@ -7,7 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>系统结构中的并行性开发及计算机系统的分类1.5-1</title>
+      <link>https://itscola.github.io/blog/8.computersystemframework-1.5-1/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/8.computersystemframework-1.5-1/</guid>
+      <description>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解计算机系统结构。 如果你正在学这门科目，那这个系列将非常适合你。
+这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。
+这个系列并不是普通的“笔记”，不同的是，我会用尽可能简洁通俗的语言来讲解。
+计算机系统结构系列
+一 并行性 现代以及未来的计算机，都是并行的。并行能大大提高计算效率。
+1. 并行性的定义 计算机在 同一时刻 或 同一时间间隔，进行运算或操作的特性，称为并行性。
+按照 同一时刻 或 同一时间间隔 可将 并行性 分类两类（两重含义）
+同时性 和 并发性。
+1.1 同时性 定义：一个以上的事件 同一时刻 发生。
+如CPU的两个核，分别同时运行两个程序，这就是同时发生的。
+1.2 并行性 定义：一个以上的事件 同一时间间隔 发生。
+如很多游戏，多个人在一起PVP（Player vs player），实际上是 一个人动一下 之后下一个人动一下 再 下一个人动一下&amp;hellip;.. 这就是并行性。
+由于切换非常快，所以就看上去是同时在动。
+2. 并行性目的 并行性的目的是为了能并行处理，以提高计算机解题效率。
+并发和并行（补充） 和性质命名不太一样。我们说的“并行”“并发”是两种方式 ，是有区别的。
+并行 对应的 同时性。
+并发 对应的是 并行性。
+不要把 性质 和 方式 搞混。
+二 并行性等级划分 并行性可以以多种角度进行多种划分。
+1. 计算机系统执行程序的角度 从计算机系统执行程序的角度来看，并行性等级由低到高可分为四级。</description>
+    </item>
+    
     <item>
       <title>[1.4]应用 器件 的发展对系统结构的影响1.4-2</title>
       <link>https://itscola.github.io/blog/7.computersystemframework-1.4-2/</link>

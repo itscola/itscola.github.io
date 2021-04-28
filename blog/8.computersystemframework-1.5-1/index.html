@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">系统结构中的并行性开发及计算机系统的分类1.5-1</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-并行性">一 并行性</a>
+      <ul>
+        <li><a href="#1-并行性的定义">1. 并行性的定义</a></li>
+        <li><a href="#11--同时性">1.1  同时性</a></li>
+        <li><a href="#12-并行性">1.2 并行性</a></li>
+        <li><a href="#2-并行性目的">2. 并行性目的</a></li>
+      </ul>
+    </li>
+    <li><a href="#并发和并行补充">并发和并行（补充）</a></li>
+    <li><a href="#二-并行性等级划分">二 并行性等级划分</a>
+      <ul>
+        <li><a href="#1-计算机系统执行程序的角度">1. 计算机系统执行程序的角度</a></li>
+        <li><a href="#2-计算机处理数据的角度">2. 计算机处理数据的角度</a></li>
+        <li><a href="#3-计算机信息加工的各个步骤和阶段的角度">3. 计算机信息加工的各个步骤和阶段的角度</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a></p>
+<h2 id="一-并行性">一 并行性</h2>
+<p>现代以及未来的计算机，都是并行的。并行能大大提高计算效率。</p>
+<h3 id="1-并行性的定义">1. 并行性的定义</h3>
+<p>计算机在 <strong>同一时刻</strong> 或 <strong>同一时间间隔</strong>，进行运算或操作的特性，称为并行性。</p>
+<p><strong>按照 同一时刻 或 同一时间间隔 可将 并行性 分类两类（两重含义）</strong></p>
+<p><strong>同时性 和 并发性</strong>。</p>
+<h3 id="11--同时性">1.1  同时性</h3>
+<p><strong>定义：一个以上的事件 同一时刻 发生。</strong></p>
+<p>如CPU的两个核，分别同时运行两个程序，这就是同时发生的。</p>
+<h3 id="12-并行性">1.2 并行性</h3>
+<p><strong>定义：一个以上的事件 同一时间间隔 发生。</strong></p>
+<p>如很多游戏，多个人在一起PVP（Player vs player），实际上是 一个人动一下 之后下一个人动一下 再 下一个人动一下&hellip;.. 这就是并行性。</p>
+<p>由于切换非常快，所以就看上去是同时在动。</p>
+<h3 id="2-并行性目的">2. 并行性目的</h3>
+<p>并行性的目的是为了能并行处理，以<strong>提高计算机解题效率</strong>。</p>
+<h2 id="并发和并行补充">并发和并行（补充）</h2>
+<p>和性质命名不太一样。我们说的“并行”“并发”是两种方式 ，是有区别的。</p>
+<p><strong>并行 对应的 同时性。</strong><br>
+<strong>并发 对应的是 并行性。</strong></p>
+<p><strong>不要把 性质 和 方式 搞混。</strong></p>
+<h2 id="二-并行性等级划分">二 并行性等级划分</h2>
+<p>并行性可以以多种角度进行多种划分。</p>
+<h3 id="1-计算机系统执行程序的角度">1. 计算机系统执行程序的角度</h3>
+<p>从计算机系统执行程序的角度来看，<strong>并行性等级由低到高可分为四级。</strong></p>
+<h4 id="1-指令内部">1. 指令内部</h4>
+<p>一条指令内部各个微操作之间的并行执行。</p>
+<p>传统机器语言机器级 用 微程序 解释一条指令，然后会有多个 微操作（步骤） 交给 微程序机器级 由硬件执行。这些微操作可以并行执行。</p>
+<p><strong>一条指令 -&gt; 多个微操作（并行）</strong></p>
+<p><a href="https://www.whitecola.top/blog/1.computersystemframework-1/">计算机系统层次结构</a></p>
+<h4 id="2-指令之间">2. 指令之间</h4>
+<p>多条指令的并行执行。</p>
+<p>我们一条指令 对应的 多个微操作（步骤）可以并行，我们的指令之间，也可以并行。</p>
+<p><strong>多条指令（并行） -&gt; 多个微操作（并行）</strong></p>
+<h4 id="3-任务或进程之间">3. 任务或进程之间</h4>
+<p>多个任务或程序段的并行操作。</p>
+<ol>
+<li>任务 指 <strong>进程</strong>，有时也可以指<strong>线程</strong>。<br>
+注意，进程和线程是有区别的。<br>
+<strong>操作系统的不同任务之间是进程，而进程的子任务是线程。</strong></li>
+</ol>
+<p><code>new Thread(()-&gt;{}).start()</code><br>
+这是一段java代码，它创建了一个新线程去执行{}内的代码（任务）。就是这个线程。 它们的并行性 就是指的 多线程。 放大到进程也是一样。
+**任务可以有并行性。   **</p>
+<ol start="2">
+<li>程序段 指的是一段程序，比如代码中调用的一个函数（方法）。 这些也可以有并行性。 同时 或 同一时间间隔 调用多个函数（方法）。</li>
+</ol>
+<h4 id="5-作业或程序之间">5. 作业或程序之间</h4>
+<p>多个作业或多道程序的并行执行。</p>
+<p>多个作业可以理解为，我一个计算机进行作业不够，那我再来一个，再不够再来一个。 就让多个计算机并行作业。</p>
+<p><strong>多个计算机跑一个程序协同工作，并行计算。</strong></p>
+<p>多道程序就更好理解了，计算机中几个独立的程序并行执行。</p>
+<h3 id="2-计算机处理数据的角度">2. 计算机处理数据的角度</h3>
+<p>从计算机系统处理数据的角度来看，<strong>并行性等级也由低到高可分为四级。</strong></p>
+<h4 id="0-字比特字节">0. 字，比特，字节</h4>
+<p>这里需要一个铺垫，作为以下几种方式的基础。首先要知道，什么是 字(word)、比特(bit)、字节(Byte)。</p>
+<ol>
+<li>位 是计算机中最基本的组成单位，它可以用一个0或一个1表示，指的就是 比特（bit）。</li>
+</ol>
+<p><em>我们都知道二进制，都知道计算机只认识0或1。实际上，0或1只是用来表达的方式，计算机连0或1都不认识。计算机只认识有电和没电两种状态。计算机是可以做到16进制等的，只是完全没必要，目前二进制就够用了，没必要再去无意义的增加成本了。</em></p>
+<ol start="2">
+<li>
+<p>字节（Byte），一个字节（Byte）等于八个比特（bit）。八个比特（bit）能表示2^8=256种情况。</p>
+</li>
+<li>
+<p>字（word）有几个字节（Byte）表示，</p>
+</li>
+</ol>
+<p>16位计算机中   1字（word）= 2字节（Byte）= 16位（bit）</p>
+<p>32位计算机中   1字（word）= 4字节（Byte）= 32位（bit）</p>
+<p>64位计算机中   1字（word）= 8字节（Byte）= 64位（bit）</p>
+<p><del>所以现在你知道多少位计算机是怎么来的了。</del></p>
+<p><strong>字节是计算机处理数据中，最基本的单位。</strong></p>
+<p><del>因为字节不会改变，永远1=8。</del></p>
+<hr>
+<p>网络运营商为了让网络看着快，说100兆宽带，300兆宽带，500兆宽带。比如300兆宽带，实际上说的是 300Mb/s 而不是 300MB/s。所以办的宽带速度换算成实际速度，要除以8。</p>
+<p>300Mb/s -&gt; 300/ 8 -&gt; 37.5MB/s</p>
+<p>懂了吗？所以你的300兆的网络，下载速度最高也大约就37.5MB/s</p>
+<hr>
+<h4 id="1-位串字串">1. 位串字串</h4>
+<p>同时只对一个字的一位进行处理，这通常是指传统的<strong>串行单处理机</strong>，没有并行性。<br>
+（每次只对一个字的一位进行处理）</p>
+<p>就是每次对一个字（word）的一个位（bit）进行处理。</p>
+<p><del>效率不太行。</del></p>
+<h4 id="2-位并字串">2. 位并字串</h4>
+<p>同时对一个字的全部位进行处理，这通常是指传统的<strong>并行单处理机</strong>，开始出现并行性。</p>
+<p>就是每次对一个字（word）的 <strong>所有位（bit）并行</strong> 进行处理。</p>
+<p><del>效率提高点了</del></p>
+<h4 id="3-位片串字并">3. 位片串字并</h4>
+<p>同时对许多字的同一位（称位片）进行处理，这通常是指 <strong>传统的并行单处理机</strong>。</p>
+<p>就是，字（word）并行处理，每个字的同一位（bit）（位片）串行处理。</p>
+<p><del>谁起的位片这个名字啊</del></p>
+<h4 id="4-全并行">4. 全并行￼</h4>
+<p>同时对许多字的全部或部分位组进行处理。</p>
+<p>字（word）并行，位（bit）也并行。￼</p>
+<h3 id="3-计算机信息加工的各个步骤和阶段的角度">3. 计算机信息加工的各个步骤和阶段的角度</h3>
+<h4 id="1-存储器操作并行">1. 存储器操作并行</h4>
+<p>在一次存储访问中（周期）可以一些方式访问多个字。   如 单体单字、多体单字、多体多字。</p>
+<p><strong>我们可以按内容访问方式，对内容中大量的字，以 位片串字并 或 全并行方式 ，进行比较，检索，更新，变换等操作</strong></p>
+<p><!-- raw HTML omitted --><strong>简而言之，就是每次对储存访问用到的操作，可以对字并行处理。</strong><!-- raw HTML omitted --></p>
+<p>典型的例子是 <strong>并行储存器系统</strong> 和 以相联储存器微核心构成的 <strong><!-- raw HTML omitted -->相联处理机<!-- raw HTML omitted --></strong>。</p>
+<h4 id="2-处理器操作步骤并行">2. 处理器操作步骤并行</h4>
+<p>指令的取指，分析，执行，浮点加法的求阶差、对阶、尾加、舍入、规格化等操作，执行步骤在时间上重叠流水地进行。</p>
+<p>典型例子是 <strong><!-- raw HTML omitted -->流水线处理机<!-- raw HTML omitted --></strong>。</p>
+<p><del>看完你可能会说 “什么玩意？？”</del></p>
+<p><strong>简单来说，就是对指令的各种操作，以流水线的方式处理。</strong></p>
+<p>比如 A负责处理取指，B负责处理分析，C负责处理执行。 <br>
+那么要一个command（指令）过去，其实是A处理完取指，交给B处理分析，再交给C处理执行。</p>
+<h4 id="3-处理器操作并行">3. 处理器操作并行</h4>
+<p>通过重复设置大量处理单元。<br>
+让它们在同一控制器下按同一指令要求对 向量 、数组中各元素同时操作。</p>
+<p><strong>我们在本篇文章上方（1.指令内部）说过，一条指令，有多个步骤（微操作）。</strong></p>
+<p><strong>这里，就是用多个处理单元，通过同一控制器，对一条指令要求的步骤同时处理。</strong></p>
+<p>典型例子是，<strong><!-- raw HTML omitted -->阵列处理机<!-- raw HTML omitted --></strong>。</p>
+<p>就是说，<strong>多个处理机</strong>，对<strong>一个指令</strong>处理，对一个指令的<strong>多个步骤</strong>（微操作）并行处理。属于 <strong>单指令流多数据流计算机</strong>。</p>
+<h4 id="4-指令任务作业并行">4. 指令、任务、作业并行</h4>
+<p>这是较高级的并行。</p>
+<p>指令级以上的并行（就这个）是多个处理机同时对多条指令和相关的多数据组进行处理。</p>
+<p>典型例子是“<strong><!-- raw HTML omitted -->多处理机<!-- raw HTML omitted --></strong>”</p>
+<p>就是说，<strong>多个处理机</strong>，对<strong>多个指令</strong>并行处理，对每个指令的<strong>多个步骤</strong>（微操作）并行处理。属于 <strong>多指令流多数据流计算机</strong>。</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/7.computersystemframework-1.4-2/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
