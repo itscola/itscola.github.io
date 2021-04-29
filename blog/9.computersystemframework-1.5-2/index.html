@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">系统结构中的并行性开发及计算机系统的分类1.5-2</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#并行性">并行性</a></li>
+    <li><a href="#一-沿3种并行性开发途径的多机系统类型和特点">一 沿3种并行性开发途径的多机系统类型和特点</a>
+      <ul>
+        <li><a href="#1-时间重叠流水线">1. 时间重叠（流水线）</a></li>
+        <li><a href="#2-资源重复">2. 资源重复</a></li>
+        <li><a href="#3-资源共享">3. 资源共享</a></li>
+        <li><a href="#4-补充">4. 补充</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-耦合度">二 耦合度</a>
+      <ul>
+        <li><a href="#1-最低耦合">1. 最低耦合</a></li>
+        <li><a href="#2-松散耦合">2. 松散耦合</a></li>
+        <li><a href="#3-紧密耦合">3. 紧密耦合</a></li>
+      </ul>
+    </li>
+    <li><a href="#三-计算机系统的分类flynn分类法1996费林">三 计算机系统的分类（Flynn分类法）（1996，费林）</a>
+      <ul>
+        <li><a href="#1-单指令流单数据流sisd">1. 单指令流单数据流（SISD）</a></li>
+        <li><a href="#2-单指令流多数据流simd">2. 单指令流多数据流（SIMD）</a></li>
+        <li><a href="#3-多指令流单数据流misd">3. 多指令流单数据流（MISD）</a></li>
+        <li><a href="#4-多指令流多数据流mimd">4. 多指令流多数据流（MIMD）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a></p>
+<h2 id="并行性">并行性</h2>
+<p>在读本篇文章前，确保你已经读过了<br>
+<a href="https://www.whitecola.top/blog/8.computersystemframework-1.5-1/">系统结构中的并行性开发及计算机系统的分类1.5-1</a></p>
+<h2 id="一-沿3种并行性开发途径的多机系统类型和特点">一 沿3种并行性开发途径的多机系统类型和特点</h2>
+<p>提高并行性的常用技术途径有三种。<br>
+<strong>时间重叠，资源重复，资源共享</strong>。</p>
+<h3 id="1-时间重叠流水线">1. 时间重叠（流水线）</h3>
+<p>引入时间因素，让多个处理过程在时间上相互绰开，轮流重叠地使用同一套硬件设备的各个部分，加快硬件周转来赢得速度。</p>
+<p><del>其实就是一种流水线运行方式。下面来解释一下，假如你看不懂上面的，很正常。还没解释。</del></p>
+<p>比如要运行</p>
+<p>-&gt; 取指 -&gt; 分析 -&gt; 执行</p>
+<p>那么在流水线中将这样运行。</p>
+<p><img src="/ComputerSystem/Time.png" alt="image"></p>
+<p>每条指令的各个步骤，轮流在相应硬件上执行。5个Δt（指令周期） 就可以解析完3条指令。大大加快了程序的执行速度，<strong>时间重叠基本上不必重复增加硬件设备就可以较大地提高计算机系统的性能价格比</strong>。</p>
+<h3 id="2-资源重复">2. 资源重复</h3>
+<p>引入空间因素，通过重复设置硬件资源来提高可靠性或性能。</p>
+<p><del>简单来说，就是堆硬件。性能不够，硬件来凑。</del></p>
+<p><img src="/ComputerSystem/Resources.png" alt="image"><br>
+通过设置N个完全相同的处理单元（PE），在<strong>同一控制器（CU）的控制下，给各处理单元分配不同的数据，完成指令要求的同一种运算或操作</strong>，一提高速度性能。</p>
+<p>体现了同时性。<br>
+资源重复不仅可提高 <strong>可靠性</strong> 还可以提高系统的 <strong>速度性能</strong>。</p>
+<h3 id="3-资源共享">3. 资源共享</h3>
+<p>用软件实现，使多个任务（进程 、线程&hellip;）按一定时间顺序轮流使用同一套硬件设备。</p>
+<p><strong>多道程序分时系统</strong>就是典型的资源共享实例。</p>
+<p>资源共享不仅只是CPU、主存、外设等硬件资源共享，也可以包括软件、信息资源的共享。</p>
+<h3 id="4-补充">4. 补充</h3>
+<p>在实际并行性使用上，这三种方式是同时使用的。</p>
+<h2 id="二-耦合度">二 耦合度</h2>
+<p>写代码的时候，我们经常通过各种设计模式降低耦合度（解耦）。各大公司里，也会尽量降低员工的耦合度（解耦）。</p>
+<p>拿公司举例，耦合度低，可以就是 一个员工不干了，换一个员工就能接着他的工作干。无法造成什么影响。  <br>
+反之，耦合度高了，一个员工不干了，会影响到整个团队。这对于公司是不利的。（一般越大的公司，耦合度越低）</p>
+<p>拿程序举例，我现在用的Oracle的付费数据库，突然有一天，我发现不太划算，于是我换了MySQL数据库。 通过接口（Implement）或什么 IOC（控制反转）等 ，说换就换，造成不了什么影响。 那么说明耦合度不高。<br>
+反之，我换了MySQl，整个系统就要瘫痪了，那么说明耦合度较高。</p>
+<p><strong>所以你可以把它理解为，整体对整体中的单个的依赖程度。 依赖程度高，耦合度就高。依赖程度低，耦合度就低。</strong></p>
+<p><strong>通常我们都更希望耦合度低一点，当也不是绝对的。</strong></p>
+<hr>
+<p>好，理解了耦合度，那么我们现在要把耦合度的概念代入计算机系统结构了。</p>
+<blockquote>
+<p>一般用耦合度系统反应各机器之间物理连接的紧密度，和交叉作用能力的强弱，有最低耦合度，松散耦合，紧密耦合 之分。</p>
+</blockquote>
+<p>那么很明显，计算机系统结构的耦合度指的是 <strong>机器物理连接紧密度（硬件耦合度）</strong> 和 <strong>交叉作用能力强弱（交叉工作耦合度）</strong>。
+<strong>还分为三级，最低耦合度，松散耦合，紧密耦合。</strong></p>
+<h3 id="1-最低耦合">1. 最低耦合</h3>
+<p>各<strong>脱机处理系统</strong>，就是最低耦合系统，耦合度最低。它的各机器之间，除了存储硬件，没有任何物理连接，也没有任何共享联机硬件资源。</p>
+<h3 id="2-松散耦合">2. 松散耦合</h3>
+<p>如果多台计算机通过通道或通信线路实现互联，共享某些外围设备，从最低频带在文件或数据集一级相互作用，则这种系统称为<strong>松散耦合系统 或  间接耦合系统</strong>。</p>
+<h3 id="3-紧密耦合">3. 紧密耦合</h3>
+<p>如果多台计算机经总线或高速开关互联，有较高的信息传播率，可实现数据集级，任务级，作业级 并行。<strong>称此系统为 紧密耦合系统 或 间接耦合系统。</strong></p>
+<h2 id="三-计算机系统的分类flynn分类法1996费林">三 计算机系统的分类（Flynn分类法）（1996，费林）</h2>
+<p>按照 指令流 和 数据流 的多倍性进行分类。由Flynn（费林）在1996年提出。</p>
+<p>指令流可以理解为，传输指令的管道。<br>
+数据流可以理解为，传输由指令流调用的数据序列。</p>
+<p>而多倍性指的是</p>
+<blockquote>
+<p>在系统受限的部件上，同时处理同一执行阶段指令或数据的最大数目。</p>
+</blockquote>
+<p>也就是指令流和数据流 在受限系统部件上的处理时的最大数目。</p>
+<p>按照这个分类法，可以分为<br>
+<strong>单指令流单数据流（SISD）</strong><br>
+<strong>单指令流多数据流（SIMD）</strong><br>
+<strong>多指令流单数据流（MISD）(无实际参照)</strong><br>
+<strong>多指令流多数据流 （MIMD）</strong></p>
+<p>S 可以记为Single adj. 单独的 单一的<br>
+M 可以记为 Multiple adj. 多数的，多样的</p>
+<p><del>快进到出 英语 系列文章。</del></p>
+<h3 id="1-单指令流单数据流sisd">1. 单指令流单数据流（SISD）</h3>
+<p><img src="/ComputerSystem/SISD.png" alt="image"></p>
+<h3 id="2-单指令流多数据流simd">2. 单指令流多数据流（SIMD）</h3>
+<p><img src="/ComputerSystem/SIMD.png" alt="image"></p>
+<h3 id="3-多指令流单数据流misd">3. 多指令流单数据流（MISD）</h3>
+<p><img src="/ComputerSystem/MISD.png" alt="image"></p>
+<h3 id="4-多指令流多数据流mimd">4. 多指令流多数据流（MIMD）</h3>
+<p><img src="/ComputerSystem/MIMD.png" alt="image"></p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/8.computersystemframework-1.5-1/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
