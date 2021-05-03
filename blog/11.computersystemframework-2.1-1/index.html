@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">数据表示,寻址方式与指令系统 2.1-1</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-数据表示与数据结构">一 数据表示与数据结构</a>
+      <ul>
+        <li><a href="#1-数据表示">1. 数据表示</a></li>
+        <li><a href="#2-数据结构">2. 数据结构</a></li>
+        <li><a href="#3-数据表示与数据结构">3. 数据表示与数据结构</a></li>
+        <li><a href="#4-数据表示类型例子">4. 数据表示类型(例子)</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-高级数据表示">二 高级数据表示</a>
+      <ul>
+        <li><a href="#1-自定义数据表示">1. 自定义数据表示</a></li>
+        <li><a href="#2-向量数组数据表示">2. 向量，数组数据表示</a></li>
+        <li><a href="#3-堆栈数据表示">3. 堆栈数据表示</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="数据表示寻址方式与指令系统-21-1">数据表示,寻址方式与指令系统 2.1-1</h1>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a>
+（2.1-1）</p>
+<h2 id="一-数据表示与数据结构">一 数据表示与数据结构</h2>
+<h3 id="1-数据表示">1. 数据表示</h3>
+<p><strong>数据表示：指的是计算机硬件能识别和引用的数据类型。表现在它有对这种类型的数据进行操作的指令和运算部件。数据表示的实质是软硬件的取舍。</strong></p>
+<p>也就是说，数据表示指的是，<strong>计算机能够用硬件表示（识别、引用）数据类型</strong>，<strong>的表示方法。</strong></p>
+<p>（通常是什么int，double，char 最常用，相比简单，硬件实现容易的几种）</p>
+<h3 id="2-数据结构">2. 数据结构</h3>
+<p><strong>数据结构是要 通过软件映像，变换成计算机中所有具有的数据表示来实现。</strong></p>
+<p>举个例子，我们要是找份工作，比如java工程师。然后面试官问 “你对数据结构的理解怎么样？” 那我们知道，问的就是HashMap，ArrayList，Vector，String，Integer等具体怎么实现的。没错，这些就是数据结构。<br>
+比如我们反编译Integer，会发现它就是用简单的算法和int 实现的。</p>
+<p>树，向量，链表，集合，都是数据结构。</p>
+<p>也就是说，<strong>我们把能数据表示的数据，通过软件方式（算法）封装，封装成了一种软件实现的新的数据类型，为“数据结构”。虽然是软件方式（算法封装）实现的数据结构，但到计算机执行时，还是用的计算机硬件能表示的数据类型（数据表示）。</strong></p>
+<blockquote>
+<p>数据结构是一种具有一定逻辑关系，在计算机中应用某种存储结构，并且封装了相应操作的数据元素的集合。</p>
+</blockquote>
+<p><img src="/ComputerSystem/IMG_3.png" alt="图片"></p>
+<p>那么，我们能用int实现Integer，用char[]实现String。所以说<br>
+<strong>不同的数据表示，能为数据结构提供不同的支持，表现在实现效率和方便性不同。</strong></p>
+<p><del>建议动手反编译一个ArrayList试试，能看到是如何用 数据表示的数据类型+算法 实现的。常见的java反编译器有jd-gui , luyten &hellip;.</del></p>
+<h3 id="3-数据表示与数据结构">3. 数据表示与数据结构</h3>
+<p>开发中，我们把软件封装实现的数据结构作为一种类型使用，它的下一层是计算机硬件表示的数据。<br>
+因此，<strong>数据结构和数据表示是软硬件的交界面。</strong></p>
+<p><strong>研究：我们在 数据表示的数据 和 数据结构 分配时，要根据需求，以适当的硬件花费为代价，考虑设计哪些 数据表示 ， 以对 数据结构 带来高效率，方便性的支持。</strong></p>
+<p>因此，<strong>数据表示的确定实质上上软硬件的取舍。</strong></p>
+<p><del>就比如我们计算机中经常用字符串，那么我们就可以用硬件实现一个（变为 “数据表示”的），原来先用字符封装而成的，而现在可用硬件 表示（识别和引用），那么我软件上得到了硬件支持，效率就会大大增加。这就是一个简单的研究过程演示。</del></p>
+<h3 id="4-数据表示类型例子">4. 数据表示类型(例子)</h3>
+<blockquote>
+<ol>
+<li>当机器设置有定点加，减，乘，除，位移，比较等定点运算指令和相应的运算硬件，可以直接对定点数进行各种处理时，计算机就有了定点数据表示。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>当机器设置有了逻辑加，逻辑乘，按位相加，逻辑位移等逻辑运算指令和相应的逻辑运算硬件，可以直接对逻辑数进行各种处理时，计算机就有了逻辑数据表示。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>当机器有了浮点运算指令，（浮点加，减，乘除，比较，存）和相应的运算硬件，可以进行直接对浮点数进行各种处理时，计算机就有了浮点数据表示。</li>
+</ol>
+</blockquote>
+<p>只有定点数据时。逻辑数据和浮点数据可以通过 定点数据 靠算法封装实现。但能进行逻辑数据表示 和 浮点数据表示 后，有计算机硬件的支持，效率和方便程度都会大大提升。</p>
+<blockquote>
+<ol start="4">
+<li>21世纪50年代，提出了变址操作对向量，阵列数据结构的支持。如果对向量的100个元素进行+1操作，需要100条指令，将其取出，做完操作再放回去。当我们可以通过变址操作（可以数据表示），我们只需要一条指令操作(从首地址开始，用变址加法器，开始操作)。速度也能更快。</li>
+</ol>
+</blockquote>
+<h2 id="二-高级数据表示">二 高级数据表示</h2>
+<h3 id="1-自定义数据表示">1. 自定义数据表示</h3>
+<p>自定义(Self-defining)数据表示包括 <strong>标志符数据表示</strong> 和 <strong>数据描述符</strong> 两类。</p>
+<ol>
+<li><strong>标识符</strong>：为了缩短高级语言与机器语言的语义差异，减轻编译器的工作，获得更高的效率。将每个数据都和它的数据类型绑定，形成 数据 + 标识符，以交给硬件来处理数据类型问题。</li>
+</ol>
+<p>在高级语言中 ，我们的数据类型直接和数据本身绑在一起。1是整形，1.2是浮点，“White_cola”是字符串。但在传统机器语言程序中，并不同，它由操作码 指明 操作数据 的类型。</p>
+<p>如在高级语言中 <br>
+<code>a = a + b;</code><br>
+在传统机器语言中为</p>
+<p><img src="/ComputerSystem/IMG_4.png" alt="图片"></p>
+<p>显然，我们的操作符决定了要操作的数据的类型。<br>
+并且，无论变量a 和 b 是否为浮点数，这条指令都会把它们当作浮点来计算。</p>
+<p>这样高级语言的编译器 需要将不同类型的数据说明语句和运算符转换层机器语言中不同类型指令的操作码，并验证操作数据的类型是否一致，如果不一致，还需要以软件的方式进行转换。这对编译器增加了负担。</p>
+<p>为缩短语义差异，让计算机的每个数据都带如下类型的￼标志位。</p>
+<p><img src="/ComputerSystem/IMG_6.png" alt="图片"></p>
+<p>以说明数据是二进制整数 还是 十进制证整数 ，浮点数，字符串，地址字，将数据类型与数据本身绑定在一起。这样，机器语言操作符就和高级语言中的运算符一样了，可以通用于各种数据类型的操作了。这种数据表示方式 称为 标识符数据表示。</p>
+<p>标志符虽然主要用于指明数据类型，也可用于指明所用的信息类型。比如图片，音乐，视频，文本&hellip;.<br>
+标志符对高级语言程序透明。</p>
+<p>有了标志符，可以将
+<code>a = a + b</code>
+编译为类似
+<code>add a,b</code><br>
+由硬件通过数据标志符对数据进行类型问题处理。</p>
+<hr>
+<p><strong>标标符的优点</strong>：</p>
+<ol>
+<li><strong>简化了指令系统和程序设计。</strong> 指令通用语各种类型的处理，减少了指令系统中指令的种类。</li>
+<li><strong>简化了编译程序。</strong> 在之前，遇到+语句时，需要检查用哪种加法指令，而有了标志符，只需要形成通用的加法指令。编译程序缩短，编译过程加快，编译效率提高。</li>
+<li><strong>便于一致性效验，可由计算机硬件直接快速检测出多种程序设计错误，提供了类型安全环境。</strong> 如乘法指令处理的数据类型为字符串，或者将浮点与地址相加，这些错误。也简化了程序的调试。在之前，检验由编译软件完成，需要额外的开销。</li>
+<li><strong>能由硬件自动变换数据类型。</strong> 如果操作数（操作数据）相容但长度不同，硬件能自行转换，如 加法指令 操作的数据一个是整形 一个是浮点，不算错，会自动转换。</li>
+<li><strong>支持数据库系统的实现与数据类型无关的要求。 使程序不修改即可处理不同种数据。</strong> （什么数据都能存了），在之前有操作数据和长度信息限制。</li>
+<li><strong>为软件调试和应用软件开发提供了支持。</strong> 下断点的时候会获取数据类型。</li>
+</ol>
+<p><strong>标志符的缺点</strong>：</p>
+<ol>
+<li>每个数据字因增设标志符，会增加程序所占用的主存（内存条的内存）空间。</li>
+<li>采用标志符会降低指令的执行速度。</li>
+</ol>
+<p>所以，标志符有明显的优点，加上现在硬件和存储器价格下降，使这种方式被广泛使用。</p>
+<p><del>因为有人大量买硬件来挖矿，导致现在价格又贵了。</del></p>
+<hr>
+<ol start="2">
+<li><strong>描述符</strong>：数据描述符，用于描述所要访问的数据是整块还是当个的 以及 访问该数据块或数据元素所要的地址以及其他信息等。</li>
+</ol>
+<p>为减少标志符所占的存储空间，对向量，数组，记录等数据，由于元素属性相同，因此发展出数据描述符。</p>
+<p><strong>描述符与标志符的差别</strong> ：数据标志符是和每个数据相连的，合存在一个存储数据单元中，描述单个数据的类型特征。而数据描述符是与数据分开存放的。</p>
+<p>描述符和数据的形式分别为：</p>
+<p><img src="/ComputerSystem/IMG_9.png" alt="图片"></p>
+<p>如上图 前3位为“000”，表示该字为数据；前三位为“101”表示数据描述符。<br>
+数据描述符时，用8位标志位描述数据特性，描述整块数据时，“地址”字段用于指明首元素地址，“长度”用于指明块内的元素个数。</p>
+<p>一个描述符描述并指向一个数据块：</p>
+<p><img src="/ComputerSystem/IMG_12.png" alt="图片"></p>
+<p>执行指令时，如<code>add x,y</code>,会去主存找到对应x和y的描述符，然后将描述符放到一个寄存器，在寄存器中经过 “地址形成逻辑”，找到两个数据 或 数据块 进行相加处理。</p>
+<p>对于数据块，寄存器内的描述符可用于数据块中的所有元素，不需要每次操作一个元素，都需要先访问存取描述符。这样，一条指令就能执行对整个数据块的运算。</p>
+<h3 id="2-向量数组数据表示">2. 向量，数组数据表示</h3>
+<p>向量（Vector）在各种语言中都有出现，是一个存储数据的地方。类似于LinkedList(链表)，数组&hellip;</p>
+<p>增加 向量，数组数据表示，组成向量机，以为向量和数据组和数组提供更好的硬件支持。</p>
+<blockquote>
+<p>这不仅能加快形成元素地址，更重要的是便于实现把向量各元素成块预取到中央处理机，用一条向量，数组指令流水线或同时对整个向量，数组高速处理。</p>
+</blockquote>
+<p>有向量数据表示的处理机就是向量处理机，如向量流水机，阵列机，相联处理机。</p>
+<p>用数据描述符描述向量：</p>
+<p><img src="/ComputerSystem/IMG_13.png" alt="图片"></p>
+<h3 id="3-堆栈数据表示">3. 堆栈数据表示</h3>
+<p>堆栈数据结构在开发中的编译和子程序调用中很有用，为了实现简单高效，不少计算机没有堆栈数据表示，有堆栈数据表示的称为堆栈计算机。</p>
+<p>一般用寄存器实现堆栈数据结构支持都不太行，机器指令少，功能单一，堆栈在主存里 访问速度低。通常指用于保存子程序调用时返回的地址，少量堆栈实现程序参数传递。</p>
+<p>堆栈计算机表现于：</p>
+<ol>
+<li><strong>由高速寄存器组成的硬件堆栈，并附加控制电路，让它与主存中的堆栈区逻辑上构成整体</strong>，<strong>使堆栈的访问速度是寄存器的，容量是主存的</strong>。</li>
+<li><strong>堆栈操作指令 丰富且功能很强</strong>，可以直接对堆栈中的数据进行各种运算和处理。</li>
+<li><strong>有力地支持了高机语言程序的编译</strong>。</li>
+<li><strong>有力的支持了子程序的嵌套和递归调用。</strong> 子程序调用另一子程序称嵌套调用，子程序直接或经其他子程序间接 调(diào不是tiáo)用自己。称直接或间接递归调用。</li>
+</ol>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/10.computersystemframeworksummary1/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
