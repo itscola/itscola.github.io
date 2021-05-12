@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">数据表示,(寻址方式与指令系统) 2.2</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#三-引入数据表示的原则">三 引入数据表示的原则</a>
+      <ul>
+        <li><a href="#1-原则1">1. 原则1</a></li>
+        <li><a href="#2-原则2">2. 原则2</a></li>
+      </ul>
+    </li>
+    <li><a href="#四-浮点数尾数基址大小和下溢出处理方法的选择">四 浮点数尾数基址大小和下溢出处理方法的选择。</a>
+      <ul>
+        <li><a href="#1-浮点尾数基址大小">1. 浮点尾数基址大小</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#目前这里展示没更新完之后会补上需要更好多方式向读者来解释清楚这边">目前这里展示没更新完，之后会补上。（需要更好多方式向读者来解释清楚这边）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="数据表示寻址方式与指令系统-21-2">数据表示,寻址方式与指令系统 2.1-2</h1>
+<p>要看懂本篇文章，你可能需要先看之前的文章。这是一个系列，讲解<strong>计算机系统结构</strong>。 如果你正在学这门科目，那这个系列将非常适合你。</p>
+<p>这个系列会以我自己理解的方式，分享我在学习 计算机系统结构 过程中，所获得的知识。</p>
+<p>这个系列并不是普通的“笔记”，<strong>不同的是，我会用尽可能简洁通俗的语言来讲解。</strong></p>
+<p><a href="https://whitecola.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/"><!-- raw HTML omitted -->计算机系统结构系列<!-- raw HTML omitted --></a>
+（2.1-2）</p>
+<p>这一篇为2.1的第二篇，接着<a href="https://www.whitecola.top/blog/11.computersystemframework-2.1-1/">上一篇</a>来。</p>
+<h2 id="三-引入数据表示的原则">三 引入数据表示的原则</h2>
+<p>我们可以将数据变为可数据表示的类型，以便于提高对数据处理的速度，性能。也可以不那么做，这会以硬件复杂度等为代价。所以，我们需要一些原则来参考。什么样的最好引入，而什么样的不一定要引入。</p>
+<h3 id="1-原则1">1. 原则1</h3>
+<p>看引入数据以支持数据表示后，系统的效率是否有提高。<br>
+判断依据：<strong>实现时间 和 所需的存储空间是否有显著减少</strong>。</p>
+<p>实现时间的是否减少，主要是看<strong>主存和处理机之间传送的信息量是否减少</strong>。 传送信息越少，实现时间越少。（取主存的数据，比起CPU慢很多。）</p>
+<p>（数据类型被变成可以数据表示的数据，那么原本的数据类型消失 导致在主存和处理机之间传送的信息量必然减少。由于不需要算法封装数据表示实现数据类型，所占用的存储空间也必然减少）</p>
+<p><img src="/ComputerSystem/IMG_14.png" alt="图片"></p>
+<h3 id="2-原则2">2. 原则2</h3>
+<p><strong>引入数据后，通用性和利用率是否提高。</strong><br>
+也就是说，是否很多场合可以用 以及 有没有被高频率使用。</p>
+<h2 id="四-浮点数尾数基址大小和下溢出处理方法的选择">四 浮点数尾数基址大小和下溢出处理方法的选择。</h2>
+<p>新增加一个数据表示后，我们需要考虑的问题。 <br>
+如：怎么来表达？<br>
+这里用浮点数的尾数来举例。（如1.1111111该怎么用硬件表达。用不同方式的影响。）</p>
+<p>下溢处理：数据在进行加减乘除等计算时，会不可避免的遇到溢出问题。这里要研究如何处理这些问题。上溢（超出范围），下溢（超出最小值范围）。</p>
+<h3 id="1-浮点尾数基址大小">1. 浮点尾数基址大小</h3>
+<p>首先来看浮点数的一般格式。</p>
+<p><img src="/ComputerSystem/IMG_15.png" alt="图片"></p>
+<blockquote>
+<p>阶码部分可以用原码，补码或增码（也称移码）表示，不管怎么样表示，p+1位阶码部分中影响阶值大小的实际只有p位。</p>
+</blockquote>
+<p>阶段码部分通常使用二进制，给尾数部分留出空间。
+这里主要看尾数的设计。</p>
+<p>尾数二进制设计：
+Rm = 2.</p>
+<p>尾数八进制设计:
+Rm = 8.</p>
+<p>尾数十进制设计：
+Rm = 10 .</p>
+<p>尾数十六进制:
+Rm  = 16</p>
+<p>Rm在这边代表了进制。</p>
+<h1 id="本篇文章未完待续">本篇文章未完待续</h1>
+<h3 id="目前这里展示没更新完之后会补上需要更好多方式向读者来解释清楚这边">目前这里展示没更新完，之后会补上。（需要更好多方式向读者来解释清楚这边）</h3>
+<p>我会发布一个单独的文章来讲解这边,之后在这篇文章引用.</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/11.computersystemframework-2.1-1/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+          <div class="footer-mail">
+          <i class="far fa-envelope"></i> <a href="">QQ: 1302399643</a> </div>
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
