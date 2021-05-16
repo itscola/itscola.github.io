@@ -9,7 +9,7 @@
     <copyright>志存高远 , 以梦为马.</copyright>
     <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/bootstrap/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bootstrap前端开发框架-1</title>
+      <title>Bootstrap前端开发框架-栅格系统-1</title>
       <link>https://itscola.github.io/blog/browserside/1.bootstrap/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
@@ -38,7 +38,7 @@
 三. 栅格系统做响应式的原理 1. 栅格 栅格系统会将我们的页面中定义的“行”，平均分成12个格，我们主要做的仅仅是将html元素装入对应的格。
 html元素可以是一个div，可以是一堆 文字，又可以是一个图片&amp;hellip;&amp;hellip;
 平均分的12个格是根据尺寸来分的。手机上分的12个格的空间明显要小于电脑端的12个格。
-就比如，同一个元素，在PC端占用6格，而在手机端占用12格。这就是以 栅格系统 做响应式的基本原理。
+就比如，同一个元素，在PC端占用6格，而在手机端占用12格。这就是以 栅格系统 做响应式的基本原理。 通常会根据栅格系统自动调整.
 不仅如此，就算是PC端，栅格系统 也会根据不同尺寸屏幕，自动调整 “栅格”以及其元素 的尺寸，</description>
     </item>
     
