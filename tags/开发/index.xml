@@ -7,7 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Wed, 12 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap前端开发框架-1</title>
+      <link>https://itscola.github.io/blog/browser-side/bootstrap/bootstrap-1.0/</link>
+      <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/browser-side/bootstrap/bootstrap-1.0/</guid>
+      <description>Bootstrap-栅格系统-1 欢迎来到前端教程的bootstrap系列，
+ Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
+ 开发一个网站，非常简单，也许只需要1天html，css，js的学习，就能学会。
+但是如果要开发一个完善的网站，那就需要花点力气了。
+要学习前端，bootstrap是一个必学的内容。
+栅格系统的文章将 教你 如何实现网页面根据屏幕尺寸自动变化(页面响应式)。
+我们的Bootstrap系列为了读者的学习效率，将不对框架作使用之外的介绍。那些介绍你可以通过搜索引擎搜索来获得相关信息。在阅读这个系列之前，确保你已经有html，css，js基础。
+ 栅格系统我们将分为两篇文章来讲，第一篇为概念与原理的讲解，第二篇是实际写代码操作的讲解。
+  栅格系统为Bootstrap的第一章，我们之所以不和其它教程一样先讲Bootstrap中其它的，是因为这个比起其它内容更重要，也更核心。 注意，我们这是“教程”，不是“文档”。
+ 一.响应式 1. 响应式 网站响应式 指的是一个网站下，无论我们用什么大小的屏幕/设备访问。网站都能通过自动变化布局，按我们的需求展现网页的内容。
+2. 为什么要响应式 我们在电脑上开发好一个前端页面后，当我们用手机访问，它显示效果并不一定会好，因为布局的内容对于手机来说太小了，又或是布局变混乱了。
+如果我们针对不同显示设备做不同的网站，那将会非常麻烦。
+通过响应式布局，我们可以在同一个网站上，使用不同的设备，显示出针对不同设备的不同布局。
+3. 响应式效果 比如 Bootstrap中文文档 这个网站。
+手机访问是这样的：
+电脑/ipad 访问是这样的：
+这是同一个网站，只不过网站根据我们的显示面积进行了布局的调整。
+布局不同，当显示的内容是一样的。
+二. 栅格系统的概念 1. 什么是数栅格系统 栅格系统可以实现自动化的网站响应式，它通过将网站页面内容划分为“栅格”，然后对不同的尺寸的显示屏自动调整“栅格”，来做到。
+也就是说，我们需要将我们网站的元素放到框架提供的“栅格”里，然后由“栅格系统”自动化调整”栅格布局“。
+2. 栅格系统从哪来 “栅格系统” 来自各种前端框架，本期我们将学习Bootstrap的栅格系统。
+三. 栅格系统做响应式的原理 1. 栅格 栅格系统会将我们的页面中定义的“行”，平均分成12个格，我们主要做的仅仅是将html元素装入对应的格。
+html元素可以是一个div，可以是一堆 文字，又可以是一个图片&amp;hellip;&amp;hellip;
+平均分的12个格是根据尺寸来分的。手机上分的12个格的空间明显要小于电脑端的12个格。
+就比如，同一个元素，在PC端占用6格，而在手机端占用12格。这就是以 栅格系统 做响应式的基本原理。
+不仅如此，就算是PC端，栅格系统 也会根据不同尺寸屏幕，自动调整 “栅格”以及其元素 的尺寸，</description>
+    </item>
+    
     <item>
       <title>数据表示,(寻址方式与指令系统) 2.2</title>
       <link>https://itscola.github.io/blog/12.computersystemframework-2.1-2/</link>
