@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bootstrap前端开发框架-1</title>
-      <link>https://itscola.github.io/blog/browser-side/bootstrap/bootstrap-1.0/</link>
+      <link>https://itscola.github.io/blog/browserside/1.bootstrap/</link>
       <pubDate>Sun, 16 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://itscola.github.io/blog/browser-side/bootstrap/bootstrap-1.0/</guid>
+      <guid>https://itscola.github.io/blog/browserside/1.bootstrap/</guid>
       <description>Bootstrap-栅格系统-1 欢迎来到前端教程的bootstrap系列，
  Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
  开发一个网站，非常简单，也许只需要1天html，css，js的学习，就能学会。
