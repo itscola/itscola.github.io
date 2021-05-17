@@ -29,7 +29,7 @@
 生产环境的是经过压缩的, 为了加载更快, 而我们要学习它,那么选择源码. 点击下载源码. 下载好后解压,并找到dist文件夹,然后再找到js文件夹. Bootstrap.js 为没有压缩过的,占用相比大些.
 Bootstrap.min.js 为压缩过的, 占用相比较小.
 2. 引入到项目 首先将dist文件夹内的所有文件夹(包括内容), 复制进项目中. 在项目的html代码中, 引入Bootstrap的css文件 与 js文件.
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Bootstrap-Demo1&amp;lt;/title&amp;gt; &amp;lt;link href=&amp;#34;css/bootstrap.</description>
+二. 栅格系统的使用 1. 定义容器 2. 定义行 3. 定义元素 根据格式:</description>
     </item>
     
     <item>
