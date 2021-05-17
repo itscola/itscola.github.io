@@ -7,7 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bootstrap前端开发框架-栅格系统-2</title>
+      <link>https://itscola.github.io/blog/browserside/2.bootstrap/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/browserside/2.bootstrap/</guid>
+      <description>Bootstrap-栅格系统-2 在读这篇文章前, 如果你不了解 栅格系统 的概念, 点击此处去上一篇
+欢迎来到前端教程的bootstrap系列，
+ Bootstrap 是最受欢迎的 HTML、CSS 和 JS 框架，用于开发响应式布局、移动设备优先的 WEB 项目。
+ 开发一个网站，非常简单，也许只需要1天html，css，js的学习，就能学会。
+但是如果要开发一个完善的网站，那就需要花点力气了。
+要学习前端，bootstrap是一个必学的内容。
+栅格系统的文章将 教你 如何实现网页面根据屏幕尺寸自动变化(页面响应式)。
+我们的Bootstrap系列为了读者的学习效率，将不对框架作使用之外的介绍。那些介绍你可以通过搜索引擎搜索来获得相关信息。在阅读这个系列之前，确保你已经有html，css，js基础。
+ 栅格系统我们将分为两篇文章来讲，第一篇为概念与原理的讲解，第二篇是实际写代码操作的讲解。
+  栅格系统为Bootstrap的第一章，我们之所以不和其它教程一样先讲Bootstrap中其它的，是因为这个比起其它内容更重要，也更核心。 注意，我们这是“教程”，不是“文档”。
+ 一. Bootstrap的安装 1. 下载 我们可以在 Bootstrap中文文档 的网站进行安装.
+首先我们将看到,这边有用于 生产环境的Bootstrap 和 Bootstrap源码.
+生产环境的是经过压缩的, 为了加载更快, 而我们要学习它,那么选择源码. 点击下载源码. 下载好后解压,并找到dist文件夹,然后再找到js文件夹. Bootstrap.js 为没有压缩过的,占用相比大些.
+Bootstrap.min.js 为压缩过的, 占用相比较小.
+2. 引入到项目 首先将dist文件夹内的所有文件夹(包括内容), 复制进项目中. 在项目的html代码中, 引入Bootstrap的css文件 与 js文件.
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34; /&amp;gt; &amp;lt;title&amp;gt;Bootstrap-Demo1&amp;lt;/title&amp;gt; &amp;lt;link href=&amp;#34;css/bootstrap.</description>
+    </item>
+    
     <item>
       <title>Bootstrap前端开发框架-栅格系统-1</title>
       <link>https://itscola.github.io/blog/browserside/1.bootstrap/</link>
