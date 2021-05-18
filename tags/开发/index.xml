@@ -7,7 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(数据表示,)寻址方式(与指令系统) 2.2-1</title>
+      <link>https://itscola.github.io/blog/13.computersystemframework-2.2-1/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/13.computersystemframework-2.2-1/</guid>
+      <description>提示：本篇文章涉及少量汇编内容。
+1. 寻址方式(addressing mode)的定义⭐️ 寻址方式指的是 指令通过什么方式来 寻找/访问 需要的数据(操作数或信息)的地址。
+不同的计算机系统都有不同的寻址方式。
+也就是说，执行一条指令， 这条指令需要通过什么方式来访问数据的 地址。
+地址在指令中主要有两种：
+1. 形式地址：通常需要给指令的每一个操作数加一个地址。 先要知道一条指令由 操作码 和 操作数 构成。
+ 操作数指出了指令执行的操作所需要数据的来源。
+ 图中操作数的位置/字段 可以是操作数本身。
+也可以是 要指向操作数 的操作地址，也可以是 要指向操作数 的操作地址 的计算方法。也就是地址码。
+而操作码 就表示我们要进行的操作。 比如ADD ，MOV &amp;hellip;&amp;hellip;.
+一条汇编指令：MOV(操作码) 操作数字段(操作数 操作数) 如 MOV AH，06H 每个指令里都可能包含多个地址，也可能不含有地址。但如果指令里给出了地址，那么我们称 指令中给出的地址为 形式地址。
+如 ADD A1 , A2 这里的A1和A2都是形式地址。
+2. 实际地址：使用形式地址信息按照一定规则计算出来的 数值/数据 称为实际地址 通常我们指令中给出的形式地址，需要按照规则进行一定的计算然后才能得出真正的 数值/数据 ， 我们把这通过计算后的 真正的 数值/数据 称为 实际地址。
+实际地址才能访问 寄存器 或 主存 的数据。
+如 ADD A1 , A2 + MEM[1200] ， 操作数字段的第二个操作数(A2 + MEM[1200]) 需要先进行计算, 然后形成的实际访问 寄存器 或 主存 中 真正数据的地址 就是实际地址。之后，赋值给A1时，再形成实际地址。</description>
+    </item>
+    
     <item>
       <title>Bootstrap前端开发框架-栅格系统-2</title>
       <link>https://itscola.github.io/blog/browserside/2.bootstrap/</link>

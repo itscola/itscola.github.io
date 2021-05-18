@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">(数据表示,)寻址方式(与指令系统) 2.2-1</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-寻址方式addressing-mode的定义">1. 寻址方式(addressing mode)的定义⭐️</a>
+      <ul>
+        <li><a href="#1-形式地址通常需要给指令的每一个操作数加一个地址">1. 形式地址：通常需要给指令的每一个操作数加一个地址。</a></li>
+        <li><a href="#2-实际地址使用形式地址信息按照一定规则计算出来的-数值数据-称为实际地址">2. 实际地址：使用形式地址信息按照一定规则计算出来的 数值/数据 称为实际地址</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-寻址方式分类">2. 寻址方式分类⭐️</a>
+      <ul>
+        <li><a href="#1-面向寄存器寻址">1. 面向寄存器寻址</a></li>
+        <li><a href="#2-面向堆栈寻址">2. 面向堆栈寻址</a></li>
+        <li><a href="#3-面向主存寻址">3. 面向主存寻址</a></li>
+        <li><a href="#4-补充">4. 补充</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-常用的寻址方式">3. *常用的寻址方式</a></li>
+    <li><a href="#4-寻址方式在指令中的指明">4. 寻址方式在指令中的指明⭐️</a>
+      <ul>
+        <li><a href="#4-1-操作数-和-地址码-和-操作码-的区别补充">4-1. 操作数 和 地址码 和 操作码 的区别【补充】</a></li>
+        <li><a href="#1-寻址方式在指令中的指明的概念">1. 寻址方式在指令中的指明的概念</a></li>
+        <li><a href="#2-占用操作码-指明方式">2. 占用操作码 指明方式</a></li>
+        <li><a href="#3-占用地址码-指明方式">3. 占用地址码 指明方式</a></li>
+        <li><a href="#4-两种方式比较">4. 两种方式比较</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p><strong>提示：本篇文章涉及少量汇编内容。</strong></p>
+<h2 id="1-寻址方式addressing-mode的定义">1. 寻址方式(addressing mode)的定义⭐️</h2>
+<p>寻址方式指的是 <strong>指令通过什么方式来</strong> 寻找/访问 需要的数据(操作数或信息)的地址。<br>
+不同的计算机系统都有不同的寻址方式。</p>
+<p>也就是说，执行一条指令， 这条指令需要通过什么方式来访问数据的 <u>地址</u>。</p>
+<p>地址在指令中主要有两种：</p>
+<h3 id="1-形式地址通常需要给指令的每一个操作数加一个地址">1. 形式地址：通常需要给指令的每一个操作数加一个地址。</h3>
+<p>先要知道一条指令由 操作码 和 操作数 构成。</p>
+<p><img src="/ComputerSystem/IMG_18.png" alt="图片"></p>
+<blockquote>
+<p>操作数指出了指令执行的操作所需要数据的来源。</p>
+</blockquote>
+<p>图中操作数的位置/字段 可以是操作数本身。<br>
+也可以是 要指向操作数 的操作地址，也可以是 要指向操作数 的操作地址 的计算方法。也就是地址码。</p>
+<p>而操作码 就表示我们要进行的操作。 比如ADD ，MOV &hellip;&hellip;.</p>
+<pre><code>一条汇编指令：MOV(操作码) 操作数字段(操作数 操作数)
+如 MOV AH，06H
+</code></pre><p>每个指令里都可能包含多个地址，也可能不含有地址。但如果指令里给出了地址，那么我们称 指令中给出的地址为  <strong>形式地址</strong>。</p>
+<p>如 ADD A1 , A2  这里的A1和A2都是形式地址。</p>
+<h3 id="2-实际地址使用形式地址信息按照一定规则计算出来的-数值数据-称为实际地址">2. 实际地址：使用形式地址信息按照一定规则计算出来的 数值/数据 称为实际地址</h3>
+<p>通常我们指令中给出的形式地址，需要按照规则进行一定的计算然后才能得出真正的 数值/数据 ， 我们把这通过计算后的 真正的 数值/数据 称为 实际地址。</p>
+<p>实际地址才能访问 寄存器 或 主存 的数据。</p>
+<p><img src="/ComputerSystem/IMG_19.png" alt="图片"></p>
+<p>如 ADD A1 , A2 + MEM[1200] ， 操作数字段的第二个操作数(A2 + MEM[1200])  需要先进行计算, 然后形成的实际访问 寄存器 或 主存 中 真正数据的地址 就是实际地址。之后，赋值给A1时，再形成实际地址。</p>
+<p>(通常在指令中看不到)</p>
+<p><del>形式地址和实际地址有可能一样，也可能不一样。 寄存器通常一样，存储器中通常不一样。</del></p>
+<h2 id="2-寻址方式分类">2. 寻址方式分类⭐️</h2>
+<h3 id="1-面向寄存器寻址">1. 面向寄存器寻址</h3>
+<blockquote>
+<p>寄存器是CPU内部用来存放数据的一些小型存储区域，用来暂时存放参与运算的数据和运算结果。</p>
+</blockquote>
+<blockquote>
+<p>面向寄存器寻址：操作数可以取自寄存器和主存，结果通常放在寄存器中，少部分放在内存。</p>
+</blockquote>
+<h3 id="2-面向堆栈寻址">2. 面向堆栈寻址</h3>
+<p>堆栈是一个特定的存储区或寄存器，是个先进后出的队列。<br>
+<del>如需了解堆栈，建议搜索java堆栈。</del></p>
+<blockquote>
+<p>面向堆栈寻址：主要访问堆栈，少量访问主存或寄存器。</p>
+</blockquote>
+<h3 id="3-面向主存寻址">3. 面向主存寻址</h3>
+<p>主要访问主存，少量访问寄存器。</p>
+<h3 id="4-补充">4. 补充</h3>
+<p>还有一种面向IO寻址，通常已经包括在主存那边了。 <br>
+通常是多个寻址方式同时使用，而不是只是一个。</p>
+<h2 id="3-常用的寻址方式">3. *常用的寻址方式</h2>
+<blockquote>
+<p>这里内容引用了少量其它视频教程的内容。<br>
+但在这里会更改部分内容 以及 加上原版教程没有的内容以便于理解。</p>
+</blockquote>
+<details>
+<summary>点击展开查看</summary>
+<pre>
+<table>
+<thead>
+<tr>
+<th>寻址方式</th>
+<th>指令</th>
+<th>含义</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>立即值寻址/立即数寻址</td>
+<td>ADD R4 , #3</td>
+<td>Regs[R4] = Regs[R4] + 3</td>
+<td>这边直接在指令里给出数 “3”，不需要去取值</td>
+</tr>
+<tr>
+<td>直接寻址/绝对寻址</td>
+<td>ADD R1 , {1001}</td>
+<td>Regs[R1] = Regs[R1] + Mem[1001]</td>
+<td>直接给出地址</td>
+</tr>
+<tr>
+<td>寄存器直接寻址</td>
+<td>ADD R4 , R3</td>
+<td>Regs[R4] = Regs[R4] + Regs[R3]</td>
+<td>将R3，R3作为寄存器地址</td>
+</tr>
+<tr>
+<td>寄存器间接寻址</td>
+<td>ADD R4 , (R1)</td>
+<td>Regs[R4] = Regs[R4] + Mem[Regs[R1]]</td>
+<td>将寄存器R1作为内存中的地址 与R4相加 赋给R4</td>
+</tr>
+<tr>
+<td>存储器间接寻址</td>
+<td>ADD R1 , @(R3)</td>
+<td>Regs[R1] = Regs[R1] + Mem[Mem[Regs[R3]]]</td>
+<td>将R3内容作为地址，访问主存储器，然后再将拿出的内容作为地址， 主存储器 ，然后获得数据。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>寻址方式</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>变址寻址</td>
+<td>“指令中的地址码 + 给定的变址寄存器 ， 数组应用”   每加一个4就是一个新地址。1 字= 4 字节 = 32比特</td>
+</tr>
+<tr>
+<td>相对寻址</td>
+<td>“相对于当前PC进行加减，分支跳转。”</td>
+</tr>
+<tr>
+<td>基址寻址</td>
+<td>“指令中的地址码 + 基地址寄存器，虚拟存储器引用”</td>
+</tr>
+<tr>
+<td>堆栈寻址</td>
+<td>“先进后出队列，不需要给地址，进栈指针减一，出栈指针加一”</td>
+</tr>
+</tbody>
+</table>
+<p></pre></p>
+</details>
+<h2 id="4-寻址方式在指令中的指明">4. 寻址方式在指令中的指明⭐️</h2>
+<h3 id="4-1-操作数-和-地址码-和-操作码-的区别补充">4-1. 操作数 和 地址码 和 操作码 的区别【补充】</h3>
+<p>我们前面说过， 一条指令的格式 由 <br>
+操作码 + 操作数  来构成。</p>
+<table>
+<thead>
+<tr>
+<th>定义</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>操作码:</td>
+<td>指令执行的方式</td>
+</tr>
+<tr>
+<td>操作数:</td>
+<td>指令执行的对象</td>
+</tr>
+<tr>
+<td>地址码:</td>
+<td>操作数这个对象的内容</td>
+</tr>
+</tbody>
+</table>
+<p>我们可以这样理解。<br>
+操作数是一个盒子，而盒子里面装的是 地址码。</p>
+<p>所以 我们也可以说 一条指令的结构是 ： 操作码 + 地址码</p>
+<h3 id="1-寻址方式在指令中的指明的概念">1. 寻址方式在指令中的指明的概念</h3>
+<p><strong>占用操作码的某些位置，来指明寻址方式。</strong><br>
+<del>也就是 占用操作码的一些位置，来指明指令寻址的方式。比如直接寻址，或是 间接寻址</del></p>
+<p>我们需要在指令中的 操作码 和 地址码 之间选择一个占用，来表达寻址方式。<br>
+这也就是两种指明方式，一种是 占用操作码 ，另一种是占用 地址码。</p>
+<blockquote>
+<p>寻址方式在指令中一般有两种不同的指明方式，不同计算机可用其中的一种。一种方式是占用操作码种的某些位来指明。另一种方式是不占用操作码，而是在地址码部分专门设置寻址方式位字段指明。 【下方解释】</p>
+</blockquote>
+<h3 id="2-占用操作码-指明方式">2. 占用操作码 指明方式</h3>
+<p>实际上是增加多个 操作码(指令) 实现。</p>
+<p>比如 <br>
+R1 = R1 + R2   -&gt;   ADD R1 , R2</p>
+<p>如果我要再实现 <br>
+R1 = R2 + 20 <br>
+就可以加一条指令 假如加一个 ADDN
+那么就是 ADDN R2 , 20</p>
+<p>这就是占用操作码来实现指明寻址方式了。</p>
+<h3 id="3-占用地址码-指明方式">3. 占用地址码 指明方式</h3>
+<p>在地址码专门设置寻址方式位字段指明。</p>
+<p>就是说，每一个地址码那边，加上一个“地址标志符”，来表示寻址方式。</p>
+<p>假如 R1 的地址是 10011 （）<br>
+我可以给它的地址码加上点内容 来表示 寻址方式。
+比如在前面加个 111 那就变成了 11110011。表示直接寻址。</p>
+<p>那么可以加个101 变为 10110011 表示间接寻址。</p>
+<p>如果这个地址标识符是两位 如10 那就4种寻址方式。
+3位 那就支持8种方式。</p>
+<h3 id="4-两种方式比较">4. 两种方式比较</h3>
+<blockquote>
+<p>相比而言，寻址方式位(占用地址码)的寻址灵活，操作码短，但学要专门的寻址方式位字段。</p>
+</blockquote>
+<blockquote>
+<p>就操作码 和 寻址方式位 的总数来看，可能会比占用操作码种某些来指明的方式更长。（需要占用的位更多 就如 “3. 占用地址码 指明方式” 所示。）</p>
+</blockquote>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/browserside/2.bootstrap/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+      
+  </div>
+
+
+<p class="copyright meta">志存高远 , 以梦为马.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
