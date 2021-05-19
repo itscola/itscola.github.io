@@ -6,23 +6,51 @@
     <description>Recent content in Tags on White_cola Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <copyright>志存高远 , 以梦为马.</copyright>
-    <lastBuildDate>Tue, 18 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</copyright>
+    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ComputerSystemFramework</title>
-      <link>https://itscola.github.io/tags/computersystemframework/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <title>C#</title>
+      <link>https://itscola.github.io/tags/c#/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://itscola.github.io/tags/computersystemframework/</guid>
+      <guid>https://itscola.github.io/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unity</title>
+      <link>https://itscola.github.io/tags/unity/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/unity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>开发</title>
       <link>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</link>
-      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
       
       <guid>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>游戏开发</title>
+      <link>https://itscola.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ComputerSystemFramework</title>
+      <link>https://itscola.github.io/tags/computersystemframework/</link>
+      <pubDate>Tue, 18 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/tags/computersystemframework/</guid>
       <description></description>
     </item>
     

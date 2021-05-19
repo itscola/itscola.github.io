@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">Unity基础操作与窗口布局 学习日记01</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#在unity中创建sprites精灵--并了解基本操作">在Unity中创建Sprites(精灵) / 并了解基本操作</a>
+      <ul>
+        <li><a href="#1-何为sprites-精灵">1. 何为Sprites (精灵)</a></li>
+        <li><a href="#2-unity窗口布局---创建一个精灵">2. Unity窗口布局 - 创建一个精灵</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="unity-engine-for-2d-games-01">Unity Engine for 2D Games 01</h1>
+<p>欢迎来到我的Unity学习日记, 是时候做个属于自己的游戏了.<br>
+我将会在这个系列中记录我学到的Unity知识.</p>
+<p>Unity是一个很有名的游戏制作引擎, 如果你需要介绍, 可以上网搜索.<br>
+很多不错的游戏由Unity开发 , 举个最近游戏的例子 , 原神.</p>
+<p style="color : white">Unity并不是只能开发画质不高 或 小型 游戏, 它同样可以做到UE引擎能做到的画质. 这是刻板印象了.</p>
+<p style="color : white">Unity好上手 , 就导致经常看到Unity的小游戏出现.</p>
+<h2 id="在unity中创建sprites精灵--并了解基本操作">在Unity中创建Sprites(精灵) / 并了解基本操作</h2>
+<h3 id="1-何为sprites-精灵">1. 何为Sprites (精灵)</h3>
+<p>精灵 是从 &ldquo;像素图片&rdquo; 中, 得到的 2D 对象.<br>
+我们可以让它走路. 让它攻击 , 让它跳跃 , 再或者 , 我们可以让它飞起来.</p>
+<p>它可以是一个2D游戏中的 NPC 也可以是一个怪物 , 更可以是一个主角.</p>
+<p><img src="/Unity2D/1.png" alt="SpriteDemo"><br>
+图片来自 <a href="https://www.pixiv.net/artworks/89921205">https://www.pixiv.net/artworks/89921205</a></p>
+<h3 id="2-unity窗口布局---创建一个精灵">2. Unity窗口布局 - 创建一个精灵</h3>
+<p>首先,我们创建一个2D Unity项目,然后将Unity切换为默认布局.
+<img src="/Unity2D/2.png" alt="切换布局"></p>
+<p>Unity有</p>
+<ol>
+<li>Hierarchy (层级窗口)</li>
+<li>Game 视图 (游戏窗口)</li>
+<li>Scene 视图 (场景窗口)</li>
+<li>Inspector 窗口</li>
+<li>Project 窗口 (项目窗口)
+<img src="/Unity2D/3.png" alt="窗口"></li>
+</ol>
+<p>这些窗口将会在动手操作时 , 让你搞懂.</p>
+<p>下面来看 Scene 窗口 场景窗口, 我们可以通过滚轮 放大或缩小. 又可以通过按住alt键 然后鼠标按住拖动位置.<br>
+我们将在这个窗口构建内容, 以让玩家看到.<br>
+<img src="/Unity2D/4.png" alt="场景窗口"></p>
+<p>我们可以看到目前我们的场景窗口中, 有一个摄像头, 它也可以在层级窗口处看到. 我们将这种称为 Game Object (游戏对象)
+<img src="/Unity2D/5.png" alt="GameObject"></p>
+<p>当我们点击一个Game Object 我们将可以在Inspector 窗口 看到所有关于它的信息.<br>
+<img src="/Unity2D/6.png" alt="Inspector窗口"></p>
+<p>我们可以在 游戏窗口中 看到摄像头中看到的. 也就是真实游戏中的场景. 点击上方的三角按钮, 即可开始游戏.<br>
+<img src="/Unity2D/7.png" alt="游戏窗口"></p>
+<p>我们可以在项目窗口 选中Assest(资源) 然后右键. 就可以创建一写 游戏对象 了.
+<img src="/Unity2D/8.png" alt="项目窗口"></p>
+<p>下面来创建一个精灵<br>
+<img src="/Unity2D/9.png" alt="创建精灵"></p>
+<p>将创建好的精灵拖动至 游戏窗口 又或者是 层级窗口. 以创建精灵这个游戏对象.
+<img src="/Unity2D/10.png" alt="实例化窗口"></p>
+<p>在工具栏这边, 可以对游戏对象进行操作. 快捷键分别为Q W E R T. 这和常用3D建模软件的操作很像.
+<img src="/Unity2D/11.png" alt="工具栏"></p>
+<p>单击精灵, 我们就可以看到这个游戏对象的属性了.<br>
+<img src="/Unity2D/12.png" alt="游戏对象"></p>
+<p>就算镜头中没有对象 , 我们依然可以双击 层级窗口的这个对象 , 然后会回到 场景窗口 对象所在的位置.<br>
+<img src="/Unity2D/13.png" alt="游戏对象"></p>
+<p>我们也可以选中对象后 , 然后在 Inspector 窗口 , 编辑位置等. 往往通过数字编辑 会更加精准.
+<img src="/Unity2D/14.png" alt="游戏对象编辑"></p>
+<p>当我们单击 3D/2D 按钮, 即可在3D / 2D 编辑视角中切换.<br>
+在3D视角中 , 长按鼠标拖动选择内容 , 按住鼠标中键移动. 按住alt+鼠标通过 旋转视角. 按住右键拖动 改变视角的朝向.
+<img src="/Unity2D/15.png" alt="游戏对象编辑"></p>
+<p>在游戏窗口 , 我们可以在这里改变视角大小.
+<img src="/Unity2D/16.png" alt="游戏窗口"></p>
+<p>随着场景窗口 游戏对象的改变 , 游戏窗口也会跟着改变.<br>
+<img src="/Unity2D/17.png" alt="游戏窗口"></p>
+<p>不在摄像机视角下的 对象, 讲不会显示在 游戏窗口中.
+<img src="/Unity2D/18.png" alt="游戏窗口"></p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/13.computersystemframework-2.2-1/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+      
+  </div>
+
+
+<p class="copyright meta">失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

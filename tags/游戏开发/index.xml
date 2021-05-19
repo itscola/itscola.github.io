@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>游戏开发 on White_cola Blog</title>
+    <link>https://itscola.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 游戏开发 on White_cola Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</copyright>
+    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity基础操作与窗口布局 学习日记01</title>
+      <link>https://itscola.github.io/blog/unity2d/what-is-sprite-in-unity/</link>
+      <pubDate>Wed, 19 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/unity2d/what-is-sprite-in-unity/</guid>
+      <description>Unity Engine for 2D Games 01 欢迎来到我的Unity学习日记, 是时候做个属于自己的游戏了.
+我将会在这个系列中记录我学到的Unity知识.
+Unity是一个很有名的游戏制作引擎, 如果你需要介绍, 可以上网搜索.
+很多不错的游戏由Unity开发 , 举个最近游戏的例子 , 原神.
+Unity并不是只能开发画质不高 或 小型 游戏, 它同样可以做到UE引擎能做到的画质. 这是刻板印象了.
+Unity好上手 , 就导致经常看到Unity的小游戏出现.
+在Unity中创建Sprites(精灵) / 并了解基本操作 1. 何为Sprites (精灵) 精灵 是从 &amp;ldquo;像素图片&amp;rdquo; 中, 得到的 2D 对象.
+我们可以让它走路. 让它攻击 , 让它跳跃 , 再或者 , 我们可以让它飞起来.
+它可以是一个2D游戏中的 NPC 也可以是一个怪物 , 更可以是一个主角.
+图片来自 https://www.pixiv.net/artworks/89921205
+2. Unity窗口布局 - 创建一个精灵 首先,我们创建一个2D Unity项目,然后将Unity切换为默认布局. Unity有
+ Hierarchy (层级窗口) Game 视图 (游戏窗口) Scene 视图 (场景窗口) Inspector 窗口 Project 窗口 (项目窗口)   这些窗口将会在动手操作时 , 让你搞懂.</description>
+    </item>
+    
+  </channel>
+</rss>
