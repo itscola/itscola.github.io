@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">(数据表示,)寻址方式(与指令系统) 2.2.2-2</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一逻辑空间-和-主存空间">一，逻辑空间 和 主存空间</a>
+      <ul>
+        <li><a href="#1-逻辑地址与主存物理地址的概念">1. 逻辑地址与主存物理地址的概念</a></li>
+        <li><a href="#2-逻辑地址与主存物理地址的分配">2. 逻辑地址与主存物理地址的分配</a></li>
+        <li><a href="#3-逻辑空间-和-主存空间-的大小">3. 逻辑空间 和 主存空间 的大小</a></li>
+        <li><a href="#4-逻辑空间-主存空间-转换">4. 逻辑空间 主存空间 转换</a></li>
+      </ul>
+    </li>
+    <li><a href="#二程序在主存中的定位技术">二，程序在主存中的定位技术</a></li>
+  </ul>
+</nav>
+    <hr>
+<p>提示：本篇涉及少量 编程，汇编 相关内容，不会可能看不懂。</p>
+<h2 id="一逻辑空间-和-主存空间">一，逻辑空间 和 主存空间</h2>
+<h3 id="1-逻辑地址与主存物理地址的概念">1. 逻辑地址与主存物理地址的概念</h3>
+<p>形式地址和实际地址是针对的所有的寻址，而逻辑地址与主存物理地址针对的是主存。</p>
+<blockquote>
+<p>逻辑地址：开发者编程用到的地址。<br>
+物理地址：程序在主存中实际的地址</p>
+</blockquote>
+<p>当定义一个字段(变量)，会开辟内存空间，给字段使用。从0号地址 向后分配(0,1,2,3,4&hellip;)。</p>
+<p>这样就有一个问题，如果我同时运行多个程序，每个程序都有字段占用0号地址 然后向后分配到内存空间。不可能每个都将一个内存空间 从0开始向后占用。</p>
+<p>所以我们就定义出 逻辑地址 和 主存物理地址。</p>
+<p><u>我们给每个程序定义一个虚拟空间，称为“逻辑空间”，每个空间都占用逻辑地址都从0开始向后。</u></p>
+<p><u>逻辑空间是在磁盘上的，因此，逻辑空间 可以大于 物理空间，也可以小于 物理空间。</u></p>
+<p><u>物理地址则是程序在物理空间中的实际位置。</u></p>
+<p><img src="/ComputerSystem/IMG_21.png" alt="图片"></p>
+<p><strong>可以理解为，我们通过磁盘，给每个程序虚拟出一个逻辑空间，然后让程序在逻辑空间中存储。在程序运行时，我们再把逻辑空间的数据 放到物理空间。以便程序所占空间的位置，不会互相影响。</strong></p>
+<p><del>逻辑地址都是虚拟的，你把握不住，程子。</del></p>
+<h3 id="2-逻辑地址与主存物理地址的分配">2. 逻辑地址与主存物理地址的分配</h3>
+<p>虽然程序在 逻辑空间 里，但实际运行时，还是要在 物理空间 中运行，才能真正工作。</p>
+<p>主存 会在 物理空间 找一个空位，把磁盘中 逻辑空间内的数据，放到 主存中物理空间的 空位中。</p>
+<p><img src="/ComputerSystem/IMG_20.png" alt="图片"></p>
+<p>假如逻辑空间中，逻辑地址是，0，a , b , c , d .  <br>
+主存中正好第 x位开始有空余空间。 <br>
+那么我们把这些数据放到主存这个位置中，主存物理地址 就成了 0 + x , a + x , c + x , d+x &hellip;. 如下图：</p>
+<p><img src="/ComputerSystem/IMG_22.png" alt="图片"></p>
+<p><u>每次 空余主存空间 来存放出程序的 逻辑空间 的位置是不固定的。  有时候刚重启，位置就可能更靠前，晚点重启，就可能更靠后。</u></p>
+<p><u>并且，主存空间内对于一个逻辑空间 不一定是连续的， 空间的中间可能有空余部分。逻辑空间是连续的，因为不需要额外加数据</u></p>
+<p>不连续的原因：可能一个程序目前将 逻辑空间 的数据存入 物理空间中的一块后，另一个程序紧接着占用了后面的空余空间。 过了一会， 第一个程序又需要新的空间，那就要隔开后一个程序的空间，来存放了。</p>
+<h3 id="3-逻辑空间-和-主存空间-的大小">3. 逻辑空间 和 主存空间 的大小</h3>
+<p>主存地址空间一般称为实存空间，就是实际的内存大小。（就是内存条的内存）</p>
+<p>逻辑空间，可以很小，也可以很大。甚至可以大过 实存空间。 因为它占的是磁盘。</p>
+<h3 id="4-逻辑空间-主存空间-转换">4. 逻辑空间 主存空间 转换</h3>
+<p>运行时， 需要将逻辑空间 转换为 主存空间。</p>
+<p>我们有很多方法来转换。 可以通过基地址相加转换，又可以通过查表等。</p>
+<h2 id="二程序在主存中的定位技术">二，程序在主存中的定位技术</h2>
+<p>（接着 一 的内容来。）</p>
+<p><strong>就是转换后，如何的定位程序在主存中的位置</strong></p>
+<p><u>我们知道我们要将 每个程序的逻辑空间，放入主存物理空间。放入后还是不连续的，那么我们要怎么知道，究竟放在了主存的哪个位置？只有知道了这个位置，才能将它在运行时 内存中进行调用。
+</u></p>
+<p>三种方式，基本原理是 逻辑地址 转变成 物理地址：</p>
+<hr>
+<ol>
+<li>静态再定位：将程序装入主存时，用软件（编译器）将逻辑地址变为物理地址。</li>
+</ol>
+<p>也就是说，在编译时，编译器直接将 逻辑地址 转换为 物理地址，在运行时，就不需要再转换。</p>
+<p><em>但是，每次编译器转换逻辑地址后，存放到的物理空间的地址，是 固定的 静态的。只能放在那个位置，无法放到别的位置。</em></p>
+<hr>
+<ol start="2">
+<li>动态再定位：指令不修改，通过基地址寻址方法来解决。</li>
+</ol>
+<p>每次在主存中找到一个空余的空间，然后给 每个程序 主存空间的基地址（开头的地址）。 <u>然后将逻辑地址 <strong>映射到</strong> 物理地址。</u></p>
+<p>也就是 ： 逻辑(形式)地址 + 主存基地址(主存开头地址) = 物理(有效)地址。</p>
+<p><a href="https://www.whitecola.top/blog/13.computersystemframework-2.2-1/#3-%E5%B8%B8%E7%94%A8%E7%9A%84%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F">立即数（直接拿数），相对寻址（直接拿地址）</a> 就不需要加基地址了。 其它大部分需要。</p>
+<p>有个情况，当逻辑空间，拿到基地址，映射后，发现分配的 物理空间 小于了 逻辑空间。 比如逻辑空间有1000个地址，而要分配的物理空间只能存下900个地址。 为了解决这个问题，就需要进行 “越界分析”（硬件判断） 来检查是否存在这个问题。</p>
+<p><em>所以这种定位就有个条件，逻辑空间每次分配时，要小于物理空间才可以。</em>  <br>
+否则，就需要用到下一个技术了。 “虚实地址的映像表”。</p>
+<hr>
+<ol start="3">
+<li>虚实地址的映像表：查表获得，第四章虚拟存储器。</li>
+</ol>
+<p>简单来说，就是弄一个 映射表，拿着逻辑地址，去 映射表 里查对应的实际地址。<br>
+<del>Minecraft Code Pack直呼内行。</del></p>
+<p>如果逻辑地址 比 实际地址多，那么就有好几个 逻辑地址 查出来的 实际地址 是一样的。</p>
+<p>那么就有 多个逻辑地址 对 一个实际地址 的问题。 但是不能同时用了。</p>
+<hr>
+<details>
+<summary>点击展开查看</summary>
+<pre>
+<p>所有存储器按照字节来编址。<br>
+像那些1G 2G 4G 8G 16G 64G 的内存条，硬盘，单位是字节。</p>
+<ol>
+<li>字节信息地址：o &hellip; o o o o (0 或 1)</li>
+<li>半字信息地址: o &hellip; o o o 0 (最后一定是0)</li>
+<li>单字信息地址: o &hellip; o o 0 0</li>
+<li>双字信息地址为: o &hellip; o 0 0 0</li>
+</ol>
+<p></pre></p>
+</details>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/unity2d/what-is-sprite-in-unity/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+      
+  </div>
+
+
+<p class="copyright meta">失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

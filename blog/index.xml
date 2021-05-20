@@ -8,7 +8,30 @@
     <language>zh-cn</language>
     <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
  Blog Powered by Hugo.</copyright>
-    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(数据表示,)寻址方式(与指令系统) 2.2.2-2</title>
+      <link>https://itscola.github.io/blog/14.computersystemframework-2.2.2-2/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/14.computersystemframework-2.2.2-2/</guid>
+      <description>提示：本篇涉及少量 编程，汇编 相关内容，不会可能看不懂。
+一，逻辑空间 和 主存空间 1. 逻辑地址与主存物理地址的概念 形式地址和实际地址是针对的所有的寻址，而逻辑地址与主存物理地址针对的是主存。
+ 逻辑地址：开发者编程用到的地址。
+物理地址：程序在主存中实际的地址
+ 当定义一个字段(变量)，会开辟内存空间，给字段使用。从0号地址 向后分配(0,1,2,3,4&amp;hellip;)。
+这样就有一个问题，如果我同时运行多个程序，每个程序都有字段占用0号地址 然后向后分配到内存空间。不可能每个都将一个内存空间 从0开始向后占用。
+所以我们就定义出 逻辑地址 和 主存物理地址。
+我们给每个程序定义一个虚拟空间，称为“逻辑空间”，每个空间都占用逻辑地址都从0开始向后。
+逻辑空间是在磁盘上的，因此，逻辑空间 可以大于 物理空间，也可以小于 物理空间。
+物理地址则是程序在物理空间中的实际位置。
+可以理解为，我们通过磁盘，给每个程序虚拟出一个逻辑空间，然后让程序在逻辑空间中存储。在程序运行时，我们再把逻辑空间的数据 放到物理空间。以便程序所占空间的位置，不会互相影响。
+逻辑地址都是虚拟的，你把握不住，程子。
+2. 逻辑地址与主存物理地址的分配 虽然程序在 逻辑空间 里，但实际运行时，还是要在 物理空间 中运行，才能真正工作。
+主存 会在 物理空间 找一个空位，把磁盘中 逻辑空间内的数据，放到 主存中物理空间的 空位中。
+假如逻辑空间中，逻辑地址是，0，a , b , c , d . 主存中正好第 x位开始有空余空间。 那么我们把这些数据放到主存这个位置中，主存物理地址 就成了 0 + x , a + x , c + x , d+x &amp;hellip;.</description>
+    </item>
+    
     <item>
       <title>Unity基础操作与窗口布局 学习日记01</title>
       <link>https://itscola.github.io/blog/unity2d/what-is-sprite-in-unity/</link>
