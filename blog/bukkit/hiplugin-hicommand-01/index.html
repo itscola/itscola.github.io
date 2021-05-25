@@ -105,13 +105,14 @@
 <p>Bukkit 插件开发中, 很多地方都较为麻烦. 比如 处理指令的tab. 或者 通过代码创建各种物品(需要不停转换).<br>
 调用 NMS(net.minecraft.server)时, 如获取物品的NBT 并保存,  需要各种Java反射. <br>
 而要实现一些高端的功能, 又经常用到NMS .</p>
-<p>不仅如此 一不小心, 项目的代码质量就会大幅下降, 到后期很难维护.</p>
+<p>不仅如此 对于部分新人 一不小心, 项目的代码质量就会大幅下降, 到后期很难维护.</p>
 <blockquote>
 <p>代码质量主要体现在开发者写的代码的水平, 它是面向开发者的, 通常代码水平越差, 项目后期越难维护, 代码可读性越差. 代码质量与成品 有没有bug , 稳不稳定, 好不好用 没有直接关系.</p>
 </blockquote>
 <p>为了实现更简单的开发, 并保持较高的代码质量 , HiPlugin出现了.<br>
 它是面向插件开发者的插件开发框架.<br>
-<a href="https://github.com/itscola/HiPlugin"><img src="https://img.shields.io/badge/HiPlugin%5BBukkitPlugin%5D-FrameWork-red.svg" alt=""></a></p>
+<a href="https://github.com/itscola/HiPlugin"><img src="https://img.shields.io/badge/HiPlugin%5BBukkitPlugin%5D-FrameWork-red.svg" alt=""></a> <br>
+自动处理命令与tab, 直接操纵NBT, 直接序列化物品再反序列化 , 创建物品一步到位&hellip;.</p>
 <p>它有以下与众不同的特点:</p>
 <ol>
 <li>
