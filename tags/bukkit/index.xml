@@ -8,7 +8,28 @@
     <language>zh-cn</language>
     <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
  Blog Powered by Hugo.</copyright>
-    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/bukkit/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/bukkit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HiPlugin Bukkit开发框架 命令系统 (一)</title>
+      <link>https://itscola.github.io/blog/bukkit/hiplugin-hicommand-01/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/bukkit/hiplugin-hicommand-01/</guid>
+      <description>在看这篇文章之前, 确保你已经有java开发, Bukkit插件开发的基础.
+一, 什么是HiPlugin Bukkit 插件开发中, 很多地方都较为麻烦. 比如 处理指令的tab. 或者 通过代码创建各种物品(需要不停转换).
+调用 NMS(net.minecraft.server)时, 如获取物品的NBT 并保存, 需要各种Java反射. 而要实现一些高端的功能, 又经常用到NMS .
+不仅如此 一不小心, 项目的代码质量就会大幅下降, 到后期很难维护.
+ 代码质量指的是 开发者写的代码的水平, 它是面向开发者的, 通常代码水平越差, 项目后期越难维护, 代码可读性越差. 代码质量与成品 有没有bug , 稳不稳定, 好不好用 没有直接关系.
+ 为了实现更简单的开发, 并保持较高的代码质量 , HiPlugin出现了.
+它是面向插件开发者的插件开发框架.
+
+它有以下与众不同的特点:
+  易用, 倾向于面向对象, 保持较高的代码质量下, 非常易学. 即使是Bukkit新手 , 也能几分钟内, 就能完全掌握框架的一两个功能.
+  高质量代码. 使用HiPlugin处理繁杂功能, 进行自动化管理. 插件开发者只需要把要处理的内容交给HiPlugin即可.
+  创新. 打破思维局限性. 用原创的处理方式实现.
+  开源. HiPlugin保持开源, 能看到所有代码, 放心使用.</description>
+    </item>
+    
     <item>
       <title>关于更好的白名单插件</title>
       <link>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</link>

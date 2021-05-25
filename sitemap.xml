@@ -3,21 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://itscola.github.io/</loc>
-    <lastmod>2021-05-20T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/bukkit/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/c#/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/blog/bukkit/hiplugin-hicommand-01/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/java/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/minecraft/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/unity/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/blog/unity2d/block-breaker-game-demo/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/blog/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://itscola.github.io/tags/%E8%AF%B4%E8%AF%B4/</loc>
+    <lastmod>2021-05-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/blog/14.computersystemframework-2.2.2-2/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/tags/computersystemframework/</loc>
-    <lastmod>2021-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/tags/</loc>
-    <lastmod>2021-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/blog/</loc>
-    <lastmod>2021-05-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/tags/%E7%A1%AC%E4%BB%B6/</loc>
@@ -26,16 +53,7 @@
     <loc>https://itscola.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2021-05-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://itscola.github.io/tags/c#/</loc>
-    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/tags/unity/</loc>
-    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://itscola.github.io/blog/unity2d/what-is-sprite-in-unity/</loc>
-    <lastmod>2021-05-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2021-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/blog/13.computersystemframework-2.2-1/</loc>
@@ -119,9 +137,6 @@
     <loc>https://itscola.github.io/blog/what-is-machine-learning/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://itscola.github.io/tags/java/</loc>
-    <lastmod>2021-02-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://itscola.github.io/blog/compiler-and-interpreter/</loc>
     <lastmod>2021-02-25T00:00:00+00:00</lastmod>
   </url><url>
@@ -134,13 +149,7 @@
     <loc>https://itscola.github.io/blog/gradle-basic/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://itscola.github.io/tags/bukkit/</loc>
-    <lastmod>2021-02-23T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://itscola.github.io/tags/mc%E5%9C%B0%E5%9B%BE/</loc>
-    <lastmod>2021-02-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/tags/minecraft/</loc>
     <lastmod>2021-02-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/blog/%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%99%BD%E5%90%8D%E5%8D%95%E6%8F%92%E4%BB%B6/</loc>
@@ -159,9 +168,6 @@
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/blog/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://itscola.github.io/tags/%E8%AF%B4%E8%AF%B4/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://itscola.github.io/about/</loc>

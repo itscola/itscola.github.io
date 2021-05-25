@@ -8,7 +8,26 @@
     <language>zh-cn</language>
     <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
  Blog Powered by Hugo.</copyright>
-    <lastBuildDate>Wed, 19 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity 方块破坏者小游戏 学习日记(小游戏记录)02</title>
+      <link>https://itscola.github.io/blog/unity2d/block-breaker-game-demo/</link>
+      <pubDate>Tue, 25 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/unity2d/block-breaker-game-demo/</guid>
+      <description> 记录学习过程中制作的了一个非常简单的小游戏, 没有任何教学, 如果你点开是想学内容, 请看其它文章.
+记录学习过程中制作的了一个非常简单的小游戏, 没有任何教学, 如果你点开是想学内容, 请看其它文章.
+记录学习过程中制作的了一个非常简单的小游戏, 没有任何教学, 如果你点开是想学内容, 请看其它文章.
+希望这篇文章作为自己将来Unity学习路上的回忆.
+方块破坏小游戏 通过发射球, 撞击方块, 在每次球向下方回弹时 , 接住球. 一个简单的小游戏. Level 2
+1. 开始 在开始时, 球会黏在下方的板上, 等待玩家左键发射.
+板会根据鼠标的移动而移动.
+弹射:
+2. 碰撞 球如果碰到上方 或 左右方的墙壁, 会回弹.
+碰到方块, 会回弹, 并且方块将会消失. 3. 关卡 当所有方块消失, 来到第二关.
+4. 游戏结束 </description>
+    </item>
+    
     <item>
       <title>Unity基础操作与窗口布局 学习日记01</title>
       <link>https://itscola.github.io/blog/unity2d/what-is-sprite-in-unity/</link>

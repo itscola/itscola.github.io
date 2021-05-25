@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>博客</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">HiPlugin Bukkit开发框架 命令系统 (一)</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-什么是hiplugin">一, 什么是HiPlugin</a></li>
+    <li><a href="#二-hiplugin-命令系统">二, HiPlugin 命令系统</a>
+      <ul>
+        <li><a href="#1-创建一个-hicommand">1. 创建一个 HiCommand</a></li>
+        <li><a href="#2-创建子命令类">2. 创建子命令类</a></li>
+        <li><a href="#3-编写子命令类">3. 编写子命令类[!]</a></li>
+        <li><a href="#4-添加命令到命令处理系统">4. 添加命令到命令处理系统</a></li>
+        <li><a href="#5-将插件命令处理托管给hicommand命令系统">5. 将插件命令处理托管给HiCommand命令系统</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<p>在看这篇文章之前, 确保你已经有java开发, Bukkit插件开发的基础.</p>
+<h2 id="一-什么是hiplugin">一, 什么是HiPlugin</h2>
+<p>Bukkit 插件开发中, 很多地方都较为麻烦. 比如 处理指令的tab. 或者 通过代码创建各种物品(需要不停转换).<br>
+调用 NMS(net.minecraft.server)时, 如获取物品的NBT 并保存,  需要各种Java反射. <br>
+而要实现一些高端的功能, 又经常用到NMS .</p>
+<p>不仅如此 一不小心, 项目的代码质量就会大幅下降, 到后期很难维护.</p>
+<blockquote>
+<p>代码质量指的是 开发者写的代码的水平, 它是面向开发者的, 通常代码水平越差, 项目后期越难维护, 代码可读性越差. 代码质量与成品 有没有bug , 稳不稳定, 好不好用 没有直接关系.</p>
+</blockquote>
+<p>为了实现更简单的开发, 并保持较高的代码质量 , HiPlugin出现了.<br>
+它是面向插件开发者的插件开发框架.<br>
+<a href="https://github.com/itscola/HiPlugin"><img src="https://img.shields.io/badge/HiPlugin%5BBukkitPlugin%5D-FrameWork-red.svg" alt=""></a></p>
+<p>它有以下与众不同的特点:</p>
+<ol>
+<li>
+<p><strong>易用</strong>, 倾向于面向对象, 保持较高的代码质量下, 非常易学. <br>
+即使是Bukkit新手 , 也能几分钟内, 就能完全掌握框架的一两个功能.</p>
+</li>
+<li>
+<p><strong>高质量代码</strong>. 使用HiPlugin处理繁杂功能, 进行自动化管理.  <br>
+插件开发者只需要把要处理的内容交给HiPlugin即可.</p>
+</li>
+<li>
+<p><strong>创新</strong>. 打破思维局限性. 用原创的处理方式实现.</p>
+</li>
+<li>
+<p><strong>开源.</strong> HiPlugin保持开源, 能看到所有代码, 放心使用.</p>
+</li>
+</ol>
+<h2 id="二-hiplugin-命令系统">二, HiPlugin 命令系统</h2>
+<p>到了本篇文章的主要内容了.</p>
+<h3 id="1-创建一个-hicommand">1. 创建一个 HiCommand</h3>
+<p>首先, 我们需要创建一个命令处理系统 HiPlugin.</p>
+<p>在主类创建一个instance.<br>
+<img src="/HiPlugin/1.png" alt="图片"></p>
+<p>创建一个命令处理系统 HiCommand.
+<img src="/HiPlugin/2.png" alt="图片"></p>
+<p>new HiCommand(插件实例,命令前缀) 参数:</p>
+<ol>
+<li>
+<p>插件实列 instance. : 命令处理系统需要处理插件的实例.</p>
+</li>
+<li>
+<p>命令前缀: 创建的这个命令系统的前缀.<br>
+如你的命令有: <br>
+/iTech give xxx<br>
+/iTech create xxx <br>
+这个 &ldquo;iTech&rdquo; 就是这个命令处理系统的前缀. 当然,你可以创建多个命令系统, 每个系统需要一个前缀.<br>
+(前缀不区分大小写)</p>
+</li>
+</ol>
+<h3 id="2-创建子命令类">2. 创建子命令类</h3>
+<p>在HiPlugin框架下 , 每个子命令都是一个单独的类.</p>
+<p>首先, 创建一个包 , 比如 commands 用于存放 子命令类.<br>
+<img src="/HiPlugin/3.png" alt="图片"></p>
+<p>将类继承 ICommand 接口.  并在类名上方添加 @ItsACommand 注解<br>
+注解的第一个参数为 命令的子参数, 另一个为命令执行所需的权限.<br>
+如/itech give xxx . give就是这个命令类的子参数, 代表这个子命令类.
+<img src="/HiPlugin/4.png" alt="图片"></p>
+<p>这边拿一个新子命令类做为例子, 实现ICommand接口的所有方法.
+<img src="/HiPlugin/5.png" alt="图片"><br>
+哦那个要</p>
+<h3 id="3-编写子命令类">3. 编写子命令类[!]</h3>
+<p>Demo : <a href="https://github.com/itscola/ITech/blob/main/src/main/java/top/whitecola/itech/commands/GiveItem.java">https://github.com/itscola/ITech/blob/main/src/main/java/top/whitecola/itech/commands/GiveItem.java</a></p>
+<p>onCommand方法将写命令在执行时要做的动作.<br>
+<img src="/HiPlugin/6.png" alt="图片"></p>
+<p>getUsage方法写命令的使用方式 &lt;&gt;内为必要参数 []内为可选参数.<br>
+<img src="/HiPlugin/7.png" alt="图片"></p>
+<p>getUsageDescripition 方法写子命令的描述, 将来的版本可以配合上个方法,实现自动生成help命令等.
+<img src="/HiPlugin/8.png" alt="图片"></p>
+<p>最关键的是 getArgs 与 handleArg  它们可以全自动的处理命令的tab. <br>
+只需要在getArgs返回所有参数 , 并在handleArgs处理并返回一个 List<String> 代表提示到这个位置的时候 , 返回多个提示内容(字符串). <br>
+<img src="/HiPlugin/9.png" alt="图片"></p>
+<p>比如 <br>
+<img src="/HiPlugin/13.png" alt="图片"><br>
+当玩家输入 /itech createItem [ItechItem] 的 [ITechItem] 这个参数时, 就会提示三个内容 &ldquo;awa1&rdquo; ,&ldquo;awa2&rdquo; , &ldquo;awa3&rdquo; <br>
+<img src="/HiPlugin/14.png" alt="图片"></p>
+<h3 id="4-添加命令到命令处理系统">4. 添加命令到命令处理系统</h3>
+<p><img src="/HiPlugin/10.png" alt="图片"></p>
+<h3 id="5-将插件命令处理托管给hicommand命令系统">5. 将插件命令处理托管给HiCommand命令系统</h3>
+<p><img src="/HiPlugin/11.png" alt="图片"></p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/unity2d/block-breaker-game-demo/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+      
+  </div>
+
+
+<p class="copyright meta">失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>
