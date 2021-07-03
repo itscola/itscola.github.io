@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Java and C# developer.">
+    <meta name="Author" content="White_cola">
+    <meta name="keywords" content="白可乐的博客,White_cola Blog,white_cola,white_cola mcbbs">
+    <link rel="stylesheet" href=https://itscola.github.io/css/syntax.css>
+    <link rel="stylesheet" href=https://itscola.github.io/css/style.css>
+    <script src="https://kit.fontawesome.com/1b7478c139.js" crossorigin="anonymous"></script>
+    <title>White_cola Blog</title>
+  </head><body><aside id="sidenav">
+    <header>
+    
+        <a href=https://itscola.github.io/><img src="https://itscola.github.io/avatar.png" alt="avatar"></a>
+        
+    
+
+    <a id="branding" href=https://itscola.github.io/>
+        
+            White_cola Blog
+        
+    </a>
+    </header>
+
+    <nav>
+        
+            		
+            <a href="/"
+                
+            >
+                <i class="fas fa-home fa-sm"></i>
+                <span>主页</span>
+            </a>
+        
+            		
+            <a href="/blog/"
+                
+            >
+                <i class="blog"></i>
+                <span>全部文章</span>
+            </a>
+        
+            		
+            <a href="/tags"
+                
+            >
+                <i class="tags"></i>
+                <span>标签</span>
+            </a>
+        
+            		
+            <a href="https://github.com/itscola"
+                
+                    target="_blank"
+                
+            >
+                <i class="github"></i>
+                <span>github</span>
+            </a>
+        
+            		
+            <a href="/tags/machine-learning/"
+                
+            >
+                <i class="MachineLearning"></i>
+                <span>机器学习</span>
+            </a>
+        
+            		
+            <a href="/tags/computersystemframework/"
+                
+            >
+                <i class="ComputerSystemFramework"></i>
+                <span>计算机系统结构</span>
+            </a>
+        
+    </nav>
+</aside>
+<main id="main">
+            <a href="javascript:void(0)" id="closebtn" onclick="navToggle()"><i class="fas fa-bars fa-lg"></i></a>
+            <div class="content">
+    
+    <h1 id="title">Java UI开发 - 容器,内容窗格,布局管理器 (一)</h1>
+    
+      
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-awt-与-swing">1. AWT 与 Swing</a></li>
+    <li><a href="#2-容器">2. 容器</a>
+      <ul>
+        <li><a href="#21-顶层容器">2.1 顶层容器</a></li>
+        <li><a href="#22-内容窗格">2.2 内容窗格</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-布局管理器">3. 布局管理器</a>
+      <ul>
+        <li><a href="#31-flowlayout-布局管理器">3.1 FlowLayout 布局管理器</a></li>
+        <li><a href="#32-borderlayout-布局管理器">3.2 BorderLayout 布局管理器</a></li>
+        <li><a href="#33-cardlayout-布局管理器">3.3 CardLayout 布局管理器</a></li>
+        <li><a href="#34-gridlayout-布局管理器">3.4 GridLayout 布局管理器</a></li>
+        <li><a href="#35-boxlayout-布局管理器">3.5 BoxLayout 布局管理器</a></li>
+        <li><a href="#36-空布局">3.6 空布局</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    <hr>
+<h1 id="java-ui开发---1">Java UI开发 - 1</h1>
+<p>Java 的 UI 开发目前已经不好学到了，原因是不经常用。 <br>
+企业开发中，很少人会选择用 Java 开发有 UI 的桌面程序。教程中也很难找到了。</p>
+<p>即使这样，学习一下还是很有必要的，万一需要使用，不至于不会用。</p>
+<p>另一种情况，我们可以通过这个技术衍生出类似技术的 思考能力。或许在以后用其它语言写桌面程序时，已经有了实现思路。</p>
+<p>其实目前有很多桌面程序也是 java 写得，比如 java 开发者基本都熟悉的 JetBrain Idea 以及 JetBrain 的其它产品，它是由 java swing 写的（没错，不是 javafx ）。 再比如 ArcTime ， HMCL 等等。</p>
+<p>作为 “跨平台掌门人” Java ， 跨平台在这方面也是少不了的。 <br>
+这是这个教程系列的第一篇文章，我会用最通俗的语言，让你学会的。</p>
+<h2 id="1-awt-与-swing">1. AWT 与 Swing</h2>
+<p><u>Java 的 GUI 由各种组件构成</u>，它们在 java.awt 与 javax.swing 包中。<br>
+AWT 组件在 java.awt 中，Swing 组件在 javax.swing 中。</p>
+<p><u>AWT 称为 重量级组件</u>，它是在 Swing 之前出现的。（<u>总会显示在 轻量级组件 前面</u>）</p>
+<p><u>Swing 称为 轻量级组件</u>，它的实现不包含任何本地代码，跨平台性良好。比起 AWT，不同平台上，Swing 的显示并不会有什么差别。此外，Swing中的组件通常以 J 开头</p>
+<p>Swing 比 AWT 有更多的功能，主要体现在 Swing 组件会有更多可自定义的选择。</p>
+<p>它们是可以混合使用的。</p>
+<h2 id="2-容器">2. 容器</h2>
+<p><u>组件中，有部分组件称为 容器组件，其它的称为 非容器组件</u>。顾名思义，容器组件可以用来装载其它组件。</p>
+<p><u>容器又分为 顶层容器 ， 普通容器（一般用途容器）。 <br>
+由于容器可以装组件，而容器本身也是一种组件，所以之前是可以嵌套的，最顶层的容器必须是顶层容器。 </u></p>
+<h3 id="21-顶层容器">2.1 顶层容器</h3>
+<p>常见顶级容器有 JFrame , JDialog , JWindow , JApplet。  <br>
+这边先来看 JFrame。</p>
+<p>JFrame ：这是一个常用的顶级容器，有时也称它为 “框架”。 <br>
+它的构造方法有 JFrame() 与 JFrame(String title)，第二个用来设定窗口标题。</p>
+<p>常用方法有：</p>
+<ol>
+<li>void setBounds(int x,int y,int width,int height) 设置位置以及大小。</li>
+<li>void setTitle(String title) 设置标题。</li>
+<li>void setSize(int size) 设置大小。</li>
+<li>void setBackground(Color BackgroundColor) 设置背景颜色。</li>
+<li>void pack() 自动调整适合的大小与布局。</li>
+<li>void setLayout(LayoutManager manager) 设置布局管理器。</li>
+<li>void getContentPane() 获取此框架的内容窗格对象。</li>
+</ol>
+<pre><code>JFrame frame = new JFrame(“demo“); // 创建框架容器。
+frame.getContentPane().add(new JButton(“jButton“));  // 向容器中加入一个 “jButton” 按钮。
+
+frame.pack; // 设定适合的大小布局。
+frame.setVisible(true); // 显示
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // 关闭时退出。
+</code></pre><h3 id="22-内容窗格">2.2 内容窗格</h3>
+<p>JFrame , JDialog , JWindow , JApplet 都有内容窗格，也是一种容器，<u>内容窗格是存放组件的地方</u>。</p>
+<p>可以使用 getContentPane() 方法来获取内容窗格，它返回的对象的类继承了 java.awt.Container ，依然是一个容器。</p>
+<p>然后我们可以通过它来向内容窗格 添加组件，通过getContentPane().add( xxx )方法。 <br>
+写为: frame.getContentPane().add( xxx );</p>
+<p>可以通过setContentPane() 方法来设定容器的内容窗口。</p>
+<pre><code>JFrame frame = new JFrame(); // 创建一个框架。
+JPanel panel = new JPanel(); // 创建一个内容窗格。
+panel.add(new JButton(“demoButton“)); // 向内容窗格中添加一个按钮。🌟
+frame.setContentPane(panel); // 将创建的内容窗格设定为 框架 的内容窗格。
+
+frame.pack; // 设定适合的大小布局。
+frame.setVisible(true); // 显示
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // 关闭时退出。
+</code></pre><p>我们来看上方代码的第三行。我们知道 容器 中有 内容窗格 ，正在能添加组件的部分 是容器中的内容窗格。所以我们单独创建一个内容窗格，然后在其中添加组件，这是完全没问题的。</p>
+<h2 id="3-布局管理器">3. 布局管理器</h2>
+<p>内容窗格可以添加组件，那么 “布局管理器” 可以理解它是管理 “内容窗格” 中摆放添加的组件的方式。也就是说，组件在内容窗格中的布局，位置，大小。都由布局管理器来管理。</p>
+<p>我们可以通过内容窗格的 setLayout(“布局管理器”) 来设定指定布局管理器。</p>
+<p>布局管理器有很多，那么我们看几个常见的。</p>
+<h3 id="31-flowlayout-布局管理器">3.1 FlowLayout 布局管理器</h3>
+<p>它是 JPanel 的默认布局管理器。<br>
+这个布局管理器的组件摆放方式是，一行一行的摆放组件，一行满了换下一行。</p>
+<p>FlowLayout 布局管理器与其它布局管理器不同的是，它不强制改变组件的大小，它可以通过调用每个组件的 getPerferredSize() 来获得组件希望的大小。</p>
+<p>接下来看构造方法。</p>
+<p>它的第一个构造方法 FlowLayout() 将默认创建一个 水平和垂直间距都是 5 像素，且居中对齐的FlowLayout 布局管理器。</p>
+<p>如果想改变对其方式，就要用到第二个构造方法 FlowLayout(int align) 它的参数可以是三个常量 FlowLayout.LEFT , FlowLayout.RIGHT , FlowLayout.CENTER 。分别代表 左对齐，右对齐，居中对齐。</p>
+<p>当然，也可以改变 水平和垂直间距，通过第三个构造方法，FlowLayout(int align,int hgap,int vgap) ，第二三个参数分别代表 水平和垂直间距。</p>
+<pre><code>JFrame frame = new JFrame(“demo“); // 创建标题为“demo”的框架。
+JPanel panel = new JPanel();  // 创建新的内容窗口。
+panel.setLayout(new FlowLayout()); // 设置内容窗口的布局管理器为 FlowLayout。（为了演示）
+JButton button1 = new JButton(); // 创建一个按钮。 
+
+panel.add(button1); // 将按钮添加到创建的内容窗口。
+frame.setContentPane(panel); // 将frame的内容窗口设置为创建的panel.
+frame.setSize(400,200); // 设置框架的长和宽。🌟
+
+frame.setVisible(true); // 显示
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // 关闭时退出。
+
+</code></pre><p>我们来看第9行的代码 frame.setSize(400.200) ，要注意，但框架大小改变，它的组件布局也会发生变化。</p>
+<h3 id="32-borderlayout-布局管理器">3.2 BorderLayout 布局管理器</h3>
+<p>除来 JPanel 的默认布局管理器是 FlowLayout，其它 内容窗格 通常都是 BorderLayout 布局管理器。</p>
+<p>当容器大小变化，管理的组件相对位置不变，当会改变组件的大小。</p>
+<p>BorderLayout 布局管理器 将布局分为 5 个区域。上部（North），中部（Center），下部（South），左部（West），右部（East）。每个区域只能加一个组件。如果你尝试向一个区域添加多个组件，那么后添加的组件会把之前添加的覆盖掉。</p>
+<p>虽然每个区域只能加一个组件，但是我们可以通过 嵌套 的方式来添加更多组件。如在一个布局中嵌套一个 JPanel 内容窗格。</p>
+<p>那么在添加时，就要指定哪个区域了。 有两种方式指定。</p>
+<pre><code>frame.getContentPane().add(button,BorderLayout.Center);  
+frame.getContentPane().add(button,“Center“); 
+</code></pre><p>在用 BorderLayout 布局管理器的情况下，除了 Center 区域外，没有组件的区域的大小会变为 0 ，此时 Center 将会占领大小为 0 的区域。 而如果除了 Center 区域外，都没有组件，那么Center将会占领全部区域（整个窗口）。</p>
+<p>接下来看构造方法。</p>
+<p>BorderLayout() 默认情况下，组件之间没有间距。</p>
+<p>可以通过BorderLayout(int hgap,int vgap) 构造方法来指定组件之间的水平和垂直间距。</p>
+<h3 id="33-cardlayout-布局管理器">3.3 CardLayout 布局管理器</h3>
+<p>这是个非常非常有意思且常见的布局管理器。<br>
+它就是卡片式的布局管理器，会把布局当作多张卡片，每次只显示一张。它将 容器 作为它的卡片。</p>
+<p>第一个添加进去的容器，将作为默认卡片显示。然后可以通过调用它的方法，显示其它卡片。</p>
+<p>很常见的 UI，左边是一列选项，右边是显示区域。一旦点击对应选项，右边的显示区域就会改变，那就是通过CardLayout 嵌套实现的了。没有它，就需要通过设置容器的隐藏显示来实现了。</p>
+<p>它有几个常用方法，可以用来控制内容窗格的显示。（顺序是由添加顺序决定的）</p>
+<ol>
+<li>void first(Container contentPane) : 翻到容器的第一张卡片。</li>
+<li>void last(Container contentPane) : 翻到容器的最后一张卡片。</li>
+<li>void next(Container contentPane) : 翻到目前容器显示卡片的下一张卡片。如果目前是最后一张，则翻到第一张。</li>
+<li>void previous(Container contentPane) : 翻到目前容器显示卡片的上一张卡片。如果目前是第一张，则翻到最后一张。</li>
+<li>void show(Container contentPane,String name) : 翻到目前容器的指定名字的卡片，如果不存在，那就不操作 。</li>
+</ol>
+<p>接下来看构造方法。 <br>
+CardLayout() 构造方法，会构造一个默认的无间距的 CardLayout 布局管理器。<br>
+可以用 CardLayout(int hgap,int vgap) 构造方法来指定水平和垂直间距。</p>
+<pre><code>JFrame frame = new JFrame(“demo“);
+CardLayout cardLayout = new CardLayout();
+frame.getContentPane.setLayout(cardLayout);
+
+JPanel panel1 = new JPanel();
+JPanel panel2 = new JPanel();
+JPanel panel3 = new JPanel();
+JPanel panel4 = new JPanel();
+ 
+frame.getContentPane.add(panel1,“First“);
+frame.getContentPane.add(panel2,“Second“);
+frame.getContentPane.add(panel3,“Third“);
+frame.getContentPane.add(panel4,“Fourth“);
+
+frame.pack; // 设定适合的大小布局。
+frame.setVisible(true); // 显示
+frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   // 关闭时退出。
+
+cardLayout.first(frame.getContentPane); // 显示 panel1
+cardLayout.last(frame.getContentPane); // 显示 panel4
+cardLayout.next(frame.getContentPane) //显示 panel1
+cardLayout.next(frame.getContentPane) //显示 panel2
+cardLayout.previous(frame.getContentPane) //显示 panel1
+cardLayout.show(frame.getContentPane,“Third“) // 显示panel3
+</code></pre><h3 id="34-gridlayout-布局管理器">3.4 GridLayout 布局管理器</h3>
+<p>GridLayout 网格布局，它是网格式的布局管理器。容器空间会被分为 行 * 列 个格子，每个组件会占据一个格子。每个组件的位置根据添加顺序而定，会从左向右排，一行不够会换下一行。</p>
+<p>和 BorderLayout 一样，容器大小变化，管理的组件相对位置不变，当会改变组件的大小。</p>
+<p>rows 表示行，cols表示列。它们之中可以一个为 0，另一个不为 0，但不能都为0 。 <br>
+如果 rows 为 0 而cols 不为 0，那么行数将会按照实际情况来定；如果 rows 不为 0 而 cols 为 0，那么列会根据实际情况来定。</p>
+<p>网格每列与每行的宽度高度都是相同的。如果网格个数比添加组件的个数更多，空余的网格将会是空白。如果网格的个数不够用，系统会根据需求自动添加添加网格。</p>
+<p>接下来看构造方法。
+GridLayout() 构造方法创建的 GridLayout 管理器的网格会根据实际情况而定。 <br>
+可以用 GridLayout(int rows,int cols) 构造方法来指定行和列。 <br>
+也可以用 GridLayout(int rows,int cols,int hgap,int vgap) 构造方法来指定格的水平和垂直间距。</p>
+<p>它的添加方法很普通 frame.getContentPane.add() 就行。</p>
+<h3 id="35-boxlayout-布局管理器">3.5 BoxLayout 布局管理器</h3>
+<p>BoxLayout 布局管理可以按照水平排列组件，也可以按照竖直排列组件。每个组件在水平排列和竖直排列时会有不同的宽度和高度。</p>
+<p>BoxLayout(Contrainer target,int axis) 是它唯一的构造方法。第一个参数要选择一个容器设置为此布局管理器；第二个参数可以填入两个常量，BoxLayout.X_AXIS 或 BoxLayout.Y_AXIS，表示是 水平排列 还是 竖直排列。</p>
+<p>虽然要选定容器，但设置布局时还是这样。</p>
+<pre><code>jPanel.setLayout(new BoxLayout(jPanel,BoxLayout,X_AXIS));
+</code></pre><p>在 javax.swing 包下还有一个 Box 类，它提供了创建 BoxLayout 容器的静态方法。还有一些创建空白组件（不可见组件）的方法，用来占位置，想在组件之间留距离，就可以用它。</p>
+<p>两个静态方法分别是：</p>
+<ol>
+<li>BoxcreateHorizontalBox() 创建一个水平方向的 BoxLayout 的<strong>容器</strong>。</li>
+<li>BoxcreateVerticalBox() 创建一个竖直方向的 BoxLayout 的<strong>容器</strong>。</li>
+</ol>
+<p>还有几个创建空白组件的静态方法，用来增加可见组件之间的距离。</p>
+<ol>
+<li>createHorizontalGlue();  用于填满所有剩余水平空间。</li>
+<li>createVerticalGlue();  用于填满剩余竖直空间。</li>
+<li>createHorizontalStruct(int width);  用于指定填水平空间的宽度。</li>
+<li>createVerticalStruct(int width);  用于指定填竖直空间的高度。</li>
+<li>createRigidArea(Dimension dimension); 用于填指定的区域。</li>
+</ol>
+<h3 id="36-空布局">3.6 空布局</h3>
+<p>如果所有布局都无法满足需求，那么可以使用空布局来做到自定义组件的位置大小。 <br>
+设置布局时可以写为 setLayout(null) 。</p>
+<p>可以使用组件的setBounds(int x,int y,int width,int height) 来设定。</p>
+
+    
+    <div class="nav-next-prev">
+        <div class="nav-prev">
+            
+                <a href="https://itscola.github.io/blog/bukkit/hiplugin-hicommand-01/"><i class="fas fa-chevron-left"></i></a>
+            
+        </div>
+        <a class="nav-top" href="#">top</i></a>
+        <div class="nav-next">
+            
+                <a class="grayed-out" href="javascript:void()"><i class="fas fa-chevron-right"></i></a>
+            
+        </div>
+    </div>
+    
+
+            </div><footer>
+<div class="footer-content">
+
+  <div class="contact-info">
+      
+      
+  </div>
+
+
+<p class="copyright meta">失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</p>
+
+</div>
+</footer></main>
+    </body>
+    <script src=https://itscola.github.io/js/navbutton.js></script>
+</html>

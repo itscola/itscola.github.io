@@ -8,7 +8,24 @@
     <language>zh-cn</language>
     <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
  Blog Powered by Hugo.</copyright>
-    <lastBuildDate>Tue, 25 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java UI开发 - 容器,内容窗格,布局管理器 (一)</title>
+      <link>https://itscola.github.io/blog/javaui/java-ui-develope-1/</link>
+      <pubDate>Sat, 03 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/javaui/java-ui-develope-1/</guid>
+      <description>Java UI开发 - 1 Java 的 UI 开发目前已经不好学到了，原因是不经常用。 企业开发中，很少人会选择用 Java 开发有 UI 的桌面程序。教程中也很难找到了。
+即使这样，学习一下还是很有必要的，万一需要使用，不至于不会用。
+另一种情况，我们可以通过这个技术衍生出类似技术的 思考能力。或许在以后用其它语言写桌面程序时，已经有了实现思路。
+其实目前有很多桌面程序也是 java 写得，比如 java 开发者基本都熟悉的 JetBrain Idea 以及 JetBrain 的其它产品，它是由 java swing 写的（没错，不是 javafx ）。 再比如 ArcTime ， HMCL 等等。
+作为 “跨平台掌门人” Java ， 跨平台在这方面也是少不了的。 这是这个教程系列的第一篇文章，我会用最通俗的语言，让你学会的。
+1. AWT 与 Swing Java 的 GUI 由各种组件构成，它们在 java.awt 与 javax.swing 包中。
+AWT 组件在 java.awt 中，Swing 组件在 javax.swing 中。
+AWT 称为 重量级组件，它是在 Swing 之前出现的。（总会显示在 轻量级组件 前面）
+Swing 称为 轻量级组件，它的实现不包含任何本地代码，跨平台性良好。比起 AWT，不同平台上，Swing 的显示并不会有什么差别。此外，Swing中的组件通常以 J 开头</description>
+    </item>
+    
     <item>
       <title>HiPlugin Bukkit开发框架 命令系统 (一)</title>
       <link>https://itscola.github.io/blog/bukkit/hiplugin-hicommand-01/</link>
