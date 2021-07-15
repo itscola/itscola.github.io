@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on White_cola Blog</title>
+    <link>https://itscola.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on White_cola Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>失落和喜悦不断交缠，执着的一切充满挑战。
+ Blog Powered by Hugo.</copyright>
+    <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>@所有人 搭建个网页版的 Idea 随时随地 Java 开发？</title>
+      <link>https://itscola.github.io/blog/ijava/projector-idea-ide/</link>
+      <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://itscola.github.io/blog/ijava/projector-idea-ide/</guid>
+      <description>一 要是能随时随地写代码就好了 12.9 寸的 iPad Pro 加上妙控键盘，再来一个蓝牙鼠标，确实很香，携带型没得说。
+但是由于是 iPadOS 而非 Macos，在程序开发上，是它的非常大的短板。
+App store 也不允许上架能创造软件的开发工具（为了让用户只从 App store 下载 app，以此来达到安全性）。因此用 app 做开发，非常难。
+想象随时随地，拿出 iPad，直接写代码，那该多快乐啊。
+二 Jetbrains Projector https://lp.jetbrains.com/projector 还好，Jebrains 提供了 Projector 产品，供我们进行在线开发。也就是说，我们随时随地进入网站，使用 Jetbrains Idea。
+简单来说，它会把本地的 idea 的 Swing ui，渲染到一个网站上，然后通过网站，控制电脑上的 idea 。
+这看似和远程操作很像，但不一样的是这是在一个网站上，而且 操作界面 变成了网站的一部分。
+这样以来，任何设备只要打开浏览器，输入网址，打开网站（当然还要输入密码），就能继续写代码。
+1. 为什么不直接远程 ？ 在外面一般用流量，消耗流量多不说，时不时也达不到完美的流畅度，会有一定的延迟。
+Teamviewer 等远程软件，在外面连家里会有很大的延迟，而且连接端必须有下载软件。
+云电脑通常又比较贵，而且数据必须在云电脑那边。免费的又必须不停重新安装。
+自己用程序搭建的话，没有公网 ip 情况，用 frp，ngrok 等，对网络有一定要求。不是自己搭建的内网穿透的话，更不用说了。
+直接在浏览器使用 idea，便捷性大大提高。
+还有一点就是，iPad 连 teamviwer 远程写代码，体验很不好，容易误操作。
+当然，假如你那边没有以上问题，或者能接受，直接远程肯定是更舒服。具体要看情况。但大部分不会做到太好。
+三 环境部署 我这里直接用最简单的方法了，直接在 Idea 中安装 Projector 的插件。 这篇文章也不是教程，而是告诉你一个解决方案，如何去实现。</description>
+    </item>
+    
+  </channel>
+</rss>
