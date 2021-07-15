@@ -11,10 +11,10 @@
     <lastBuildDate>Thu, 15 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://itscola.github.io/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>@所有人 搭建个网页版的 Idea 随时随地 Java 开发？</title>
-      <link>https://itscola.github.io/blog/java/projector/</link>
+      <link>https://itscola.github.io/blog/java/projector-idea-ide/</link>
       <pubDate>Thu, 15 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://itscola.github.io/blog/java/projector/</guid>
+      <guid>https://itscola.github.io/blog/java/projector-idea-ide/</guid>
       <description>一 要是能随时随地写代码就好了 12.9 寸的 iPad Pro 加上妙控键盘，再来一个蓝牙鼠标，确实很香，携带型没得说。
 但是由于是 iPadOS 而非 Macos，在程序开发上，是它的非常大的短板。
 App store 也不允许上架能创造软件的开发工具（为了让用户只从 App store 下载 app，以此来达到安全性）。因此用 app 做开发，非常难。
